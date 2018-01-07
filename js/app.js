@@ -479,7 +479,7 @@ var home = location.href,
                     respond.parentNode.insertBefore(div, respond)
                 }!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
                 jQuery("body").animate({
-                    scrollTop: jQuery('#respond').offset().top - 180
+                    scrollTop: jQuery('#reply-title').offset().top - 180
                 }, 400);
                 parent.value = parentId;
                 cancel.style.display = '';
@@ -674,28 +674,75 @@ if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEve
     window.addEventListener( 'hashchange', function() {
         var id = location.hash.substring( 1 ),
             element;
-
         if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
             return;
         }
-
         element = document.getElementById( id );
-
         if ( element ) {
             if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
                 element.tabIndex = -1;
             }
-
             element.focus();
         }
     }, false );
 }
 
-// 一言调用
+// 一言替换简介
 if(Poi.hitokoto == 'open') {
     $(function () {
         $.post("https://sslapi.hitokoto.cn/", function(e){
             $('.header-info p').html(e.hitokoto+" —— <strong>"+e.from+"</strong>")
         },'JSON');
     });
+}
+
+// AJAX删除评论
+function deleteComments(obj, children = false) {
+    function main() {
+        var url = $(obj).attr('data-url');
+        var arg = url.replace(/.*\?/, '');
+        url = url.replace(/\?.*/, '');
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: arg,
+            error: function(e) {
+                swal({
+                    title: "请求出错",
+                    text: "啊咧，网络好像开小差了，再试试吧……",
+                    type: "error",
+                    confirmButtonText: "好的",
+                    timer: 3000
+                });
+            }
+        });
+        var parent = $(obj).parent().parent().parent().parent().parent().parent();
+        $('>.children>[id^="comment-"]>.contents .deleteComments', parent).each(function() {
+            deleteComments(this, true);
+        });
+        parent.remove();
+    }
+    if (!children) {
+        swal({
+            title: "删除确定",
+            text: "如果删除主楼评论的话会隐藏楼中楼评论喔……",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "删除",
+            cancelButtonText: "取消",
+            closeOnConfirm: false,
+        }, function() {
+            main();
+            swal({
+                title: "删除成功",
+                text: "删除的评论已经躺进回收站啦~~",
+                type: "success",
+                confirmButtonText: "好的",
+                timer: 3000
+            });
+        });
+    } else {
+        main();
+    }
 }
