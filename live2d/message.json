@@ -1,0 +1,138 @@
+{
+    "mouseover": [
+        {
+            "selector": ".post-entry .entry-title a, .lower .menu a",
+            "text": ["要看看 <span style=\"color:#f6f;\">{text}</span> 么？"]
+        },
+        {
+            "selector": ".post-thumbs",
+            "text": ["文章特色配图好看嘛？"]
+        },
+        {
+            "selector": ".post-content-wraps",
+            "text": ["想要了解更多，那就再深入点吧~~"]
+        },
+        {
+            "selector": "#poi-play-bar",
+            "text": ["<span style=\"color:red;\">要听下主人精心挑选的歌曲么~~♪(^∇^*)</span>"]
+        },
+        {
+            "selector": ".searchbox .iconfont",
+            "text": ["<span style=\"color:red;\">在找什么东西呢，需要帮忙吗~~</span>"]
+        },
+        {
+            "selector": ".site-branding .site-title a",
+            "text": ["<span style=\"color:red;\">要返回主页嘛？</span>"]
+        },
+        {
+            "selector": ".lower #show-nav",
+            "text": ["<span style=\"color:red;\">那是菜单按钮噢~~</span>"]
+        },
+        {
+            "selector": ".header-user-avatar",
+            "text": ["<span style=\"color:red;\">那不要乱玩噢~~</span>"]
+        },
+        {
+            "selector": ".loadvideo",
+            "text": ["<span style=\"color:red;\">你要看下主人准备的 MMD 吗？~~</span>"]
+        },
+        {
+            "selector": "#video-add",
+            "text": ["<span style=\"color:red;\">不喜欢可以换下一部呢~~</span>"]
+        },
+        {
+            "selector": ".top-social",
+            "text": ["<span style=\"color:red;\">主人的社交ID，不关注下嘛？</span>"]
+        },
+        {
+            "selector": "input[name=s]",
+            "text": ["找不到想看的内容？搜索看看吧。"]
+        },
+        {
+            "selector": ".reward-open",
+            "text": ["客官大人，是要准备给主人打赏吗？谢谢啦~~"]
+        },
+        {
+            "selector": ".notification",
+            "text": ["评论都收起来啦，点开吐槽下吧~~"]
+        },
+        {
+            "selector": ".comment .contents",
+            "text": ["想要吐槽些什么吗？"]
+        },
+        {
+            "selector": ".post-like",
+            "text": ["给这篇文章点个赞吧！"]
+        },
+        {
+            "selector": ".post-share",
+            "text": ["把这篇文章分享出去可以让更多的人看到噢~~"]
+        },
+        {
+            "selector": ".cd-top",
+            "text": ["回到顶部去吧~~"]
+        },
+        {
+            "selector": "#respond .siren-checkbox-label",
+            "text": ["评论先打卡，不想公开的话记得点隐私噢~~"]
+        },
+        {
+            "selector": "#respond input[name=author]",
+            "text": ["敢问客官尊姓大名~~"]
+        },
+        {
+            "selector": "#respond input[name=email]",
+            "text": ["客官给个头像噢~~"]
+        },
+        {
+            "selector": "#respond input[name=url]",
+            "text": ["客官的博客在哪儿呢？我要去看看。"]
+        },
+        {
+            "selector": "#comments_edit.textarea",
+            "text": ["嘛，东西可以乱吃，话可不能乱说噢~~"]
+        },
+        {
+            "selector": ".meme_btn",
+            "text": ["客官要挑选一个滑稽的表情吗？"]
+        },
+        {
+            "selector": "[name=submit]",
+            "text": ["写好了就发送吧！我会第一时间通知主人的~~"]
+        },
+        {
+            "selector": "#pagination a",
+            "text": ["还有文章哦~~"]
+        },
+        {
+            "selector": ".navigator a",
+            "text": ["这是翻页键~~"]
+        },
+        {
+            "selector": ".linkpage",
+            "text": ["这是主人的好伙伴噢~~"]
+        },
+        {
+            "selector": ".post-squares.nextprev .previous",
+            "text": ["点击看上一篇文章~~"]
+        },
+        {
+            "selector": ".post-squares.nextprev .next",
+            "text": ["点击看下一篇文章~~"]
+        },
+        {
+            "selector": ".hide-button",
+            "text": ["你不喜欢人家，尽管隐藏呗，哼~~"]
+        },
+        {
+            "selector": "#landlord #live2d",
+            "text": ["干嘛呢你，快把手拿开~~", "鼠…鼠标放错地方了！"]
+        }
+    ],
+    "click": [
+        {
+            "selector": "#landlord #live2d",
+            "text": ["不要动手动脚的！快把手拿开~~", "真…真的是不知羞耻！","Hentai！", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
+        }
+    ]
+}
