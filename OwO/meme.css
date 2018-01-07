@@ -18,10 +18,11 @@
 #comments_edit {
     resize: vertical;
     overflow: auto;
-    width: 100%;
     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
     font-size: 16.8px;
-    height: 140px;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
     border: 1px solid #ddd;
     padding: 12px 15px;
     border-radius: 4px;
