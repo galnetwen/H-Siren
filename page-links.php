@@ -11,6 +11,10 @@ get_header();
     <?php the_content(); ?>
     <hr>
         <article id="post-<?php the_ID(); ?>" class="linkpage">
+            <?php if(get_bookmarks(
+            array(
+                'category_name'  => 'LINK'
+            ))) { ?>
             <h3>后宫乐园</h3>
             <ul>
                 <?php
@@ -26,6 +30,11 @@ get_header();
                 }
                 ?>
             </ul>
+            <?php } ?>
+            <?php if(get_bookmarks(
+            array(
+                'category_name'  => 'BANS'
+            ))) { ?>
             <h3>挂掉了哎</h3>
             <ul>
                 <?php
@@ -41,6 +50,7 @@ get_header();
                 }
                 ?>
             </ul>
+            <?php } ?>
         </article><!-- #post -->
     <?php endwhile; // end of the loop. ?>
 </div><!-- main -->
