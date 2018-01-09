@@ -478,9 +478,10 @@ var home = location.href,
                     div.style.display = 'none';
                     respond.parentNode.insertBefore(div, respond)
                 }!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
-                jQuery("body").animate({
-                    scrollTop: jQuery('#reply-title').offset().top - 180
-                }, 400);
+                var textarea = $('#comments_edit'),top = {scrollTop:textarea.offset().top-400};
+                $('body').animate(top);
+                $(document.documentElement).animate(top);
+                setTimeout(function(){textarea.focus();},400);
                 parent.value = parentId;
                 cancel.style.display = '';
                 cancel.onclick = function() {
@@ -694,4 +695,57 @@ if(Poi.hitokoto == 'open') {
             $('.header-info p').html(e.hitokoto+" —— <strong>"+e.from+"</strong>")
         },'JSON');
     });
+}
+
+// AJAX删除评论
+function deleteComments(obj, children = false) {
+    function main() {
+        var url = $(obj).attr('data-url');
+        var arg = url.replace(/.*\?/, '');
+        url = url.replace(/\?.*/, '');
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: arg,
+            success: function(e) {
+                swal({
+                    title: "删除成功",
+                    text: "删除的评论已经躺进回收站啦~~",
+                    type: "success",
+                    confirmButtonText: "好的",
+                    timer: 3000
+                });
+                var parent = $(obj).parent().parent().parent().parent().parent().parent();
+                $('>.children>[id^="comment-"]>.contents .deleteComments', parent).each(function() {
+                    deleteComments(this, true);
+                });
+                parent.remove();
+            },
+            error: function(e) {
+                swal({
+                    title: "请求出错",
+                    text: "啊咧，网络好像开小差了，再试试吧……",
+                    type: "error",
+                    confirmButtonText: "好的",
+                    timer: 3000
+                });
+            },
+        });
+    }
+    if (!children) {
+        swal({
+            title: "删除确定",
+            text: "如果删除主楼评论的话楼中楼评论也会删除掉喔……",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "删除",
+            cancelButtonText: "取消",
+            closeOnConfirm: false,
+        }, function() {
+            main();
+        });
+    } else {
+        main();
+    }
 }

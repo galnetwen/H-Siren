@@ -297,6 +297,12 @@ if(!function_exists('akina_comment_format')){
                                     <h4 class="author"><a href="<?php comment_author_url(); ?>" target="_blank"><?php echo get_avatar( $comment->comment_author_email, '24', '', get_comment_author() ); ?><?php comment_author(); ?> <span class="isauthor" title="<?php esc_attr_e('Author', 'akina'); ?>">博主</span></a></h4>
                                 </div>
                                 <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                                <?php if (current_user_can('level_10')) {
+                                $home = home_url();
+                                echo '
+                                <span class="deleteComments" onclick="deleteComments(this);" data-url="' .wp_nonce_url( "$home/wp-admin/comment.php?c=" . $comment->comment_ID . '&amp;action=deletecomment', 'delete-comment_' . $comment->comment_ID ) . '">删除</span>
+                                ';
+                                } ?>
                                 <div class="right">
                                     <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true );//comment_date(get_option('date_format')); ?></time><?php echo siren_get_useragent($comment->comment_agent); ?></div>
                                 </div>

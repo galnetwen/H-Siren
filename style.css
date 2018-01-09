@@ -486,6 +486,7 @@ img {
     /* Make sure images are scaled correctly. */
     max-width: 100%;
     /* Adhere to container width. */
+    border-radius: 5px;
 }
 
 table {
@@ -2899,10 +2900,6 @@ border-bottom: 20px solid #FFFFFF;
     opacity: 0;
 }
 
-.contents:hover .right {
-    opacity: 1;
-}
-
 .comment .comment-reply-link {
     font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
     font-size: 12px;
@@ -2919,17 +2916,40 @@ border-bottom: 20px solid #FFFFFF;
     opacity: 0;
 }
 
-.comment .contents:hover .comment-reply-link {
+.comment .deleteComments {
+    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    background: #87ceeb;
+    border-radius: 3px;
+    vertical-align: top;
+    float: right;
+    margin: 4px 4px 4px 0;
+    padding: 0 5px;
+    opacity: 0;
+}
+
+.comment .contents:hover .right,
+.comment .contents:hover .comment-reply-link,
+.comment .contents:hover .deleteComments {
     opacity: .9;
 }
 
-.comment .contents .comment-reply-link:hover {
+.comment .contents .right:hover,
+.comment .contents .comment-reply-link:hover,
+.comment .contents .deleteComments:hover {
     opacity: 1;
 }
 
 @media (max-width: 880px) {
-    .comment .comment-reply-link {
+    .comment .comment-reply-link,
+    .comment .deleteComments {
         opacity: 1;
+        position: relative;
+        z-index: 1;
     }
 
     .comment .contents {
@@ -3035,6 +3055,8 @@ border-bottom: 20px solid #FFFFFF;
     .comment h4 img {
         max-width: 24px !important;
         display: inline-block;
+        position: relative;
+        top: 14px;
     }
 
     .arrow-left {
@@ -3067,12 +3089,13 @@ border-bottom: 20px solid #FFFFFF;
 }
 
 .comment-respond #cancel-comment-reply-link {
-    background: #f4f6f8;
     border-radius: 20px;
     padding: 10px 15px;
     font-size: 12px;
     color: #454545;
     border: 1px solid #ccc;
+    position: relative;
+    top: 11px;
 }
 
 .comment-respond textarea, .comment-respond input {
@@ -3211,8 +3234,7 @@ border-bottom: 20px solid #FFFFFF;
  */
 .siren-checkbox-label {
     position: relative;
-    /* top: 4px; */
-    margin: 0 20px 0 0;
+    margin: 0 20px 10px 0;
     display: inline-block;
     cursor: pointer;
     color: #555;
@@ -5829,13 +5851,16 @@ i.iconfont.down {
 
     .comment .left {
         margin-left: 5px;
+        float: none;
     }
 
     .comment .right {
         opacity: 1;
         margin: 0 5px 0 0;
+        float: none;
     }
 
+    .comment .right,
     .comment .body p {
         padding-left: 34px;
     }
@@ -5844,6 +5869,7 @@ i.iconfont.down {
         margin-left: 0;
     }
 
+    .comment .children .comment .right,
     .comment .children .body p {
         padding-left: 28px;
     }
