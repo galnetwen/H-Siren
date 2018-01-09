@@ -50,9 +50,7 @@ if (akina_option('akina_meta') == true) {
 <?php if (akina_option('live2d_s') != '0'){ ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/live2d/css/live2d.css" />
 <?php } ?>
-<?php if (akina_option('ctrl_c') != '0'){ ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/sweet-alert.css" />
-<?php } ?>
 <?php wp_head(); ?>
 <?php if(akina_option('google_analytics_1')){ ?>
 <script async src="<?php echo akina_option('google_analytics_1'); ?>"></script>
@@ -69,14 +67,11 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) {
 }
 </script>
 <![endif]-->
-<?php if(akina_option('web_title') !='0') {
-    $onblur_text= akina_option('onblur');
-    $onfocus_text = akina_option('onfocus');
-?>
+<?php if(akina_option('web_title') !='0') { ?>
 <script type="text/javascript">
 const title = {
-    focus: '<?php echo $onfocus_text ;?>',
-    blur: '<?php echo $onblur_text ;?>',
+    focus: '<?php echo akina_option('onfocus'); ?>',
+    blur: '<?php echo akina_option('onblur'); ?>',
 }
 handleVisibilityChange = () => {
     if (document.hidden) {
@@ -87,15 +82,14 @@ handleVisibilityChange = () => {
 }
 document.addEventListener("visibilitychange", handleVisibilityChange, false)
 </script>
-<?php }?>
-<?php if(akina_option('right_click') !='0') {
-?>
+<?php } ?>
+<?php if(akina_option('right_click') !='0') { ?>
 <script type="text/javascript">
 document.oncontextmenu = function() {
     return false;
 };
 </script>
-<?php }?>
+<?php } ?>
 </head>
 <body <?php body_class(); ?>>
     <section id="main-container">

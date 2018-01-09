@@ -46,14 +46,12 @@
             <div class="footer-device">
                 <p><?php echo akina_option('record') ? '<a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">'.akina_option('record').'</a>' : ''; ?></p>
             </div>
-            <?php if (akina_option('web_runtime') != '0') {
-                $web_buildtime = akina_option('web_buildtime')
-            ?>
+            <?php if (akina_option('web_runtime') != '0') { ?>
             <div class="footer-device">
                 <p>
                 网站在各种灾难中运行了
                     <script type="text/javascript">
-                        BirthDay=new Date("<?php echo $web_buildtime ;?>");
+                        BirthDay=new Date("<?php echo akina_option('web_buildtime'); ?>");
                         today=new Date();
                         timeold=(today.getTime()-BirthDay.getTime());
                         sectimeold=timeold/1000
@@ -110,12 +108,12 @@
     <!-- search end -->
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <?php wp_footer(); ?>
-<?php if (akina_option('live2d_s') != '0'){ ?>
+<?php if (akina_option('live2d_s') != '0') { ?>
 <script type="text/javascript">
 var live2d_Path = '<?php bloginfo('template_url'); ?>/live2d/model/<?php echo akina_option('live2d_m'); ?>/'
 var message_Path = '<?php bloginfo('template_url'); ?>/live2d/'
 var home_Path = '<?php echo home_url(); ?>/'
-<?php if (akina_option('live2d_b') == true && akina_option('live2d_i')){
+<?php if (akina_option('live2d_b') == true && akina_option('live2d_i')) {
 $date_strings = date('Y') . date('m') . date('d') . date('H') . date('i') . date('s') . mt_rand(100000, 999999);
 $md5_strings = md5($date_strings);
 $strings = substr($md5_strings, 0, 24);
@@ -124,22 +122,22 @@ var live2d_Dress = '<?php echo akina_option('live2d_i'); ?>/<?php echo akina_opt
 <?php } ?>
 </script>
 <?php } ?>
-<?php if(akina_option('site_statistics')){ ?>
+<?php if(akina_option('site_statistics')) { ?>
 <script type="text/javascript">
 <?php echo akina_option('site_statistics'); ?>
 </script>
 <?php } ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/OwO/meme.js"></script>
-<?php if (akina_option('click_effect') != '0'){ ?>
+<?php if (akina_option('click_effect') != '0') { ?>
 <script type="text/javascript" src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
 <script type="text/javascript">if (screen && screen.width > 860){document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fireworks.js"><\/script>');}</script>
 <?php } ?>
-<?php if (akina_option('ctrl_c') != '0'){ ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/inc/js/sweet-alert.min.js"></script>
+<?php if (akina_option('ctrl_c') != '0') { ?>
 <script type="text/javascript">
 document.body.oncopy = function(){
     swal({   
-        title: "选中内容复制成功",
+        title: "复制成功",
         text: "<?php echo akina_option('ctrl_cs'); ?>",
         type: "success",
         confirmButtonText: "好的",
@@ -148,10 +146,10 @@ document.body.oncopy = function(){
 }
 </script>
 <?php } ?>
-<?php if (akina_option('live2d_s') != '0'){ ?>
+<?php if (akina_option('live2d_s') != '0') { ?>
 <script type="text/javascript">if (screen && screen.width > 860){document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/live2d/js/live2d.js"><\/script>');}</script>
 <script type="text/javascript">if (screen && screen.width > 860){document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/live2d/js/message.js"><\/script>');}</script>
-<script type="text/javascript">if (screen && screen.width > 860){document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/live2d/js/<?php if (akina_option('live2d_b') == true && akina_option('live2d_i')){ ?>run_field.js<?php }else{ ?>run_local.js<?php } ?>"><\/script>');}</script>
+<script type="text/javascript">if (screen && screen.width > 860){document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/live2d/js/<?php if (akina_option('live2d_b') == true && akina_option('live2d_i')) { ?>run_field.js<?php }else{ ?>run_local.js<?php } ?>"><\/script>');}</script>
 <?php } ?>
 </body>
 </html>
