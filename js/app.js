@@ -698,7 +698,8 @@ if(Poi.hitokoto == 'open') {
 }
 
 // AJAX删除评论
-function deleteComments(obj, children = false) {
+function deleteComments(obj,children) {
+  	children = children||false;
     function main() {
         var url = $(obj).attr('data-url');
         var arg = url.replace(/.*\?/, '');
@@ -735,7 +736,7 @@ function deleteComments(obj, children = false) {
     if (!children) {
         swal({
             title: "删除确定",
-            text: "如果删除主楼评论的话楼中楼评论也会删除掉喔……",
+            text: "如果删除主楼评论的话会隐藏楼中楼评论喔……",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
