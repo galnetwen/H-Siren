@@ -416,6 +416,13 @@ function optionsframework_options() {
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('图片放大', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
+        'id' => 'zoom_c',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('文章点赞', 'akina'),
         'id' => 'post_like',
         'std' => "yes",
@@ -718,20 +725,6 @@ function optionsframework_options() {
         'id' => 'live2d_i',
         'std' => '',
         'type' => 'text');
-
-    $options[] = array(
-        'name' => __('ServerChan', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启。一个通过微信给博主提醒的功能', 'options_framework_theme'),
-        'id' => 'serverchan_b',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('密钥', 'options_framework_theme'),
-        'desc' => __('此处填写你申请的 ServerChan 密钥', 'options_framework_theme'),
-        'id' => 'serverchan_i',
-        'std' => '',
-        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('网站公告', 'options_framework_theme'),

@@ -51,6 +51,9 @@ if (akina_option('akina_meta') == true) {
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/live2d/css/live2d.css" />
 <?php } ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/sweet-alert.css" />
+<?php if (akina_option('zoom_c') != '0'){ ?>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/zooming.min.js"></script>
+<?php } ?>
 <?php wp_head(); ?>
 <?php if(akina_option('google_analytics_1')){ ?>
 <script async src="<?php echo akina_option('google_analytics_1'); ?>"></script>

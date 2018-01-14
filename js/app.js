@@ -401,7 +401,7 @@ var home = location.href,
                     // If there is no link, that is the last page, then remove the navigation
                         $("#pagination").html("<span>Don't have more ...</span>");
                     }
-                    if(Poi.live2d_tips == 'open'){ if (initTips){initTips()} }  // 重载 Live2D 提示
+                    if (Poi.live2d_tips == 'open') { initTips() } // 重载 Live2D 提示
                 }
             });
             return false;
@@ -604,15 +604,16 @@ $(function() {
             Siren.CE();
             NProgress.done();
             $("#loading").fadeOut(500);
-            if(Poi.codelamp == 'open'){ Prism.highlightAll() };  // 解决Prism代码高亮
-            if($('.ds-thread').length > 0) {  // 解决多说问题
-               if (typeof DUOSHUO !== 'undefined'){
-                  DUOSHUO.EmbedThread('.ds-thread');
-               }else{
-                  $.getScript("//static.duoshuo.com/embed.js");
-              }
+            if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
+            if($('.ds-thread').length > 0) { // 解决多说问题
+                if(typeof DUOSHUO !== 'undefined'){
+                    DUOSHUO.EmbedThread('.ds-thread');
+                }else{
+                    $.getScript("//static.duoshuo.com/embed.js");
+                }
             }
-            if(Poi.live2d_tips == 'open'){ if (initTips){initTips()} }  // 重载 Live2D 提示
+            if(Poi.live2d_tips == 'open'){ initTips() } // 重载 Live2D 提示
+            if(Poi.picture_zoom == 'open'){ initImg() } // 重载图片放大实例
         }).on('submit', '.search-form,.s-search', function (event) {
             event.preventDefault();
             $.pjax.submit(event, '#page', {
@@ -749,4 +750,15 @@ function deleteComments(obj,children) {
     } else {
         main();
     }
+}
+
+//图片放大初始化
+if(Poi.picture_zoom == 'open' && screen && screen.width > 860) {
+    function initImg() {
+        var zooming = new Zooming({
+            defaultZoomable: '.entry-content img',
+            bgColor: 'rgba(0, 0, 0, .7)'
+        })
+    }
+    initImg();
 }

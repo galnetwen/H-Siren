@@ -1377,12 +1377,12 @@ i.iconfont.hotpost {
 
 .float-contents p {
     margin: 0;
-    height: 44px;
     font-size: 15px;
 }
 
 .float-contents {
     margin: 4px 0;
+    height: 44px;
 }
 
 .post-meta {
@@ -1457,7 +1457,6 @@ i.iconfont.hotpost {
 
     .float-contents p {
         overflow: hidden;
-        height: auto;
         text-overflow: ellipsis;
         white-space: nowrap;
         /* font-size: 13px!important; */
@@ -1481,6 +1480,7 @@ i.iconfont.hotpost {
 
     .float-contents {
         margin: 3px 0 0 0;
+        height: 21px;
     }
 }
 
@@ -5661,7 +5661,7 @@ i.iconfont.down {
     width: 100%;
     margin: 35px auto;
     text-align: center;
-    z-index: 999;
+    z-index: 997;
 }
 
 .single-reward .reward-open {

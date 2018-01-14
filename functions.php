@@ -229,6 +229,7 @@ function akina_scripts() {
     $code_lamp = akina_option('open_prism_codelamp') ? 'open' : 'close';
     $live2d_tips = akina_option('live2d_s') ? 'open' : 'close';
     $hitokoto = akina_option('hitokoto_o') ? 'open' : 'close';
+    $picture_zoom = akina_option('zoom_c') ? 'open' : 'close';
     if(wp_is_mobile()) $auto_height = 'fixed';    //拦截移动端
     wp_localize_script( 'app', 'Poi' , array(
         'pjax' => akina_option('poi_pjax'),
@@ -237,6 +238,7 @@ function akina_scripts() {
         'codelamp' => $code_lamp,
         'live2d_tips' => $live2d_tips,
         'hitokoto' => $hitokoto,
+        'picture_zoom' => $picture_zoom,
         'ajaxurl' => admin_url('admin-ajax.php'),
         'order' => get_option('comment_order'),    //ajax comments
         'formpostion' => 'bottom'    //ajax comments 默认为bottom，如果你的表单在顶部则设置为top。
@@ -269,13 +271,6 @@ require get_template_directory() . '/inc/categories-images.php';
  * Disable Embeds.
  */
 require get_template_directory() . '/inc/disable-embeds.php';
-
-/**
- * ServerChan.
- */
-if (akina_option('serverchan_b') == true && akina_option('serverchan_i')){
-    require get_template_directory() . '/inc/server-chan.php';
-}
 
 /**
  * COMMENT FORMATTING
