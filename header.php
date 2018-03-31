@@ -65,32 +65,37 @@ if (akina_option('akina_meta') == true) {
 <?php } ?>
 <!--[if IE]>
 <script type="text/javascript">
-if (!!window.ActiveXObject || "ActiveXObject" in window) {
-  alert('请抛弃万恶的IE浏览器吧！请更换浏览器访问本博客呢……');
-}
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        alert('请抛弃万恶的IE浏览器吧！请更换浏览器访问本博客呢……');
+    }
 </script>
 <![endif]-->
 <?php if(akina_option('web_title') !='0') { ?>
 <script type="text/javascript">
-const title = {
-    focus: '<?php echo akina_option('onfocus'); ?>',
-    blur: '<?php echo akina_option('onblur'); ?>',
-}
-handleVisibilityChange = () => {
-    if (document.hidden) {
-        document.title = title.blur
-    } else  {
-        document.title = title.focus
+    var OriginTitile = document.title;
+    var titleTime;
+    var title = {
+        focus: '<?php echo akina_option('onfocus'); ?>',
+        blur: '<?php echo akina_option('onblur'); ?>',
     }
-}
-document.addEventListener("visibilitychange", handleVisibilityChange, false)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = title.blur;
+            clearTimeout(titleTime);
+        } else {
+            document.title = title.focus;
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            }, 2000);
+        }
+    });
 </script>
 <?php } ?>
 <?php if(akina_option('right_click') !='0') { ?>
 <script type="text/javascript">
-document.oncontextmenu = function() {
-    return false;
-};
+    document.oncontextmenu = function() {
+        return false;
+    };
 </script>
 <?php } ?>
 </head>
