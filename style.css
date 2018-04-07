@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 蜜汁路易
 Author URI: https://www.cssplus.org
 Description: Fuzzz 的 Akina 主题分支，本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 3.0.3.180407
+Version: 3.0.3.180408
 Tags: Akina（娱乐版）
 */
 
@@ -2249,7 +2249,8 @@ h1.page-title.mb- {
 
 h3#comments-list-title {
     max-width: 780px;
-    margin: 10px 20px;
+    margin: 0 auto;
+    margin-top: 8px;
     font-family: microsoft yahei;
     color: #7D7D7D;
     font-size: 20px;
@@ -2671,9 +2672,14 @@ form#commentform {
 nav#comments-navi {
     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
     color: #9A9A9A;
-    position: absolute;
-    margin-left: 25px;
-    margin-top: -15px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#comments-navi a, #comments-navi span {
+    margin: 40px 0 0 0;
+    display: inline-block;
 }
 
 span.page-numbers.current {
@@ -4675,6 +4681,10 @@ i.iconfont.down {
         padding: 0 6.39%;
         max-width: 1245px;
         margin: 0;
+    }
+
+    nav#comments-navi {
+        margin-top: 15px;
     }
 }
 
