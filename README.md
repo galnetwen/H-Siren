@@ -30,6 +30,7 @@
 - 评论框添加了表情，并支持实时预览；由 [小さな手は](http://www.littlehands.site/ "小さな手は") 实现，效果很好，谢谢他
 - 重写友链页面，样式与代码提取自 [DIYGod](https://diygod.me/ "DIYGod") 的 [Amativeness](https://github.com/DIYgod/Amativeness "Amativeness") 主题
 - 原生编辑器添加载入主题样式，后台写文章可视化与前台显示效果一致
+- 后台屏蔽 WordPress 更新与编辑器自动保存等……
 - 添加鼠标点击特效
 - 添加网页运行天数
 - 添加 ICP 备案号选项
@@ -61,15 +62,15 @@
 
 ### 现有问题
 > 某些屏蔽邮件发送的主机可能会导致评论后 AJAX 刷新严重超时的问题。
+某些主机上使用主题会导致个别界面错位。
 
 ### 获得主题
 前往我的 [Github](https://github.com/galnetwen/H-Siren "Github") 去狠狠地 Star 吧！![](https://haremu.com/wp-content/themes/Siren/OwO/images/emoticon_002.png)
 为了名称美观，下载 zip 压缩包的朋友请把解压出来的文件夹改下名字，改为 **H-Siren** ！
 
 ### 注意事项
-**不支持 PHP 版本低于 7.1 的博客，会造成主题多个地方显示错误，懒得修改兼容了……**
 
-使用友链页面需要新建 LINK 和 BANS 两个分类，其中 BANS 分类用于显示崩坏掉的却暂时不撤销的友链，
+使用友链页面需要新建 LINK 和 BANS 两个分类，其中 BANS 分类用于显示崩坏掉的却暂时不撤销的友链。
 新添加的友链要放进这两个分类里面，友链才可以看见噢 ~
 
 ### 更新日志
@@ -90,7 +91,17 @@
 - 添加图片放大功能，在文章页设置中开启
 - 修正 卡片式风格 在没有正文内容时的显示效果
 
+**2018.03.21**
+- 尝试修复评论表情框在某些主机无法加载的问题
+
+**2018.04.07**
+- 新增一个 “高斯模糊” 网页背景风格 样式，在基本设置中选择，效果仅限于 PC 端
+- 修正主题样式部分小细节的参数，强迫症 OJ8K
+
 ### 主题欣赏
+
+**白色简约**
+
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110051930.jpg)
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110052048.jpg)
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110052201.jpg)
@@ -98,3 +109,10 @@
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110052347.jpg)
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110052418.jpg)
 ![](https://haremu.com/wp-content/uploads/2018/01/20180110052542.jpg)
+
+**高斯模糊**
+
+![](https://haremu.com/wp-content/uploads/2018/01/20180407133429.png)
+![](https://haremu.com/wp-content/uploads/2018/01/20180407133535.png)
+![](https://haremu.com/wp-content/uploads/2018/01/20180407133728.png)
+![](https://haremu.com/wp-content/uploads/2018/01/20180407142300.png)
