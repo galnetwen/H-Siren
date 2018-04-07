@@ -101,9 +101,8 @@ if (akina_option('akina_meta') == true) {
 </head>
 <body <?php body_class(); ?>>
     <section id="main-container">
-        <?php 
-        if(!akina_option('head_focus')){ 
-        $filter = akina_option('focus_img_filter');
+        <?php if(!akina_option('head_focus')){ 
+            $filter = akina_option('focus_img_filter');
         ?>
         <div class="headertop <?php echo $filter; ?>">
             <?php get_template_part('layouts/imgbox'); ?>

@@ -2,7 +2,11 @@
 $image_file = get_random_bg_url() ? 'background-image: url('.get_random_bg_url().');' : '';
 $bg_style = akina_option('focus_height') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
-<figure id="centerbg" class="centerbg" style="<?php echo $image_file.$bg_style ?>">
+<?php if(akina_option('background_style') == 'simple'){ ?>
+    <figure id="centerbg" class="centerbg" style="<?php echo $image_file . $bg_style ?>">
+<?php } else { ?>
+    <figure id="centerbg" class="centerbg" style="<?php echo 'background-image: none;' ?>">
+<?php } ?>
 	<?php if ( !akina_option('focus_infos') ){ ?>
 	<div class="focusinfo">
    		<?php if (akina_option('focus_logo')):?>

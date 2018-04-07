@@ -176,6 +176,16 @@ function optionsframework_options() {
         ));
 
     $options[] = array(
+        'name' => __('网页背景风格', 'akina'),
+        'id' => 'background_style',
+        'std' => "simple",
+        'type' => "radio",
+        'options' => array(
+            'simple' => __('白色简约', ''),
+            'blur' => __('高斯模糊', '')
+        ));
+
+    $options[] = array(
         'name' => __('文章列表风格', 'akina'),
         'id' => 'post_list_style',
         'std' => "imageflow",

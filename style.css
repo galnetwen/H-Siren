@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 蜜汁路易
 Author URI: https://www.cssplus.org
 Description: Fuzzz 的 Akina 主题分支，本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 2.0.6.170420
+Version: 3.0.3.180407
 Tags: Akina（娱乐版）
 */
 
@@ -1285,8 +1285,10 @@ i.iconfont.hotpost {
     position: absolute;
     top: 20px;
     opacity: 0;
-    padding-top: 8px;
+    padding: 5px 5px 5px 10px;
     border-top: 1px solid #ddd;
+    width: 110px;
+    margin-left: -30px;
     -webkit-transform: translate3d(-150px,0,0);
     transform: translate3d(-150px,0,0);
     visibility: hidden;
@@ -1309,7 +1311,7 @@ i.iconfont.hotpost {
     float: left
 }
 
-.comnum {
+.comnum, .views {
     float: left;
 }
 
@@ -1351,6 +1353,9 @@ i.iconfont.hotpost {
     font-weight: normal;
     font-size: 20px;
     line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .post.post-list-thumbs {
@@ -1640,9 +1645,9 @@ i.iconfont.hotpost {
 
 .entry-content ol {
     list-style: decimal;
-    background: #F9F9F9;
-    border: 1px dashed #E4E4E4;
-    padding: 15px 10px 15px 50px;
+    /* background: #F9F9F9; */
+    /* border: 1px dashed #E4E4E4; */
+    padding: 15px 30px;
     color: #616161;
     margin-left: 0;
 }
@@ -1664,14 +1669,24 @@ i.iconfont.hotpost {
     font-size: 21px;
 }
 
-.entry-content h3:before {
+.entry-content h1:before,
+.entry-content h2:before,
+.entry-content h3:before,
+.entry-content h4:before,
+.entry-content h5:before,
+.entry-content h6:before {
     content: "「";
     margin-right: 5px;
     color: #FF6D6D;
     /* font-size: 25px; */
 }
 
-.entry-content h3:after {
+.entry-content h1:after,
+.entry-content h2:after,
+.entry-content h3:after,
+.entry-content h4:after,
+.entry-content h5:after,
+.entry-content h6:after {
     content: "」";
     margin-left: 5px;
     color: #FF6D6D;
@@ -1679,13 +1694,14 @@ i.iconfont.hotpost {
 }
 
 .entry-content code {
-    background: #eee;
-    color: #E67474;
     word-break: break-word;
     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
-    padding: 2px;
-    /* border: 1px dashed #ddd; */
     text-shadow: none;
+    letter-spacing: 1px;
+}
+
+pre.code-toolbar > .toolbar .toolbar-item {
+    text-transform: uppercase;
 }
 
 .entry-content a {
@@ -2233,9 +2249,7 @@ h1.page-title.mb- {
 
 h3#comments-list-title {
     max-width: 780px;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 40px;
+    margin: 10px 20px;
     font-family: microsoft yahei;
     color: #7D7D7D;
     font-size: 20px;
@@ -2428,13 +2442,14 @@ span.edit-link {
     position: relative;
     float: left;
     background: #F7F7F7;
-    border: 1px solid #F1F1F1;
     overflow: hidden;
+    border-radius: 0 0 5px 5px;
 }
 
 .works-feature img {
     width: 257px;
     height: 175px;
+    object-fit: cover;
 }
 
 h1.works-title {
@@ -2442,7 +2457,7 @@ h1.works-title {
     font-weight: 400;
     margin: 0 0 10px 0;
     padding: 0 20px;
-    padding-top: 40px;
+    padding-top: 60px;
 }
 
 .works-title a {
@@ -2494,7 +2509,7 @@ h1.works-title {
     position: absolute;
     left: 0;
     top: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, .8);
     height: 100%;
     opacity: 0;
     width: 100%;
@@ -2574,13 +2589,14 @@ span.time {
 .ar-time {
     position: absolute;
     left: -18px;
-    top: px;
     margin-top: 3px;
 }
 
 #archives-content {
     position: relative;
     border-left: 1px dashed #F5F5F5;
+    left: 18px;
+    width: calc(100% - 30px);
 }
 
 .arrow-left-ar {
@@ -2653,11 +2669,11 @@ form#commentform {
 }
 
 nav#comments-navi {
-    margin: 0 auto;
-    max-width: 860px;
-    width: 100%;
     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
     color: #9A9A9A;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: -15px;
 }
 
 span.page-numbers.current {
@@ -2965,6 +2981,10 @@ border-bottom: 20px solid #FFFFFF;
     color: rgba(0,0,0,.35);
 }
 
+.comment .info time {
+    margin-right: 4px;
+}
+
 .comment .info .useragent-info img {
     vertical-align: sub;
     width: 14px;
@@ -3079,9 +3099,9 @@ border-bottom: 20px solid #FFFFFF;
 
 .comment-respond {
     width: 100%;
-    max-width: 770px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 50px;
 }
 
 .comment-respond .logged-in-as {
@@ -3098,23 +3118,16 @@ border-bottom: 20px solid #FFFFFF;
     top: 11px;
 }
 
-.comment-respond textarea, .comment-respond input {
+.comment-respond input {
     font-family: "microsoft jhenghei","Arial",Sans-Serif;
     font-size: 14px;
-    float: left;
-    width: 31.99%;
-    margin: 0;
-    padding: 21px 25px 20px;
+    /* float: left; */
+    width: calc(33% - 2px);
+    margin: 0 0 10px 1px;
     color: #535a63;
-    border: 0;
     background: #FFFFFF;
-}
-
-.comment-respond input {
     border: 1px solid #ddd;
-    margin-bottom: 10px;
-    margin-right: 2%;
-    padding: 5px 25px;
+    padding: 5px 20px;
 }
 
 .comment-respond input:last-of-type {
@@ -3324,6 +3337,7 @@ h1.fes-title , h1.main-title {
     height: 160px;
     width: 257px;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .top-feature li {
@@ -3456,7 +3470,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     #centerbg {
-        height: 300px;
+        height: 300px !important;
         background-attachment: scroll;
     }
 
@@ -3812,11 +3826,13 @@ i.iconfont.js-toggle-search.iconsearch {
 */
 .error-img {
     text-align: center;
+    margin-top: 75px;
 }
 
 .err-button.back {
-    font-family: microsoft yahei;
+    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
     text-align: center;
+    margin: 40px 0;
 }
 
 .err-button.back a {
@@ -4658,6 +4674,7 @@ i.iconfont.down {
         width: 100%;
         padding: 0 6.39%;
         max-width: 1245px;
+        margin: 0;
     }
 }
 
@@ -5880,5 +5897,9 @@ i.iconfont.down {
 
     ol .contents .main .body p {
         padding-left: 33px;
+    }
+
+    h1.works-title {
+        padding-top: 80px;
     }
 }
