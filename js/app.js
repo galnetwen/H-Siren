@@ -692,9 +692,9 @@ if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEve
 // 一言替换简介
 if(Poi.hitokoto == 'open') {
     $(function () {
-        $.post("https://sslapi.hitokoto.cn/", function(e){
+        $.getJSON("https://sslapi.hitokoto.cn/", function(e){
             $('.header-info p').html(e.hitokoto+" —— <strong>"+e.from+"</strong>")
-        },'JSON');
+        });
     });
 }
 
