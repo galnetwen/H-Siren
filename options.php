@@ -793,7 +793,7 @@ function optionsframework_options() {
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('浏览器滑动条', 'options_framework_theme'),
+        'name' => __('隐藏滑动条', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启，仅支持 Chrome 内核的浏览器', 'options_framework_theme'),
         'id' => 'slider_bar',
         'std' => '0',

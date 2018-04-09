@@ -6,8 +6,7 @@ if ( akina_option('shownav') ) { ?>
 .site-top .lower nav {
     display: block !important;
 }
-
-<?php } // Style Settings ?>
+<?php } ?>
 <?php // theme-skin
 if ( akina_option('theme_skin') ) { ?>
 .author-profile i,
@@ -44,7 +43,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 span.ar-circle,
 .object,
 ::selection,
-::-webkit-scrollbar-thumb,
 .comment .comment-reply-link,
 .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after {
     background: <?php echo akina_option('theme_skin'); ?>;
@@ -83,20 +81,20 @@ span.ar-circle,
     -webkit-box-shadow: 0 0 10px <?php echo akina_option('theme_skin'); ?>;
 }
 
-<?php if (akina_option('open_rtf') != '1'){ ?>
+<?php if (akina_option('open_rtf') != '1') { ?>
 #comments_edit {
     -webkit-user-modify: read-write-plaintext-only;
     -moz-user-modify: read-write-plaintext-only;
 }
 
 <?php } ?>
-<?php if (akina_option('slider_bar') != '1'){ ?>
+<?php if (akina_option('slider_bar') != '0') { ?>
 ::-webkit-scrollbar {
     display: none;
 }
 
 <?php } ?>
-<?php if (akina_option('thumbnail_o') == true && akina_option('focus_img_0')){ ?>
+<?php if (akina_option('thumbnail_o') == true && akina_option('focus_img_0')) { ?>
 .entry-header {
     display: none;
 }
@@ -290,7 +288,6 @@ body::before {
         position: absolute;
     }
 }
-
 <?php } ?>
 </style>
 <?php }
