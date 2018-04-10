@@ -46,25 +46,18 @@
             <div class="footer-device">
                 <p><?php echo akina_option('record') ? '<a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">'.akina_option('record').'</a>' : ''; ?></p>
             </div>
-            <?php if (akina_option('web_runtime') != '0') { ?>
+            <?php if (akina_option('web_runtime') != '0') {
+                $now_time = date("Y-m-d");
+                $buil_dtime = akina_option('web_buildtime');
+                $date = "$buil_dtime";
+                $time_1 = strtotime($now_time);
+                $time_2 = strtotime($date);
+                $result = round(($time_1-$time_2)/3600/24);
+            ?>
             <div class="footer-device">
-                <p>
-                网站在各种灾难中运行了
-                    <script type="text/javascript">
-                        BirthDay=new Date("<?php echo akina_option('web_buildtime'); ?>");
-                        today=new Date();
-                        timeold=(today.getTime()-BirthDay.getTime());
-                        sectimeold=timeold/1000
-                        secondsold=Math.floor(sectimeold);
-                        msPerDay=24*60*60*1000
-                        e_daysold=timeold/msPerDay
-                        daysold=Math.floor(e_daysold);
-                        document.write(daysold);
-                    </script>
-                天
-                </p>
+                <p>网站在各种灾难中运行了 <?php echo $result ?> 天</p>
             </div>
-          <?php } ?>
+            <?php } ?>
         </div><!-- .site-info -->
     </footer><!-- #colophon -->
     <div class="openNav">

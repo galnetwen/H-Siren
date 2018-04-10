@@ -248,9 +248,9 @@ function optionsframework_options() {
 
     $options[] = array(
         'name' => __('建站日期', 'options_framework_theme'),
-        'desc' => __('日期格式：10 31,2017（月 日,年)', 'options_framework_theme'),
+        'desc' => __('日期格式：2017-10-31（年-月-日）', 'options_framework_theme'),
         'id' => 'web_buildtime',
-        'std' => '10 31,2017',
+        'std' => '2017-10-31',
         'type' => 'text');
 
     $options[] = array(
