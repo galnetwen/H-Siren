@@ -540,6 +540,7 @@ var home = location.href,
                     $('#loading-comments').slideUp('fast');
                     $('#loading-comments').after(result.fadeIn(500));
                     $('ul.commentwrap').after(nextlink);
+                    if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
                 }
             });
         });
@@ -737,7 +738,7 @@ function deleteComments(obj,children) {
     if (!children) {
         swal({
             title: "删除确定",
-            text: "如果删除主楼评论的话会隐藏楼中楼评论喔……",
+            text: "如果删除主楼评论的话楼中楼评论也会删掉……",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
