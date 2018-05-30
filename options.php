@@ -236,7 +236,7 @@ function optionsframework_options() {
         'name' => __('页脚信息', 'options_framework_theme'),
         'desc' => __('页脚说明文字，支持HTML代码', 'options_framework_theme'),
         'id' => 'footer_info',
-        'std' => '<a href="https://haremu.com/" target="_blank" rel="nofollow">H-Siren</a>',
+        'std' => '<a href="https://www.cssplus.org" target="_blank" rel="nofollow">Siren</a>',
         'type' => 'textarea');
 
     $options[] = array(

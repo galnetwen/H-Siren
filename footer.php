@@ -39,7 +39,7 @@
                     <?php 
                     $statistics_link = akina_option('site_statistics_link') ? '<a href="'.akina_option('site_statistics_link').'" target="_blank" rel="nofollow">Statistics</a>' : '';
                     $site_map_link = akina_option('site_map_link') ? '<a href="'.akina_option('site_map_link').'" target="_blank" rel="nofollow">Sitemap</a>' : '';
-                    printf(esc_html__( '%1$s &nbsp; %2$s &nbsp; %3$s &nbsp; %4$s', 'akina' ), $site_map_link, '<a href="https://www.cssplus.org" rel="designer" target="_blank" rel="nofollow">Theme</a>', '<a href="https://wordpress.org" target="_blank" rel="nofollow">WordPress</a>', $statistics_link);
+                    printf(esc_html__( '%1$s &nbsp; %2$s &nbsp; %3$s &nbsp; %4$s', 'akina' ), $site_map_link, '<a href="https://haremu.com" rel="designer" target="_blank" rel="nofollow">Theme</a>', '<a href="https://wordpress.org" target="_blank" rel="nofollow">WordPress</a>', $statistics_link);
                     ?>
                 </p>
             </div>
