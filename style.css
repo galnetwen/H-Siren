@@ -3128,7 +3128,7 @@ border-bottom: 20px solid #FFFFFF;
     font-family: "microsoft jhenghei","Arial",Sans-Serif;
     font-size: 14px;
     float: left;
-    width: calc(33% - -1px);
+    width: calc(33% - 0px);
     margin: 0 0 10px 1px;
     color: #535a63;
     background: #FFFFFF;
