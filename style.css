@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 后宫学长
 Author URI: https://haremu.com
 Description: Fuzzz 的 Akina 主题分支，本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 3.0.4.180602
+Version: 3.0.5.180608
 Tags: Akina（娱乐版）
 */
 
@@ -2673,8 +2673,9 @@ nav#comments-navi {
     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
     color: #9A9A9A;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 50px 30px;
     width: 100%;
+    display: inline-block;
 }
 
 #comments-navi a, #comments-navi span {
@@ -4684,7 +4685,7 @@ i.iconfont.down {
     }
 
     nav#comments-navi {
-        margin-top: 15px;
+        /** margin-top: 15px; **/
     }
 }
 
@@ -5793,6 +5794,13 @@ i.iconfont.down {
 .linkpage h3 {
     padding: 14px 0;
     margin: auto;
+    font-size: 20px;
+}
+
+.linkpage p,
+.linkpage h2,
+.linkpage h3 {
+    text-align: center;
 }
 
 .linkpage ul {
@@ -5803,10 +5811,11 @@ i.iconfont.down {
 
 .linkpage li {
     float: left;
-    width: calc(33% + 1px);
+    width: calc(33% - 8px);
     position: relative;
     transition: all .3s ease-out;
     border-radius: 10px;
+    margin: 0 5px 12px;
 }
 
 .linkpage li:hover {
@@ -5851,6 +5860,8 @@ i.iconfont.down {
     overflow: hidden;
     margin: auto;
     text-transform: uppercase;
+    text-align: left;
+    padding-right: 15px;
 }
 
 .comment .children .left {
@@ -5866,6 +5877,13 @@ i.iconfont.down {
 @media (max-width: 860px) {
     .linkpage li {
         width: 50%;
+        margin: 0 0 10px;
+    }
+
+    .linkpage p,
+    .linkpage h2,
+    .linkpage h3 {
+        text-align: left;
     }
 
     .entry-content blockquote p {

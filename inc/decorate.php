@@ -253,6 +253,14 @@ body::before {
     position: unset;
 }
 
+.linkpage li {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.linkpage li a p {
+    color: #ddd;
+}
+
 @media (max-width: 860px) {
     body::before{
         background-image: none;
@@ -287,7 +295,18 @@ body::before {
     .headertop::before {
         position: absolute;
     }
+
+    .linkpage li {
+        background-color: #fff;
+    }
 }
+
+<?php } ?>
+<?php if ( akina_option('linkpage') == 'waterfall') { ?>
+.linkpage li {
+    width: auto;
+}
+
 <?php } ?>
 </style>
 <?php }

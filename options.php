@@ -737,6 +737,16 @@ function optionsframework_options() {
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('友链样式', 'options_framework_theme'),
+        'id' => 'linkpage',
+        'std' => 'waterfall',
+        'type' => 'radio',
+        'options' => array(
+            'waterfall' => __('瀑布流', ''),
+            'paved' => __('纯平铺', '')
+        ));
+
+    $options[] = array(
         'name' => __('网站公告', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
         'id' => 'head_notice',
