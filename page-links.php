@@ -10,7 +10,7 @@ get_header();
         <?php while (have_posts()) : the_post(); ?>
         <?php the_content(); ?>
         <hr>
-        <article id="post-<?php the_ID(); ?>" class="linkpage">
+        <article id="post-<?php the_ID(); ?>" class="linkpage <?php echo akina_option('linkpage'); ?>">
         <?php
             $linkcats = $wpdb->get_results("SELECT T1.name AS name FROM $wpdb->terms T1, $wpdb->term_taxonomy T2 WHERE T1.term_id = T2.term_id AND T2.taxonomy = 'link_category'");
             if ($linkcats) : foreach ($linkcats as $linkcat) :

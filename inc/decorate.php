@@ -299,12 +299,10 @@ body::before {
     .linkpage li {
         background-color: #fff;
     }
-}
 
-<?php } ?>
-<?php if ( akina_option('linkpage') == 'waterfall') { ?>
-.linkpage li {
-    width: auto;
+    .linkpage li a p {
+        color: #bbc;
+    }
 }
 
 <?php } ?>
