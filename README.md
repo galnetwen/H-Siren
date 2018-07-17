@@ -118,22 +118,3 @@
 H-Siren/images/custom/
 ```
 在该文件夹下，支持多个文件夹、任意文件夹名、任意图片文件名称，删除原来的文件夹也行
-
-### 主题欣赏
-
-**白色简约**
-
-![](https://haremu.com/wp-content/uploads/2018/01/20180110051930.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052048.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052201.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052250.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052347.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052418.jpg)
-![](https://haremu.com/wp-content/uploads/2018/01/20180110052542.jpg)
-
-**高斯模糊**
-
-![](https://haremu.com/wp-content/uploads/2018/01/20180407133429.png)
-![](https://haremu.com/wp-content/uploads/2018/01/20180407133535.png)
-![](https://haremu.com/wp-content/uploads/2018/01/20180407133728.png)
-![](https://haremu.com/wp-content/uploads/2018/01/20180407142300.png)
