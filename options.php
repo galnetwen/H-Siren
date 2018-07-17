@@ -5,15 +5,16 @@
  * If the identifier changes, it'll appear as if the options have been reset.
  */
 
-function optionsframework_option_name() {
+function optionsframework_option_name()
+{
 
     // 从样式表获取主题名称
     $themename = wp_get_theme();
-    $themename = preg_replace("/\W/", "_", strtolower($themename) );
+    $themename = preg_replace("/\W/", "_", strtolower($themename));
 
-    $optionsframework_settings = get_option( 'optionsframework' );
+    $optionsframework_settings = get_option('optionsframework');
     $optionsframework_settings['id'] = $themename;
-    update_option( 'optionsframework', $optionsframework_settings );
+    update_option('optionsframework', $optionsframework_settings);
 }
 
 /**
@@ -25,7 +26,8 @@ function optionsframework_option_name() {
  * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
  */
 
-function optionsframework_options() {
+function optionsframework_options()
+{
     // 测试数据
     $test_array = array(
         'one' => __('1', 'options_framework_theme'),
@@ -36,7 +38,7 @@ function optionsframework_options() {
         'six' => __('6', 'options_framework_theme'),
         'seven' => __('7', 'options_framework_theme')
     );
-        
+
 
     // 复选框数组
     $multicheck_array = array(
@@ -59,20 +61,20 @@ function optionsframework_options() {
         'image' => '',
         'repeat' => 'repeat',
         'position' => 'top center',
-        'attachment'=>'scroll' );
+        'attachment' => 'scroll');
 
     // 版式默认值
     $typography_defaults = array(
         'size' => '15px',
         'face' => 'georgia',
         'style' => 'bold',
-        'color' => '#bada55' );
-        
+        'color' => '#bada55');
+
     // 版式设置选项
     $typography_options = array(
-        'sizes' => array( '6','12','14','16','20' ),
-        'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-        'styles' => array( 'normal' => '普通','bold' => '粗体' ),
+        'sizes' => array('6', '12', '14', '16', '20'),
+        'faces' => array('Helvetica Neue' => 'Helvetica Neue', 'Arial' => 'Arial'),
+        'styles' => array('normal' => '普通', 'bold' => '粗体'),
         'color' => false
     );
 
@@ -82,11 +84,11 @@ function optionsframework_options() {
     foreach ($options_categories_obj as $category) {
         $options_categories[$category->cat_ID] = $category->cat_name;
     }
-    
+
     // 将所有标签（tags）加入数组
     $options_tags = array();
     $options_tags_obj = get_tags();
-    foreach ( $options_tags_obj as $tag ) {
+    foreach ($options_tags_obj as $tag) {
         $options_tags[$tag->term_id] = $tag->name;
     }
 
@@ -100,7 +102,7 @@ function optionsframework_options() {
     }
 
     // 如果使用图片单选按钮, define a directory path
-    $imagepath =  get_template_directory_uri() . '/images/';
+    $imagepath = get_template_directory_uri() . '/images/';
 
     $options = array();
 
@@ -121,7 +123,7 @@ function optionsframework_options() {
         'name' => __('主页图标', 'options_framework_theme'),
         'desc' => __('最佳高度尺寸40PX', 'options_framework_theme'),
         'id' => 'akina_logo',
-        'type' => 'upload');    
+        'type' => 'upload');
 
     $options[] = array(
         'name' => __('关键词和描述', 'options_framework_theme'),
@@ -135,7 +137,7 @@ function optionsframework_options() {
         'desc' => __('各关键字间用半角逗号","分割，数量在5个以内最佳。', 'options_framework_theme'),
         'id' => 'akina_meta_keywords',
         'std' => '',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('网站描述', 'options_framework_theme'),
@@ -153,15 +155,8 @@ function optionsframework_options() {
 
     $options[] = array(
         'name' => __('页面装饰图', 'options_framework_theme'),
-        'desc' => __('默认开启，勾选关闭，显示在文章页面，独立页面以及分类页的顶部', 'options_framework_theme'),
+        'desc' => __('默认开启，勾选关闭。显示在文章页面，独立页面以及分类页的顶部', 'options_framework_theme'),
         'id' => 'patternimg',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('随机装饰图', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，页面装饰图将使用 第一屏 设置的背景图API，懒人必备，写文章无需再专门设置特色图，当然手动设置的特色图不受影响', 'options_framework_theme'),
-        'id' => 'thumbnail_o',
         'std' => '0',
         'type' => 'checkbox');
 
@@ -178,7 +173,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('网页背景风格', 'akina'),
         'id' => 'background_style',
-        'std' => "simple",
+        'std' => "blur",
         'type' => "radio",
         'options' => array(
             'simple' => __('白色简约', ''),
@@ -203,7 +198,7 @@ function optionsframework_options() {
         'options' => array(
             'round' => __('圆形', ''),
             'square' => __('方形', '')
-        ));    
+        ));
 
     $options[] = array(
         'name' => __('评论列表收缩', 'akina'),
@@ -213,7 +208,7 @@ function optionsframework_options() {
         'options' => array(
             'yes' => __('开启', ''),
             'no' => __('关闭', '')
-        ));    
+        ));
 
     $options[] = array(
         'name' => __('分页模式', 'akina'),
@@ -230,7 +225,7 @@ function optionsframework_options() {
         'desc' => __('一段自我描述的话', 'options_framework_theme'),
         'id' => 'admin_des',
         'std' => '公交车司机终于在众人的指责中将座位让给了老太太',
-        'type' => 'textarea');    
+        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('页脚信息', 'options_framework_theme'),
@@ -300,7 +295,7 @@ function optionsframework_options() {
         'desc' => __('直接填写CSS代码，无需标签', 'options_framework_theme'),
         'id' => 'site_custom_style',
         'std' => '',
-        'type' => 'textarea');        
+        'type' => 'textarea');
 
 
     //第一屏
@@ -334,7 +329,7 @@ function optionsframework_options() {
         'desc' => __('默认开启，勾选关闭', 'options_framework_theme'),
         'id' => 'focus_height',
         'std' => '0',
-        'type' => 'checkbox');     
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('开启视频', 'options_framework_theme'),
@@ -378,36 +373,6 @@ function optionsframework_options() {
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('背景图 - 1', 'options_framework_theme'),
-        'desc' => __('可选，最佳尺寸1920*1080，将替换首页图', 'options_framework_theme'),
-        'id' => 'focus_img_1',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('背景图 - 2', 'options_framework_theme'),
-        'desc' => __('可选，最佳尺寸1920*1080，将被随机显示', 'options_framework_theme'),
-        'id' => 'focus_img_2',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('背景图 - 3', 'options_framework_theme'),
-        'desc' => __('可选，最佳尺寸1920*1080，将被随机显示', 'options_framework_theme'),
-        'id' => 'focus_img_3',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('背景图 - 4', 'options_framework_theme'),
-        'desc' => __('可选，最佳尺寸1920*1080，将被随机显示', 'options_framework_theme'),
-        'id' => 'focus_img_4',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('背景图 - 5', 'options_framework_theme'),
-        'desc' => __('可选，最佳尺寸1920*1080，将被随机显示', 'options_framework_theme'),
-        'id' => 'focus_img_5',
-        'type' => 'upload');
-
-    $options[] = array(
         'name' => __('背景图滤镜', 'akina'),
         'id' => 'focus_img_filter',
         'std' => "filter-nothing",
@@ -440,17 +405,7 @@ function optionsframework_options() {
         'options' => array(
             'yes' => __('开启', ''),
             'no' => __('关闭', '')
-        ));    
-
-    $options[] = array(
-        'name' => __('文章分享', 'akina'),
-        'id' => 'post_share',
-        'std' => "no",
-        'type' => "radio",
-        'options' => array(
-            'yes' => __('开启', ''),
-            'no' => __('关闭', '')
-        ));    
+        ));
 
     $options[] = array(
         'name' => __('上一篇下一篇', 'akina'),
@@ -460,7 +415,7 @@ function optionsframework_options() {
         'options' => array(
             'yes' => __('开启', ''),
             'no' => __('关闭', '')
-        ));    
+        ));
 
     $options[] = array(
         'name' => __('博主信息', 'akina'),
@@ -488,7 +443,7 @@ function optionsframework_options() {
     //社交选项
     $options[] = array(
         'name' => __('社交网络', 'options_framework_theme'),
-        'type' => 'heading');    
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('微信', 'options_framework_theme'),
@@ -515,7 +470,7 @@ function optionsframework_options() {
         'desc' => __('空间地址', 'options_framework_theme'),
         'id' => 'qzone',
         'std' => '',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('GitHub', 'options_framework_theme'),
@@ -598,14 +553,14 @@ function optionsframework_options() {
     //聚焦图链
     $options[] = array(
         'name' => __('聚焦图', 'options_framework_theme'),
-        'type' => 'heading' );
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('总开关', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
         'id' => 'top_feature',
         'std' => '0',
-        'type' => 'checkbox');    
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('聚焦标题', 'options_framework_theme'),
@@ -613,13 +568,13 @@ function optionsframework_options() {
         'id' => 'feature_title',
         'std' => '聚焦',
         'class' => 'mini',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('聚焦图一', 'options_framework_theme'),
         'desc' => __('尺寸257*160', 'options_framework_theme'),
         'id' => 'feature1_img',
-        'std' => $imagepath.'temp.jpg',
+        'std' => $imagepath . 'temp.jpg',
         'type' => 'upload');
 
     $options[] = array(
@@ -627,20 +582,20 @@ function optionsframework_options() {
         'desc' => __('聚焦图一标题', 'options_framework_theme'),
         'id' => 'feature1_title',
         'std' => '聚焦',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('聚焦图一链接', 'options_framework_theme'),
         'desc' => __('聚焦图一链接', 'options_framework_theme'),
         'id' => 'feature1_link',
         'std' => '',
-        'type' => 'text');        
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('聚焦图二', 'options_framework_theme'),
         'desc' => __('尺寸257*160', 'options_framework_theme'),
         'id' => 'feature2_img',
-        'std' => $imagepath.'temp.jpg',
+        'std' => $imagepath . 'temp.jpg',
         'type' => 'upload');
 
     $options[] = array(
@@ -661,7 +616,7 @@ function optionsframework_options() {
         'name' => __('聚焦图三', 'options_framework_theme'),
         'desc' => __('尺寸257*160', 'options_framework_theme'),
         'id' => 'feature3_img',
-        'std' => $imagepath.'temp.jpg',
+        'std' => $imagepath . 'temp.jpg',
         'type' => 'upload');
 
     $options[] = array(
@@ -669,7 +624,7 @@ function optionsframework_options() {
         'desc' => __('聚焦图三标题', 'options_framework_theme'),
         'id' => 'feature3_title',
         'std' => '聚焦',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('聚焦图三链接', 'options_framework_theme'),
@@ -679,10 +634,10 @@ function optionsframework_options() {
         'type' => 'text');
 
 
-    //其他
+    //其它
     $options[] = array(
-        'name' => __('其他', 'options_framework_theme'),
-        'type' => 'heading' );
+        'name' => __('其它项', 'options_framework_theme'),
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('PJAX局部刷新', 'options_framework_theme'),
@@ -751,7 +706,7 @@ function optionsframework_options() {
         'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
         'id' => 'head_notice',
         'std' => '0',
-        'type' => 'checkbox');    
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('公告内容', 'options_framework_theme'),
@@ -765,7 +720,7 @@ function optionsframework_options() {
         'desc' => __('填写分类ID，多个用英文“ , ”分开，仅首页生效', 'options_framework_theme'),
         'id' => 'classify_display',
         'std' => '',
-        'type' => 'text');    
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('图片展示分类', 'options_framework_theme'),
@@ -810,18 +765,11 @@ function optionsframework_options() {
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('多说插件支持', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，如果使用多说插件，请开启此项', 'options_framework_theme'),
-        'id' => 'general_disqus_plugin_support',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
         'name' => __('代码高亮PJAX', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启，仅支持 Prism 高亮插件的PJAX加载，使用前需要先安装该插件', 'options_framework_theme'),
         'id' => 'open_prism_codelamp',
         'std' => '0',
-        'type' => 'checkbox');    
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('评论框富文本粘贴', 'options_framework_theme'),
@@ -879,28 +827,21 @@ function optionsframework_options() {
     //前台登录
     $options[] = array(
         'name' => __('前台登录', 'options_framework_theme'),
-        'type' => 'heading' );
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('指定登录地址', 'options_framework_theme'),
-        'desc' => __('注意！需确定新URL可用，否则无法登陆后台', 'options_framework_theme'),
+        'desc' => __('仅是替换登录入口处的URL，不能修改 WP 登录地址', 'options_framework_theme'),
         'id' => 'new_login_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('指定注册地址', 'options_framework_theme'),
-        'desc' => __('该链接使用在登录页面作为注册入口，建议填写', 'options_framework_theme'),
+        'desc' => __('该链接使用在前台登录页面作为注册入口，建议填写', 'options_framework_theme'),
         'id' => 'exregister_url',
         'std' => '',
         'type' => 'text');
-
-    $options[] = array(
-        'name' => __('允许用户注册', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，允许用户在前台注册', 'options_framework_theme'),
-        'id' => 'ex_register_open',
-        'std' => '0',
-        'type' => 'checkbox');    
 
     $options[] = array(
         'name' => __('登录自动跳转', 'options_framework_theme'),
@@ -908,13 +849,6 @@ function optionsframework_options() {
         'id' => 'login_urlskip',
         'std' => '0',
         'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('开启注册验证', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，开启后用户注册时要滑动验证', 'options_framework_theme'),
-        'id' => 'login_validate',
-        'std' => '0',
-        'type' => 'checkbox');    
 
     return $options;
 }

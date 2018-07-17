@@ -4,8 +4,8 @@
 Theme Name: H-Siren
 Author: 后宫学长
 Author URI: https://haremu.com
-Description: Fuzzz 的 Akina 主题分支，本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 3.0.5.180609
+Description: Fuzzz 的 Akina 主题分支。本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
+Version: 4.1.5.180715
 Tags: Akina（娱乐版）
 */
 
@@ -84,7 +84,6 @@ Tags: Akina（娱乐版）
     }
 }
 
-
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -97,7 +96,7 @@ html {
 
 body {
     margin: 0;
-    font: 300 17px miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font: 300 17px miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -316,7 +315,6 @@ th {
     padding: 0;
 }
 
-
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -342,7 +340,7 @@ h6 {
 
 p {
     margin-bottom: 1.5em;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     font-size: 16.8px;
 }
 
@@ -376,7 +374,7 @@ address {
 
 pre {
     background: #F8F8F8;
-    font: 15px/22px "microsoft jhenghei","Arial",Sans-Serif;
+    font: 15px/22px "microsoft jhenghei", "Arial", Sans-Serif;
     line-height: 1.6;
     margin-bottom: 1.6em;
     max-width: 100%;
@@ -410,7 +408,6 @@ ins {
 big {
     font-size: 125%;
 }
-
 
 /*--------------------------------------------------------------
 # Elements
@@ -493,7 +490,6 @@ table {
     margin: 0 0 1.5em;
     width: 100%;
 }
-
 
 /*--------------------------------------------------------------
 # Forms
@@ -603,16 +599,15 @@ textarea {
     color: #A5A5A5;
 }
 
-
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
     color: royalblue;
     outline: none;
-    -webkit-transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
-    transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
+    -webkit-transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
+    transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 a:visited {
@@ -633,7 +628,6 @@ a:active {
     outline: none;
 }
 
-
 /*--------------------------------------------------------------
 ## body
 --------------------------------------------------------------*/
@@ -642,24 +636,27 @@ a:active {
     display: block;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 @keyframes fade-in {
-  
+
     0% {
         opacity: 0;
-    }/*初始状态 透明度为0*/  
+    }
+    /*初始状态 透明度为0*/
     40% {
         opacity: 0;
-    }/*过渡状态 透明度为0*/  
+    }
+    /*过渡状态 透明度为0*/
     100% {
         opacity: 1;
-    }/*结束状态 透明度为1*/
+    }
+    /*结束状态 透明度为1*/
 }
 
 @-webkit-keyframes fade-in {
-    /*针对webkit内核*/  
+    /*针对webkit内核*/
     0% {
         opacity: 0;
     }
@@ -694,7 +691,8 @@ a:active {
     z-index: 0;
 }
 
-#video-btn,#video-add {
+#video-btn,
+#video-add {
     position: absolute;
     bottom: 3px;
     right: 5px;
@@ -711,7 +709,8 @@ a:active {
     animation: poi-face 10s linear infinite alternate;
 }
 
-#video-btn:hover,#video-add:hover {
+#video-btn:hover,
+#video-add:hover {
     opacity: 1;
 }
 
@@ -743,13 +742,12 @@ a:active {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 0;
     font-size: 18px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;
     transition: .4s ease all
 }
-
 
 /*
  * 头部装饰图
@@ -812,7 +810,7 @@ a:active {
     margin: auto;
     padding: 0;
     border: 0;
-    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
 }
 
 .pattern-center .cat-des {
@@ -872,13 +870,12 @@ a:active {
         height: 280px;
     }
 
-    .pattern-center h1.cat-title, 
+    .pattern-center h1.cat-title,
     .pattern-center h1.entry-title,
     .single-center .single-header h1.entry-title {
         font-size: 26px;
     }
 }
-
 
 /*--------------------------------------------------------------
 ## header
@@ -944,9 +941,9 @@ a:active {
     margin-top: 22px;
     margin-left: 5px;
     opacity: .75;
-    -webkit-transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
-    transition: color 0.2s ease-out,border 0.2s ease-out,opacity 0.2s ease-out;
+    -webkit-transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
+    transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .site-title img:hover {
@@ -970,7 +967,6 @@ a:active {
 #mo-nav {
     display: none
 }
-
 
 /*--------------------------------------------------------------
 ## Menus
@@ -1020,7 +1016,7 @@ a:active {
     display: inline-block;
     color: black;
     font-size: larger;
-    
+
 }
 
 .site-top ul li a:hover {
@@ -1142,7 +1138,6 @@ ul.sub-menu li a {
     color: #545454;
 }
 
-
 /* Small menu. */
 
 /*--------------------------------------------------------------
@@ -1150,7 +1145,7 @@ ul.sub-menu li a {
 --------------------------------------------------------------*/
 .site-main {
     padding: 40px 0 0;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .site-content {
@@ -1223,7 +1218,7 @@ ul.sub-menu li a {
 
 .entry-title a {
     color: #504E4E;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .entry-title a:hover {
@@ -1237,7 +1232,7 @@ ul.sub-menu li a {
     font-size: 12px;
     color: #989898;
     letter-spacing: 0;
-    font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif;
+    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
 }
 
 .p-time i {
@@ -1254,8 +1249,8 @@ i.iconfont.hotpost {
     min-height: 60px;
     margin: 0 0 0 17%;
     font-size: 15px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
-    color: rgba(0,0,0,.66);
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    color: rgba(0, 0, 0, .66);
     letter-spacing: 0;
     line-height: 30px;
 }
@@ -1281,7 +1276,7 @@ i.iconfont.hotpost {
 
 .info-meta {
     margin-top: 10px;
-    font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif;
+    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
     position: absolute;
     top: 20px;
     opacity: 0;
@@ -1289,8 +1284,8 @@ i.iconfont.hotpost {
     border-top: 1px solid #ddd;
     width: 110px;
     margin-left: -30px;
-    -webkit-transform: translate3d(-150px,0,0);
-    transform: translate3d(-150px,0,0);
+    -webkit-transform: translate3d(-150px, 0, 0);
+    transform: translate3d(-150px, 0, 0);
     visibility: hidden;
     transition: .7s all ease;
     -webkit-transition: .6s all ease;
@@ -1315,13 +1310,13 @@ i.iconfont.hotpost {
     float: left;
 }
 
-.info-meta  a {
+.info-meta a {
     color: #B3B3B3
 }
 
-.post-list:hover  .info-meta {
-    -webkit-transform: translate3d(-230px,0,0);
-    transform: translate3d(-230px,0,0);
+.post-list:hover .info-meta {
+    -webkit-transform: translate3d(-230px, 0, 0);
+    transform: translate3d(-230px, 0, 0);
     opacity: 1;
     visibility: visible;
 }
@@ -1340,7 +1335,6 @@ i.iconfont.hotpost {
         padding: 20px 0 0;
     }
 }
-
 
 /*
  * 卡片风格
@@ -1457,7 +1451,7 @@ i.iconfont.hotpost {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: 17px!important;
+        font-size: 17px !important;
     }
 
     .float-contents p {
@@ -1526,7 +1520,7 @@ i.iconfont.hotpost {
     text-align: right;
     margin-bottom: 10px;
     margin-top: -15px;
-    font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif;
+    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
 }
 
 .s-content {
@@ -1546,7 +1540,6 @@ i.iconfont.hotpost {
 .post-status {
     margin-bottom: 80px;
 }
-
 
 /*--------------------------------------------------------------
 # pagenav
@@ -1583,7 +1576,6 @@ i.iconfont.hotpost {
     transition: all 0.2s ease-in-out;
 }
 
-
 /*--------------------------------------------------------------
 # footer
 --------------------------------------------------------------*/
@@ -1596,7 +1588,7 @@ i.iconfont.hotpost {
     text-align: center;
     font-size: 14px;
     color: #B9B9B9;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .site-info p {
@@ -1629,7 +1621,6 @@ i.iconfont.hotpost {
     margin: 5px 0;
 }
 
-
 /*--------------------------------------------------------------
 # single
 --------------------------------------------------------------*/
@@ -1652,7 +1643,8 @@ i.iconfont.hotpost {
     margin-left: 0;
 }
 
-.entry-content ol li , .entry-content ul li {
+.entry-content ol li,
+.entry-content ul li {
     padding: 8px 0;
     font-size: 16.8px;
     font-weight: 400;
@@ -1695,7 +1687,7 @@ i.iconfont.hotpost {
 
 .entry-content code {
     word-break: break-word;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     text-shadow: none;
     letter-spacing: 1px;
 }
@@ -1744,7 +1736,7 @@ h1.entry-title {
     content: '...';
     display: inline-block;
     margin-left: .6em;
-    color: rgba(0,0,0,.8);
+    color: rgba(0, 0, 0, .8);
     position: relative;
     top: -30px;
     font-size: 28px;
@@ -1790,13 +1782,12 @@ h1.page-title {
     padding: 10px 15px;
     color: #828282;
     margin-bottom: 30px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 h1.page-title.mb- {
     margin-top: 100px;
 }
-
 
 /*--------------------------------------------------------------
 # post footer
@@ -1865,7 +1856,7 @@ h1.page-title.mb- {
     font-size: 13px;
     color: #B3B3B3;
     text-transform: uppercase;
-    font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif
+    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif
 }
 
 .post-tags a {
@@ -1902,70 +1893,6 @@ h1.page-title.mb- {
     cursor: not-allowed;
 }
 
-.post-share {
-    float: right;
-    list-style: none;
-    margin-right: 20px;
-}
-
-.post-share img:hover {
-    opacity: .8
-}
-
-.post-share ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    display: none;
-    top: -3px;
-    position: relative;
-    -moz-transition: opacity .4s ease-out;
-    -o-transition: opacity .4s ease-out;
-    -webkit-transition: opacity .4s ease-out;
-    transition: opacity .4s ease-out
-}
-
-.post-share li {
-    float: left;
-    margin-right: 20px;
-}
-
-.post-share li img {
-    width: 32px;
-    height: 32px;
-    padding: 7px;
-}
-
-.post-share ul li i {
-    font-size: 20px
-}
-
-.post-share span {
-    float: left;
-    margin-right: 10px;
-}
-
-.post-share ul li a:hover {
-    color: #A0DAD0
-}
-
-.post-share .show-share {
-    margin-left: 10px;
-    cursor: pointer;
-    opacity: .6;
-    float: right;
-    -moz-transition: opacity .1s ease-out;
-    -o-transition: opacity .1s ease-out;
-    -webkit-transition: opacity .1s ease-out;
-    transition: opacity .1s ease-out
-}
-
-.post-share:hover .show-share , .post-share:hover .sharehidden {
-    opacity: 1;
-    display: inline-block;
-}
-
 /**
 *  nextprev
 */
@@ -1996,7 +1923,8 @@ h1.page-title.mb- {
     z-index: 100;
 }
 
-.post-squares article, .post-squares a {
+.post-squares article,
+.post-squares a {
     position: relative;
     display: block;
     float: left;
@@ -2006,12 +1934,13 @@ h1.page-title.mb- {
     text-align: center;
 }
 
-.post-squares article:hover > .background, .post-squares a:hover > .background {
+.post-squares article:hover > .background,
+.post-squares a:hover > .background {
     opacity: .6;
 }
 
 .post-squares .category {
-    font-family: "microsoft jhenghei","Arial",Sans-Serif;
+    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
     font-size: 10px;
     padding: 7px 15px;
     text-transform: uppercase;
@@ -2021,7 +1950,7 @@ h1.page-title.mb- {
 }
 
 .post-squares h3 {
-    font-family: "microsoft jhenghei","Arial",Sans-Serif;
+    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 30px;
@@ -2046,7 +1975,7 @@ h1.page-title.mb- {
 }
 
 .post-squares .label {
-    font-family: "microsoft jhenghei","Arial",Sans-Serif;
+    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
     font-size: 13px;
     display: block;
     text-transform: uppercase;
@@ -2085,7 +2014,8 @@ h1.page-title.mb- {
     }
 }
 
-.post-squares.nextprev article, .post-squares.nextprev a {
+.post-squares.nextprev article,
+.post-squares.nextprev a {
     height: 150px;
     padding: 55px 40px;
     text-align: left;
@@ -2106,7 +2036,8 @@ h1.page-title.mb- {
     width: 70%;
 }
 
-.post-squares.nextprev .next h3, .post-squares.nextprev .previous h3 {
+.post-squares.nextprev .next h3,
+.post-squares.nextprev .previous h3 {
     font-size: 14px;
 }
 
@@ -2199,7 +2130,7 @@ h1.page-title.mb- {
 }
 
 .author-profile .meta h3 a {
-    font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif;
+    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
@@ -2229,7 +2160,6 @@ h1.page-title.mb- {
     margin-right: 10px;
     font-size: 16px;
 }
-
 
 /*--------------------------------------------------------------
 # comments-nav
@@ -2289,8 +2219,7 @@ h3#comments-list-title {
     padding: 12px 25px;
     z-index: 10000;
     margin-top: -4px;
-}   
-
+}
 
 /*--------------------------------------------------------------
 # Alignments
@@ -2329,7 +2258,6 @@ h3#comments-list-title {
     cursor: auto;
 }
 
-
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -2358,7 +2286,6 @@ h3#comments-list-title {
 .site-footer:after {
     clear: both;
 }
-
 
 /*--------------------------------------------------------------
 # Widgets
@@ -2403,7 +2330,6 @@ span.edit-link {
     display: none;
 }
 
-
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -2412,7 +2338,6 @@ span.edit-link {
     display: none;
 }
 
-
 /*--------------------------------------------------------------
 ## 清除浮动
 --------------------------------------------------------------*/
@@ -2420,7 +2345,6 @@ span.edit-link {
     display: block;
     clear: both;
 }
-
 
 /*--------------------------------------------------------------
 ## works
@@ -2527,13 +2451,12 @@ h1.works-title {
     top: 0px;
 }
 
-
 /*--------------------------------------------------------------
 ## archives
 --------------------------------------------------------------*/
 
 #archives-temp {
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     margin-top: 50px;
     margin-bottom: 100px;
 }
@@ -2653,7 +2576,6 @@ header.page-header {
     color: #9C9C9C;
 }
 
-
 /*--------------------------------------------------------------
 ## welcome
 --------------------------------------------------------------*/
@@ -2670,7 +2592,7 @@ form#commentform {
 }
 
 nav#comments-navi {
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     color: #9A9A9A;
     max-width: 700px;
     margin: 0 50px 30px;
@@ -2748,7 +2670,7 @@ a.page-numbers {
     width: 100%;
     max-width: 860px;
     margin: 0 auto;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .comnav a {
@@ -2813,7 +2735,7 @@ ol.children {
 }
 
 .comment .body {
-    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     line-height: 32px;
     color: #63686d;
     /* border-bottom: 1px solid rgba(0,0,0,.05); */
@@ -2895,18 +2817,8 @@ ol.children {
     padding: 0;
 }
 
-/*.arrow-left {
-width: 0;
-height: 0;
-display: block;
-float: right;
-margin-top: -35px;
-border-left: 20px solid transparent;
-border-bottom: 20px solid #FFFFFF;
-}*/
-
 .comment .commeta {
-    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     font-size: 16px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -2924,7 +2836,7 @@ border-bottom: 20px solid #FFFFFF;
 }
 
 .comment .comment-reply-link {
-    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     font-size: 12px;
     display: block;
     margin-left: 10px;
@@ -2940,7 +2852,7 @@ border-bottom: 20px solid #FFFFFF;
 }
 
 .comment .deleteComments {
-    font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,Helvetica,Arial,sans-serif;
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     cursor: pointer;
     font-size: 12px;
     line-height: 20px;
@@ -2985,7 +2897,7 @@ border-bottom: 20px solid #FFFFFF;
     font-size: 12px;
     letter-spacing: 0px;
     text-transform: none;
-    color: rgba(0,0,0,.35);
+    color: rgba(0, 0, 0, .35);
 }
 
 .comment .info time {
@@ -3006,7 +2918,7 @@ border-bottom: 20px solid #FFFFFF;
 }
 
 .comment h4 {
-    font-family: "microsoft jhenghei","Arial",Sans-Serif;
+    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
     /* font-size: 24px; */
     font-weight: 400;
     margin: 0;
@@ -3126,7 +3038,7 @@ border-bottom: 20px solid #FFFFFF;
 }
 
 .comment-respond input {
-    font-family: "microsoft jhenghei","Arial",Sans-Serif;
+    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
     font-size: 14px;
     float: left;
     width: calc(33% - 0px);
@@ -3174,25 +3086,32 @@ border-bottom: 20px solid #FFFFFF;
     background: #5aa738;
 }
 
-.comment-respond input:focus, .comment-respond textarea:focus, .comment-respond input:active, .comment-respond textarea:active {
+.comment-respond input:focus,
+.comment-respond textarea:focus,
+.comment-respond input:active,
+.comment-respond textarea:active {
     outline: 0;
 }
 
-.comment-respond input::-webkit-input-placeholder, .comment-respond textarea::-webkit-input-placeholder {
+.comment-respond input::-webkit-input-placeholder,
+.comment-respond textarea::-webkit-input-placeholder {
     color: #535a63;
 }
 
-.comment-respond input:-moz-placeholder, .comment-respond textarea:-moz-placeholder {
+.comment-respond input:-moz-placeholder,
+.comment-respond textarea:-moz-placeholder {
     opacity: 1;
     color: #535a63;
 }
 
-.comment-respond input::-moz-placeholder, .comment-respond textarea::-moz-placeholder {
+.comment-respond input::-moz-placeholder,
+.comment-respond textarea::-moz-placeholder {
     opacity: 1;
     color: #535a63;
 }
 
-.comment-respond input:-ms-input-placeholder, .comment-respond textarea:-ms-input-placeholder {
+.comment-respond input:-ms-input-placeholder,
+.comment-respond textarea:-ms-input-placeholder {
     color: #535a63;
 }
 
@@ -3222,7 +3141,7 @@ border-bottom: 20px solid #FFFFFF;
     background: none;
 }
 
-.notification i, 
+.notification i,
 .comment-respond .logged-in-as i {
     margin-right: 10px;
     font-size: 16px;
@@ -3248,7 +3167,6 @@ border-bottom: 20px solid #FFFFFF;
     color: #B3B3B3;
 }
 
-
 /*
  * Siren checkbox
  */
@@ -3259,7 +3177,7 @@ border-bottom: 20px solid #FFFFFF;
     cursor: pointer;
     color: #555;
     font-size: 14px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     border: 1px solid #DDD;
     padding: 5px 7px;
     border-radius: 5px;
@@ -3278,7 +3196,7 @@ border-bottom: 20px solid #FFFFFF;
 
 .siren-checkbox-radioInput {
     background: #fff;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 100%;
     display: inline-block;
     margin-right: 8px;
@@ -3314,11 +3232,10 @@ p.form-submit {
     }
 }
 
-
 /*
  * top-features
  */
-h1.fes-title , h1.main-title {
+h1.fes-title, h1.main-title {
     color: #666;
     font-size: 16px;
     font-weight: 400;
@@ -3337,7 +3254,7 @@ h1.fes-title , h1.main-title {
     width: 100%;
     height: auto;
     margin-top: 55px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .top-feature img {
@@ -3387,7 +3304,7 @@ li.feature-2 {
 .notice {
     padding: 20px;
     border: 1px dashed #E6E6E6;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     color: #969696;
     position: relative;
     display: inline-block;
@@ -3415,7 +3332,6 @@ li.feature-2 {
         margin-bottom: 20px;
     }
 }
-
 
 /*
  * header-focus
@@ -3475,13 +3391,13 @@ li.feature-2 {
     z-index: -1;
 }
 
-@media (max-width:860px) {
+@media (max-width: 860px) {
     #centerbg {
         height: 300px !important;
         background-attachment: scroll;
     }
 
-    .focusinfo,#video-container {
+    .focusinfo, #video-container {
         display: none;
     }
 }
@@ -3496,8 +3412,8 @@ li.feature-2 {
     padding: 0 10px;
     top: 49.3%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     text-align: center;
     z-index: 99;
     -webkit-transition: .4s ease all;
@@ -3544,7 +3460,7 @@ li.feature-2 {
     background: rgba(0, 0, 0, 0.5);
     padding: 15px 25px;
     margin-top: 22px;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     letter-spacing: 0;
     line-height: 30px;
     border-radius: 50px;
@@ -3562,7 +3478,7 @@ li.feature-2 {
     margin-left: 10px;
     list-style: none;
     display: inline-block;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .top-social img {
@@ -3598,8 +3514,8 @@ li.feature-2 {
     background: rgba(0, 0, 0, 0.4);
     top: 40px;
     left: -40px;
-    -webkit-transform: translate3d(0,50px,0);
-    transform: translate3d(0,50px,0);
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
     opacity: 0;
 }
 
@@ -3614,8 +3530,8 @@ li.feature-2 {
 }
 
 .wechat:hover .wechatInner {
-    -webkit-transform: translate3d(0,10px,0);
-    transform: translate3d(0,10px,0);
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
     opacity: 1;
     visibility: visible;
 }
@@ -3678,7 +3594,7 @@ i.iconfont.js-toggle-search.iconsearch {
     height: 285px;
     top: 0;
     bottom: 0;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .search-form--modal .search-form__inner p {
@@ -3748,7 +3664,7 @@ i.iconfont.js-toggle-search.iconsearch {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .search-form input::-webkit-input-placeholder {
@@ -3782,7 +3698,7 @@ i.iconfont.js-toggle-search.iconsearch {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 .s-search i {
@@ -3827,7 +3743,6 @@ i.iconfont.js-toggle-search.iconsearch {
     border: 1px solid #ddd;
 }
 
-
 /*
 * 404
 */
@@ -3837,7 +3752,7 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .err-button.back {
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     text-align: center;
     margin: 40px 0;
 }
@@ -3863,7 +3778,6 @@ i.iconfont.js-toggle-search.iconsearch {
     -o-box-shadow: 0 0 4px rgba(117, 247, 211, 0.85);
     box-shadow: 0 0 4px rgba(117, 247, 211, 0.85);
 }
-
 
 /*!
 * baguetteBox.js
@@ -3925,7 +3839,7 @@ i.iconfont.js-toggle-search.iconsearch {
     color: #eee;
     background: #000;
     background: rgba(0, 0, 0, 0.8);
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 #baguetteBox-overlay .full-image:before {
@@ -4008,7 +3922,6 @@ i.iconfont.js-toggle-search.iconsearch {
     left: 0;
     top: 0;
 }
-
 
 /*
 Preloader
@@ -4107,7 +4020,7 @@ Borrowed from http://tobiasahlin.com/spinkit/
 
 @-webkit-keyframes bounce {
 
-    0%,100% {
+    0%, 100% {
         -webkit-transform: scale(0);
         transform: scale(0);
     }
@@ -4120,7 +4033,7 @@ Borrowed from http://tobiasahlin.com/spinkit/
 
 @keyframes bounce {
 
-    0%,100% {
+    0%, 100% {
         -webkit-transform: scale(0);
         -moz-transform: scale(0);
         transform: scale(0);
@@ -4132,7 +4045,6 @@ Borrowed from http://tobiasahlin.com/spinkit/
         transform: scale(1);
     }
 }
-
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -4148,7 +4060,6 @@ Borrowed from http://tobiasahlin.com/spinkit/
 .infinity-end.neverending .site-footer {
     display: block;
 }
-
 
 /*--------------------------------------------------------------
 # Media
@@ -4168,7 +4079,6 @@ iframe,
 object {
     max-width: 100%;
 }
-
 
 /*--------------------------------------------------------------
 ## Captions
@@ -4191,7 +4101,6 @@ object {
 .wp-caption-text {
     text-align: center;
 }
-
 
 /*--------------------------------------------------------------
 ## Galleries
@@ -4279,8 +4188,7 @@ object {
     transform: scale(0.9);
 }
 
-
-/* 
+/*
  * Loading bar
  */
 #nprogress {
@@ -4364,12 +4272,11 @@ object {
     }
 }
 
-
 /*
 *
 * download
 * 
-**/ 
+**/
 .download {
     color: #fff !important;
     -webkit-transition: all 0.3s;
@@ -4400,12 +4307,12 @@ object {
     -o-transition: all 0.3s;
     transition: all 0.3s;
     opacity: 1;
-    -webkit-transform: translate(0,-105%);
-    transform: translate(0,-105%);
+    -webkit-transform: translate(0, -105%);
+    transform: translate(0, -105%);
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: rgba(255,255,255,1);
-    background: rgba(255,255,255,0.25);
+    border-bottom-color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .download::after {
@@ -4416,8 +4323,8 @@ object {
 
 .download:hover::before, .download:hover::after {
     opacity: 0;
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 
 .download span {
@@ -4438,7 +4345,7 @@ i.iconfont.down {
     text-align: center;
     margin: 40px 0 80px;
     display: inline-block;
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 #pagination a {
@@ -4474,7 +4381,6 @@ i.iconfont.down {
     margin: 80px 0;
 }
 
-
 /*
 *
 * some mobile style
@@ -4505,7 +4411,7 @@ i.iconfont.down {
         top: 160px !important
     }
 
-    .admin-login , .wesite-des {
+    .admin-login, .wesite-des {
         display: none
     }
 
@@ -4593,9 +4499,9 @@ i.iconfont.down {
         font-size: 14px
     }
 
-    .entry-content ol li , .entry-content ul li {
+    .entry-content ol li, .entry-content ul li {
         font-size: 14px;
-}
+    }
 
     p {
         font-size: 14px
@@ -4605,7 +4511,7 @@ i.iconfont.down {
         font-size: 15px
     }
 
-    .post-footer , .post-share , .post-like {
+    .post-footer, .post-share, .post-like {
         display: none
     }
 
@@ -4652,7 +4558,7 @@ i.iconfont.down {
     .site-title {
         font-size: 20px;
         margin-right: 10px;
-        font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif
+        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif
     }
 
     .author-box {
@@ -4677,7 +4583,7 @@ i.iconfont.down {
         display: none
     }
 
-    h3#comments-list-title , nav#comments-navi {
+    h3#comments-list-title, nav#comments-navi {
         width: 100%;
         padding: 0 6.39%;
         max-width: 1245px;
@@ -4831,7 +4737,7 @@ i.iconfont.down {
         display: block;
         overflow-x: hidden;
         overflow-y: auto;
-        font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     }
 
     #mo-nav .m-avatar {
@@ -4867,7 +4773,7 @@ i.iconfont.down {
         text-align: center;
         border-radius: 3px;
         outline: none;
-        font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     }
 
     #mo-nav ul {
@@ -4954,15 +4860,11 @@ i.iconfont.down {
     }
 }
 
-
 /*iconfont **/
 @font-face {
     font-family: "iconfont";
     src: url('inc/fonts/iconfont.eot?t=1461591491'); /* IE9*/
-    src: url('inc/fonts/iconfont.eot?t=1461591491#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('inc/fonts/iconfont.woff?t=1461591491') format('woff'), /* chrome, firefox */
-    url('inc/fonts/iconfont.ttf?t=1461591491') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('inc/fonts/iconfont.svg?t=1461591491#iconfont') format('svg'); /* iOS 4.1- */
+    src: url('inc/fonts/iconfont.eot?t=1461591491#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('inc/fonts/iconfont.woff?t=1461591491') format('woff'), /* chrome, firefox */ url('inc/fonts/iconfont.ttf?t=1461591491') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('inc/fonts/iconfont.svg?t=1461591491#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -5311,127 +5213,126 @@ i.iconfont.down {
 
 /*颤抖动画*/
 @keyframes poi-face {
-    2%,24%,80% {
-        -webkit-transform: translate(0,1.5px) rotate(1.5deg);
-        transform: translate(0,1.5px) rotate(1.5deg)
+    2%, 24%, 80% {
+        -webkit-transform: translate(0, 1.5px) rotate(1.5deg);
+        transform: translate(0, 1.5px) rotate(1.5deg)
     }
 
-    4%,68%,98% {
-        -webkit-transform: translate(0,-1.5px) rotate(-.5deg);
-        transform: translate(0,-1.5px) rotate(-.5deg)
+    4%, 68%, 98% {
+        -webkit-transform: translate(0, -1.5px) rotate(-.5deg);
+        transform: translate(0, -1.5px) rotate(-.5deg)
     }
 
-    38%,6% {
-        -webkit-transform: translate(0,1.5px) rotate(-1.5deg);
-        transform: translate(0,1.5px) rotate(-1.5deg)
+    38%, 6% {
+        -webkit-transform: translate(0, 1.5px) rotate(-1.5deg);
+        transform: translate(0, 1.5px) rotate(-1.5deg)
     }
 
-    8%,86% {
-        -webkit-transform: translate(0,-1.5px) rotate(-1.5deg);
-        transform: translate(0,-1.5px) rotate(-1.5deg)
+    8%, 86% {
+        -webkit-transform: translate(0, -1.5px) rotate(-1.5deg);
+        transform: translate(0, -1.5px) rotate(-1.5deg)
     }
 
-    10%,72% {
-        -webkit-transform: translate(0,2.5px) rotate(1.5deg);
-        transform: translate(0,2.5px) rotate(1.5deg)
+    10%, 72% {
+        -webkit-transform: translate(0, 2.5px) rotate(1.5deg);
+        transform: translate(0, 2.5px) rotate(1.5deg)
     }
 
-    12%,64%,78%,96% {
-        -webkit-transform: translate(0,-.5px) rotate(1.5deg);
-        transform: translate(0,-.5px) rotate(1.5deg)
+    12%, 64%, 78%, 96% {
+        -webkit-transform: translate(0, -.5px) rotate(1.5deg);
+        transform: translate(0, -.5px) rotate(1.5deg)
     }
 
-    14%,54% {
-        -webkit-transform: translate(0,-1.5px) rotate(1.5deg);
-        transform: translate(0,-1.5px) rotate(1.5deg)
+    14%, 54% {
+        -webkit-transform: translate(0, -1.5px) rotate(1.5deg);
+        transform: translate(0, -1.5px) rotate(1.5deg)
     }
 
     16% {
-        -webkit-transform: translate(0,-.5px) rotate(-1.5deg);
-        transform: translate(0,-.5px) rotate(-1.5deg)
+        -webkit-transform: translate(0, -.5px) rotate(-1.5deg);
+        transform: translate(0, -.5px) rotate(-1.5deg)
     }
 
-    18%,22% {
-        -webkit-transform: translate(0,.5px) rotate(-1.5deg);
-        transform: translate(0,.5px) rotate(-1.5deg)
+    18%, 22% {
+        -webkit-transform: translate(0, .5px) rotate(-1.5deg);
+        transform: translate(0, .5px) rotate(-1.5deg)
     }
 
-    20%,36%,46% {
-        -webkit-transform: translate(0,-1.5px) rotate(2.5deg);
-        transform: translate(0,-1.5px) rotate(2.5deg)
+    20%, 36%, 46% {
+        -webkit-transform: translate(0, -1.5px) rotate(2.5deg);
+        transform: translate(0, -1.5px) rotate(2.5deg)
     }
 
-    26%,50% {
-        -webkit-transform: translate(0,.5px) rotate(.5deg);
-        transform: translate(0,.5px) rotate(.5deg)
+    26%, 50% {
+        -webkit-transform: translate(0, .5px) rotate(.5deg);
+        transform: translate(0, .5px) rotate(.5deg)
     }
 
     28% {
-        -webkit-transform: translate(0,.5px) rotate(1.5deg);
-        transform: translate(0,.5px) rotate(1.5deg)
+        -webkit-transform: translate(0, .5px) rotate(1.5deg);
+        transform: translate(0, .5px) rotate(1.5deg)
     }
 
-    30%,40%,62%,76%,88% {
-        -webkit-transform: translate(0,-.5px) rotate(2.5deg);
-        transform: translate(0,-.5px) rotate(2.5deg)
+    30%, 40%, 62%, 76%, 88% {
+        -webkit-transform: translate(0, -.5px) rotate(2.5deg);
+        transform: translate(0, -.5px) rotate(2.5deg)
     }
 
-    32%,34%,66% {
-        -webkit-transform: translate(0,1.5px) rotate(-.5deg);
-        transform: translate(0,1.5px) rotate(-.5deg)
+    32%, 34%, 66% {
+        -webkit-transform: translate(0, 1.5px) rotate(-.5deg);
+        transform: translate(0, 1.5px) rotate(-.5deg)
     }
 
     42% {
-        -webkit-transform: translate(0,2.5px) rotate(-1.5deg);
-        transform: translate(0,2.5px) rotate(-1.5deg)
+        -webkit-transform: translate(0, 2.5px) rotate(-1.5deg);
+        transform: translate(0, 2.5px) rotate(-1.5deg)
     }
 
-    44%,70% {
-        -webkit-transform: translate(0,1.5px) rotate(.5deg);
-        transform: translate(0,1.5px) rotate(.5deg)
+    44%, 70% {
+        -webkit-transform: translate(0, 1.5px) rotate(.5deg);
+        transform: translate(0, 1.5px) rotate(.5deg)
     }
 
-    48%,74%,82% {
-        -webkit-transform: translate(0,-.5px) rotate(.5deg);
-        transform: translate(0,-.5px) rotate(.5deg)
+    48%, 74%, 82% {
+        -webkit-transform: translate(0, -.5px) rotate(.5deg);
+        transform: translate(0, -.5px) rotate(.5deg)
     }
 
-    52%,56%,60% {
-        -webkit-transform: translate(0,2.5px) rotate(2.5deg);
-        transform: translate(0,2.5px) rotate(2.5deg)
+    52%, 56%, 60% {
+        -webkit-transform: translate(0, 2.5px) rotate(2.5deg);
+        transform: translate(0, 2.5px) rotate(2.5deg)
     }
 
     58% {
-        -webkit-transform: translate(0,.5px) rotate(2.5deg);
-        transform: translate(0,.5px) rotate(2.5deg)
+        -webkit-transform: translate(0, .5px) rotate(2.5deg);
+        transform: translate(0, .5px) rotate(2.5deg)
     }
 
     84% {
-        -webkit-transform: translate(0,1.5px) rotate(2.5deg);
-        transform: translate(0,1.5px) rotate(2.5deg)
+        -webkit-transform: translate(0, 1.5px) rotate(2.5deg);
+        transform: translate(0, 1.5px) rotate(2.5deg)
     }
 
     90% {
-        -webkit-transform: translate(0,2.5px) rotate(-.5deg);
-        transform: translate(0,2.5px) rotate(-.5deg)
+        -webkit-transform: translate(0, 2.5px) rotate(-.5deg);
+        transform: translate(0, 2.5px) rotate(-.5deg)
     }
 
     92% {
-        -webkit-transform: translate(0,.5px) rotate(-.5deg);
-        transform: translate(0,.5px) rotate(-.5deg)
+        -webkit-transform: translate(0, .5px) rotate(-.5deg);
+        transform: translate(0, .5px) rotate(-.5deg)
     }
 
     94% {
-        -webkit-transform: translate(0,2.5px) rotate(.5deg);
-        transform: translate(0,2.5px) rotate(.5deg)
+        -webkit-transform: translate(0, 2.5px) rotate(.5deg);
+        transform: translate(0, 2.5px) rotate(.5deg)
     }
 
-    0%,100% {
-        -webkit-transform: translate(0,0) rotate(0);
-        transform: translate(0,0) rotate(0)
+    0%, 100% {
+        -webkit-transform: translate(0, 0) rotate(0);
+        transform: translate(0, 0) rotate(0)
     }
 }
-
 
 /*
  * Login
@@ -5441,7 +5342,7 @@ i.iconfont.down {
     margin: auto;
     /* width: 400px; */
     text-align: center;
-    background: #fff;
+    /* background: #fff; */
     max-width: 330px;
 }
 
@@ -5482,7 +5383,7 @@ i.iconfont.down {
     outline: none;
     border-radius: 3px;
     font-size: 16px;
-    font: 300 14px miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+    font: 300 14px miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;
@@ -5676,7 +5577,6 @@ i.iconfont.down {
     }
 }
 
-
 /*
  * 打赏
  */
@@ -5782,7 +5682,6 @@ i.iconfont.down {
     z-index: 99999999;
     pointer-events: none;
 }
-
 
 /*
  * 友链
