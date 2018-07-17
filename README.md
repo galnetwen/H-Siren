@@ -60,7 +60,7 @@
 某些主机上使用主题会导致个别界面错位。
 
 ### 获得主题
-前往我的 [Github](https://github.com/galnetwen/H-Siren "Github") 去狠狠地 Star 吧！![](https://haremu.com/wp-content/themes/Siren/OwO/images/emoticon_002.png)
+前往我的 [Github](https://github.com/galnetwen/H-Siren "Github") 去狠狠地 Star 吧！
 
 ### 注意事项
 
