@@ -401,7 +401,7 @@ var home = location.href,
                     // If there is no link, that is the last page, then remove the navigation
                         $("#pagination").html("<span>Don't have more ...</span>");
                     }
-                    if (Poi.live2d_tips == 'open') { initTips() } // 重载 Live2D 提示
+                    if (Poi.live2d_tips == 'open') { initTips() }; // 重载 Live2D 提示
                 }
             });
             return false;
@@ -606,15 +606,8 @@ $(function() {
             NProgress.done();
             $("#loading").fadeOut(500);
             if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
-            if($('.ds-thread').length > 0) { // 解决多说问题
-                if(typeof DUOSHUO !== 'undefined'){
-                    DUOSHUO.EmbedThread('.ds-thread');
-                }else{
-                    $.getScript("//static.duoshuo.com/embed.js");
-                }
-            }
-            if(Poi.live2d_tips == 'open'){ initTips() } // 重载 Live2D 提示
-            if(Poi.picture_zoom == 'open'){ initImg() } // 重载图片放大实例
+            if(Poi.live2d_tips == 'open'){ initTips() }; // 重载 Live2D 提示
+            if(Poi.picture_zoom == 'open'){ initImg() }; // 重载图片放大实例
         }).on('submit', '.search-form,.s-search', function (event) {
             event.preventDefault();
             $.pjax.submit(event, '#page', {
