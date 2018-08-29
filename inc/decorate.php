@@ -112,10 +112,6 @@ function customizer_css()
 
         <?php }
 
-        if ( akina_option('site_custom_style') ) {
-            echo akina_option('site_custom_style');
-        }
-
         if ( akina_option('list_type') == 'square') { ?>
         .feature i,
         .feature img {
@@ -301,7 +297,14 @@ function customizer_css()
             }
         }
 
-        <?php } ?>
+        <?php }
+
+        if ( akina_option('site_custom_style') ) {
+            echo akina_option('site_custom_style');
+        }
+
+        ?>
+
     </style>
 <?php }
 
