@@ -412,7 +412,7 @@ var home = location.href,
     XCS: function(){
         var __cancel = jQuery('#cancel-comment-reply-link'),
             __cancel_text = __cancel.text(),
-            __list = 'commentwrap';//your comment wrapprer
+            __list = 'commentwrap'; // your comment wrapprer
         jQuery(document).on("submit", "#commentform", function() {
             jQuery.ajax({
                 url: Poi.ajaxurl,
@@ -450,7 +450,7 @@ var home = location.href,
                         }
                     }
                     t.createButterbar("提交成功");
-                      $('#comments_edit').html('');
+                        $('#comments_edit').html('');
                     cancel.style.display = 'none';
                     cancel.onclick = null;
                     t.I('comment_parent').value = '0';
@@ -458,6 +458,7 @@ var home = location.href,
                         temp.parentNode.insertBefore(respond, temp);
                         temp.parentNode.removeChild(temp)
                     }
+                    if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
                 }
             });
             return false;
