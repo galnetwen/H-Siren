@@ -80,7 +80,6 @@
     </div>
     <div class="search_close"></div>
 </form><!-- search -->
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <?php wp_footer(); ?>
 <?php if (akina_option('live2d_s') != '0') { ?>
     <script type="text/javascript">
@@ -103,7 +102,7 @@
 <?php } ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/OwO/meme.js"></script>
 <?php if (akina_option('click_effect') != '0') { ?>
-    <script type="text/javascript" src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.min.js"></script>
     <script type="text/javascript">
         if (screen && screen.width > 860) {
             document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fireworks.js"><\/script>');

@@ -128,3 +128,6 @@ H-Siren/images/custom/
 **2018.08.29**
 - 修复自定义CSS无法覆盖默认CSS的问题
 - 修复评论提交代码时，Prism 代码高亮不生效的问题  
+
+**2018.10.03**
+- 替换 Bootcss CDN 为 Jsdelivr CDN

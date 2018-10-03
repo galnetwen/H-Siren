@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.2.0.180829');
+define('SIREN_VERSION', '4.2.1.181003');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -231,7 +231,7 @@ add_action( 'widgets_init', 'akina_widgets_init' );
 function akina_scripts()
 {
     wp_enqueue_style('siren', get_stylesheet_uri(), array(), SIREN_VERSION);
-    //wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.min.js', array(), SIREN_VERSION, true ); 
+    wp_enqueue_script( 'jq', 'https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js', array(), SIREN_VERSION, true );
     wp_enqueue_script('pjax-libs', get_template_directory_uri() . '/js/jquery.pjax.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('input', get_template_directory_uri() . '/js/input.min.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SIREN_VERSION, true);
