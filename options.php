@@ -772,6 +772,12 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('评论框预置文字', 'options_framework_theme'),
+        'id' => 'comments_text',
+        'std' => '还不快点说点什么呀……',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('评论框富文本粘贴', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启，开启后可以在评论框粘贴带格式的富文本图文内容并且支持发表', 'options_framework_theme'),
         'id' => 'open_rtf',
