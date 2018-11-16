@@ -305,7 +305,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('总开关', 'options_framework_theme'),
-        'desc' => __('默认开启，勾选关闭', 'options_framework_theme'),
+        'desc' => __('默认开启，勾选关闭，仅在 PC 端生效', 'options_framework_theme'),
         'id' => 'head_focus',
         'std' => '0',
         'type' => 'checkbox');
@@ -389,13 +389,6 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('文章页', 'options_framework_theme'),
         'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('图片放大', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
-        'id' => 'zoom_c',
-        'std' => '0',
-        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('文章点赞', 'akina'),
@@ -557,7 +550,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('总开关', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
         'id' => 'top_feature',
         'std' => '0',
         'type' => 'checkbox');
@@ -640,9 +633,16 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('PJAX局部刷新', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，原理与AJAX相同', 'options_framework_theme'),
+        'name' => __('页面PJAX加载', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
         'id' => 'poi_pjax',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Prism PJAX', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，开启前需要先安装 Prism 插件，这个功能是解决 Prism 因页面 PJAX 加载而失效的问题', 'options_framework_theme'),
+        'id' => 'open_prism_codelamp',
         'std' => '0',
         'type' => 'checkbox');
 
@@ -655,14 +655,28 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('页面点击特效', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
         'id' => 'click_effect',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('文章图片放大', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
+        'id' => 'zoom_c',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('图片懒加载', 'options_framework_theme'),
+        'desc' => __('默认开启，仅对首页文章列表和文章内的图片生效，同时文章内的图片 ALT 信息会过滤去掉，开启对 SEO 不利', 'options_framework_theme'),
+        'id' => 'laziness_img',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('博客看板娘', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
         'id' => 'live2d_s',
         'std' => '0',
         'type' => 'checkbox');
@@ -765,13 +779,6 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('代码高亮PJAX', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，仅支持 Prism 高亮插件的PJAX加载，使用前需要先安装该插件', 'options_framework_theme'),
-        'id' => 'open_prism_codelamp',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
         'name' => __('评论框预置文字', 'options_framework_theme'),
         'id' => 'comments_text',
         'std' => '还不快点说点什么呀……',
@@ -837,21 +844,21 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('指定登录地址', 'options_framework_theme'),
-        'desc' => __('仅是替换登录入口处的URL，不能修改 WP 登录地址', 'options_framework_theme'),
+        'desc' => __('仅是替换登录入口处的 URL，不能修改 WordPress 的登录地址，推荐使用 WPS Hide LOGIN 插件修改后台登陆地址', 'options_framework_theme'),
         'id' => 'new_login_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('指定注册地址', 'options_framework_theme'),
-        'desc' => __('该链接使用在前台登录页面作为注册入口，建议填写', 'options_framework_theme'),
+        'desc' => __('填写该链接将出现在前台登录页面模板作为注册入口，目前前台注册模板失效已去除，可以填写后台注册地址', 'options_framework_theme'),
         'id' => 'exregister_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('登录自动跳转', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，管理员跳转至后台，用户跳转至主页', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，管理员跳转至后台，用户跳转至主页，但已登录用户进入前台登录模板又会跳转至后台，不打算修复，建议不开启', 'options_framework_theme'),
         'id' => 'login_urlskip',
         'std' => '0',
         'type' => 'checkbox');

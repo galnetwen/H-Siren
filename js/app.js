@@ -402,6 +402,7 @@ var home = location.href,
                         $("#pagination").html("<span>Don't have more ...</span>");
                     }
                     if (Poi.live2d_tips == 'open') { initTips() }; // 重载 Live2D 提示
+                    if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
                 }
             });
             return false;
@@ -458,7 +459,7 @@ var home = location.href,
                         temp.parentNode.insertBefore(respond, temp);
                         temp.parentNode.removeChild(temp)
                     }
-                    if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
+                    if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
                 }
             });
             return false;
@@ -541,7 +542,7 @@ var home = location.href,
                     $('#loading-comments').slideUp('fast');
                     $('#loading-comments').after(result.fadeIn(500));
                     $('ul.commentwrap').after(nextlink);
-                    if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
+                    if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
                 }
             });
         });
@@ -606,16 +607,17 @@ $(function() {
             Siren.CE();
             NProgress.done();
             $("#loading").fadeOut(500);
-            if(Poi.codelamp == 'open'){ Prism.highlightAll() }; // 解决Prism代码高亮
-            if(Poi.live2d_tips == 'open'){ initTips() }; // 重载 Live2D 提示
-            if(Poi.picture_zoom == 'open'){ initImg() }; // 重载图片放大实例
+            if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+            if (Poi.live2d_tips == 'open') { initTips() }; // 重载 Live2D 提示
+            if (Poi.picture_zoom == 'open') { initImg() }; // 重载图片放大实例
+            if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
         }).on('submit', '.search-form,.s-search', function (event) {
             event.preventDefault();
             $.pjax.submit(event, '#page', {
                 fragment:'#page',
                 timeout:8000,
             });
-            if($('.js-search.is-visible').length > 0){
+            if ($('.js-search.is-visible').length > 0) {
                 $('.js-toggle-search').toggleClass('is-active');
                 $('.js-search').toggleClass('is-visible');
             }
@@ -756,4 +758,13 @@ if(Poi.picture_zoom == 'open' && screen && screen.width > 860) {
         })
     }
     initImg();
+}
+
+//图片懒加载初始化
+if(Poi.laziness_img == 'open') {
+    function lazinessImg() {
+        var images = document.querySelectorAll(".lazinessImg");
+        lazyload(images);
+    }
+    lazinessImg();
 }

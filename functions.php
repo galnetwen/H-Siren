@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.2.2.181022');
+define('SIREN_VERSION', '4.2.3.181117');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -247,6 +247,7 @@ function akina_scripts()
     $live2d_tips = akina_option('live2d_s') ? 'open' : 'close';
     $hitokoto = akina_option('hitokoto_o') ? 'open' : 'close';
     $picture_zoom = akina_option('zoom_c') ? 'open' : 'close';
+    $laziness_img = akina_option('laziness_img') ? 'open' : 'close';
     if (wp_is_mobile()) $auto_height = 'fixed';    //拦截移动端
     wp_localize_script('app', 'Poi', array(
         'pjax' => akina_option('poi_pjax'),
@@ -256,6 +257,7 @@ function akina_scripts()
         'live2d_tips' => $live2d_tips,
         'hitokoto' => $hitokoto,
         'picture_zoom' => $picture_zoom,
+        'laziness_img' => $laziness_img,
         'ajaxurl' => admin_url('admin-ajax.php'),
         'order' => get_option('comment_order'),    //ajax comments
         'formpostion' => 'bottom'    //ajax comments
@@ -682,3 +684,18 @@ function sig_add_editor_styles()
 }
 
 add_action('init', 'sig_add_editor_styles');
+
+//文章内图片懒加载替换处理
+if (akina_option('laziness_img') == true) {
+    $preset = 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.5.3/img/svg/loader/trans.ajax-spinner-preloader.svg';
+    function lazinessImg($content)
+    {
+        global $preset;
+        $imgsrc = '/\<img.*?src\="(.*?)"[^>]*>/i';
+        $replace = "<img class=\"lazinessImg\" src=\"$preset\" data-src=\"\$1\">";
+        $content = preg_replace($imgsrc, $replace, $content);
+        return $content;
+    }
+
+    add_filter('the_content', 'lazinessImg');
+}

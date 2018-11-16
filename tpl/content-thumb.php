@@ -12,7 +12,7 @@ while (have_posts()) : the_post();
     $i++;
 
     if (has_post_thumbnail()) {
-        $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+        $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
         $post_img = $large_image_url[0];
     } else {
         $post_img = get_random_bg_url();
@@ -21,7 +21,13 @@ while (have_posts()) : the_post();
     $the_cat = get_the_category();
     ?>
     <article class="post post-list-thumbs" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <?php if (akina_option('laziness_img') != '0') {
+        global $preset;
+    ?>
+        <div class="post-thumbs lazinessImg" style="background-image: url(<?php echo $preset; ?>);" data-src="<?php echo $post_img; ?>">
+            <?php } else { ?>
         <div class="post-thumbs" style="background-image: url(<?php echo $post_img; ?>);">
+            <?php } ?>
             <a href="<?php the_permalink(); ?>"></a>
         </div>
         <div class="post-content-wraps">
