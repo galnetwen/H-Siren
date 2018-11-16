@@ -669,7 +669,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('图片懒加载', 'options_framework_theme'),
-        'desc' => __('默认开启，仅对首页文章列表和文章内的图片生效，同时文章内的图片 ALT 信息会过滤去掉，开启对 SEO 不利', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅对首页文章列表和文章内的图片生效，同时文章内的图片 ALT 信息会过滤去掉，开启对 SEO 不利', 'options_framework_theme'),
         'id' => 'laziness_img',
         'std' => '0',
         'type' => 'checkbox');
