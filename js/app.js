@@ -1,8 +1,8 @@
 /*
- * Siren application js
+ * Siren application
  * @author Louie
  * @url http://i94.me
- * @date 2016.11.19
+ * @date 2018.11.19
  */
 
 // baguetteBox Libs
@@ -42,14 +42,14 @@ var baguetteBox = function() {
             S = !1
         }), m(document, "keydown", function(t) {
             switch (t.keyCode) {
-            case 37:
-                c();
-                break;
-            case 39:
-                u();
-                break;
-            case 27:
-                r()
+                case 37:
+                    c();
+                    break;
+                case 39:
+                    u();
+                    break;
+                case 27:
+                    r()
             }
         })
     }
@@ -187,397 +187,397 @@ var home = location.href,
     s = $('#bgvideo')[0],
     Siren = {
 
-    // 移动端菜单
-    MN: function(){
-        $('.iconflat').on('click', function () {
-            $('body').toggleClass('navOpen');
-            $('#main-container,#mo-nav,.openNav').toggleClass('open');
-        });
-    },
+        // 移动端菜单
+        MN: function(){
+            $('.iconflat').on('click', function () {
+                $('body').toggleClass('navOpen');
+                $('#main-container,#mo-nav,.openNav').toggleClass('open');
+            });
+        },
 
-    // 移动端菜单自动隐藏
-    MNH: function(){
-        if($('body').hasClass('navOpen')){
-            $('body').toggleClass('navOpen');
-            $('#main-container,#mo-nav,.openNav').toggleClass('open');
-        }
-    },
-
-    // 背景视频
-    splay: function(){ // 播放
-        $('#video-btn').addClass('video-pause').removeClass('video-play').show();
-        $('.video-stu').css({"bottom":"-100px"});
-        $('.focusinfo').css({"top":"-999px"});
-        s.play();
-    },
-    spause: function(){ // 暂停
-        $('#video-btn').addClass('video-play').removeClass('video-pause');
-        $('.focusinfo').css({"top":"49.3%"});
-        s.pause();
-    },
-    liveplay: function(){ // 自动续播 - 播放
-        if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
-        if($('.videolive').length > 0){ // 检查播放状态
-                Siren.splay();
+        // 移动端菜单自动隐藏
+        MNH: function(){
+            if($('body').hasClass('navOpen')){
+                $('body').toggleClass('navOpen');
+                $('#main-container,#mo-nav,.openNav').toggleClass('open');
             }
-        }
-    },
-    livepause: function(){
-        if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
-            Siren.spause();
-            $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
-        }
-    },
-    addsource: function(){
-        $('.video-stu').html('正在载入视频 ...').css({"bottom":"0px"});
-        var t = Poi.movies.name.split(","), // 视频列表
-        _t = t[Math.floor(Math.random() * t.length)]; // 随机抽取视频
-        $('#bgvideo').attr('src',Poi.movies.url+'/'+ _t +'.mp4');
-        $('#bgvideo').attr('video-name',_t);
-    },
-    LV: function(){
-        var _btn = $('#video-btn');
-        _btn.on('click', function(){
-            if($(this).hasClass('loadvideo')){
-                $(this).addClass('video-pause').removeClass('loadvideo').hide();
-                Siren.addsource();
-                s.oncanplay = function() { // 数据可用时
+        },
+
+        // 背景视频
+        splay: function(){ // 播放
+            $('#video-btn').addClass('video-pause').removeClass('video-play').show();
+            $('.video-stu').css({"bottom":"-100px"});
+            $('.focusinfo').css({"top":"-999px"});
+            s.play();
+        },
+        spause: function(){ // 暂停
+            $('#video-btn').addClass('video-play').removeClass('video-pause');
+            $('.focusinfo').css({"top":"49.3%"});
+            s.pause();
+        },
+        liveplay: function(){ // 自动续播 - 播放
+            if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
+                if($('.videolive').length > 0){ // 检查播放状态
                     Siren.splay();
-                    $('#video-add').show();
-                    _btn.addClass('videolive');
-                    _btn.addClass('haslive'); // MDZZ
                 }
-            }else{
-                if($(this).hasClass('video-pause')){
-                    Siren.spause();
-                    _btn.removeClass('videolive');
-                    $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
+            }
+        },
+        livepause: function(){
+            if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
+                Siren.spause();
+                $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
+            }
+        },
+        addsource: function(){
+            $('.video-stu').html('正在载入视频 ...').css({"bottom":"0px"});
+            var t = Poi.movies.name.split(","), // 视频列表
+                _t = t[Math.floor(Math.random() * t.length)]; // 随机抽取视频
+            $('#bgvideo').attr('src',Poi.movies.url+'/'+ _t +'.mp4');
+            $('#bgvideo').attr('video-name',_t);
+        },
+        LV: function(){
+            var _btn = $('#video-btn');
+            _btn.on('click', function(){
+                if($(this).hasClass('loadvideo')){
+                    $(this).addClass('video-pause').removeClass('loadvideo').hide();
+                    Siren.addsource();
+                    s.oncanplay = function() { // 数据可用时
+                        Siren.splay();
+                        $('#video-add').show();
+                        _btn.addClass('videolive');
+                        _btn.addClass('haslive'); // MDZZ
+                    }
                 }else{
-                    Siren.splay();
-                    _btn.addClass('videolive'); // 用于判断切换页面时的状态
+                    if($(this).hasClass('video-pause')){
+                        Siren.spause();
+                        _btn.removeClass('videolive');
+                        $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
+                    }else{
+                        Siren.splay();
+                        _btn.addClass('videolive'); // 用于判断切换页面时的状态
+                    }
+                }
+                s.onended = function(){ // 播放结束后
+                    $('#bgvideo').attr('src','');
+                    $('#video-add').hide();
+                    _btn.addClass('loadvideo').removeClass('video-pause');
+                    _btn.removeClass('videolive');
+                    _btn.removeClass('haslive');
+                    $('.focusinfo').css({"top":"49.3%"});
+                }
+            });
+            $('#video-add').on('click', function(){
+                Siren.addsource();
+            });
+        },
+
+        // 自适应窗口高度
+        AH: function(){
+            if(Poi.windowheight == 'auto'){
+                if ($('h1.main-title').length > 0){
+                    var _height = $(window).height();
+                    $('#centerbg').css({'height':_height});
+                    $('#bgvideo').css({'min-height':_height});
+                    $(window).resize(function(){
+                        Siren.AH();
+                    });
+                }
+            }else{
+                $('.headertop').addClass('headertop-bar');
+            }
+        },
+
+        // 进程
+        PE: function(){
+            if($('.headertop').length > 0){
+                if($('h1.main-title').length > 0){
+                    $('.blank').css({"padding-top":"0px"});
+                    $('.headertop').css({"height":"auto"}).show();
+                    // 当前位置为首页并且视频原处于播放状态
+                    if(Poi.movies.live == 'open') Siren.liveplay();
+                }else{
+                    $('.blank').css({"padding-top":"80px"});
+                    $('.headertop').css({"height":"0px"}).hide();
+                    // 其他页面暂停视频
+                    Siren.livepause();
                 }
             }
-            s.onended = function(){ // 播放结束后
-                $('#bgvideo').attr('src','');
-                $('#video-add').hide();
-                _btn.addClass('loadvideo').removeClass('video-pause');
-                _btn.removeClass('videolive');
-                _btn.removeClass('haslive');
-                $('.focusinfo').css({"top":"49.3%"});
-            }
-        });
-        $('#video-add').on('click', function(){
-            Siren.addsource();
-        });
-    },
+        },
 
-    // 自适应窗口高度
-    AH: function(){
-        if(Poi.windowheight == 'auto'){
-            if ($('h1.main-title').length > 0){
-                var _height = $(window).height();
-                $('#centerbg').css({'height':_height});
-                $('#bgvideo').css({'min-height':_height});
-                $(window).resize(function(){
-                    Siren.AH();
-                });
-            }
-        }else{
-            $('.headertop').addClass('headertop-bar');
-        }
-    },
+        // 点击事件
+        CE: function(){
+            // 显示&隐藏评论
+            $('.comments-hidden').show();
+            $('.comments-main').hide();
+            $('.comments-hidden').click(function(){
+                $('.comments-main').slideDown(500);
+                $('.comments-hidden').hide();
+            });
 
-    // 进程
-    PE: function(){
-        if($('.headertop').length > 0){
-            if($('h1.main-title').length > 0){
-                $('.blank').css({"padding-top":"0px"});
-                $('.headertop').css({"height":"auto"}).show();
-                // 当前位置为首页并且视频原处于播放状态
-                if(Poi.movies.live == 'open') Siren.liveplay();
-            }else{
-                $('.blank').css({"padding-top":"80px"});
-                $('.headertop').css({"height":"0px"}).hide();
-                // 其他页面暂停视频
-                Siren.livepause();
-            }
-        }
-    },
+            // 归档页
+            $('.archives').hide();
+            $('.archives:first').show();
+            $('#archives-temp h3').click(function() {
+                $(this).next().slideToggle('fast');
+                return false;
+            });
 
-    // 点击事件
-    CE: function(){
-        // 显示&隐藏评论
-        $('.comments-hidden').show();
-        $('.comments-main').hide();
-        $('.comments-hidden').click(function(){
-            $('.comments-main').slideDown(500);
-            $('.comments-hidden').hide();
-        });
+            // 灯箱
+            baguetteBox.run('.entry-content', {
+                captions: function(element) {
+                    return element.getElementsByTagName('img')[0].alt;
+                }
+            });
 
-        // 归档页
-        $('.archives').hide();
-        $('.archives:first').show();
-        $('#archives-temp h3').click(function() {
-            $(this).next().slideToggle('fast');
-            return false;
-        });
-
-        // 灯箱
-        baguetteBox.run('.entry-content', {
-            captions: function(element) {
-                return element.getElementsByTagName('img')[0].alt;
-            }
-        });
-
-        // 搜索框
-        $('.js-toggle-search').on('click', function () {
-            $('.js-toggle-search').toggleClass('is-active');
-            $('.js-search').toggleClass('is-visible');
-        });
-        $('.search_close').on('click', function () {
-            if($('.js-search').hasClass('is-visible')){
+            // 搜索框
+            $('.js-toggle-search').on('click', function () {
                 $('.js-toggle-search').toggleClass('is-active');
                 $('.js-search').toggleClass('is-visible');
-            }
-        });
+            });
+            $('.search_close').on('click', function () {
+                if($('.js-search').hasClass('is-visible')){
+                    $('.js-toggle-search').toggleClass('is-active');
+                    $('.js-search').toggleClass('is-visible');
+                }
+            });
 
-        // 导航菜单
-        $('#show-nav').on('click', function () {
-            if($('#show-nav').hasClass('showNav')){
-                $('#show-nav').removeClass('showNav').addClass('hideNav');
-                $('.site-top .lower nav').addClass('navbar');
-            }else{
-                $('#show-nav').removeClass('hideNav').addClass('showNav');
-                $('.site-top .lower nav').removeClass('navbar');
-            }
-        });
-
-        // 过渡动画
-        $("#loading").click(function() {
-            $("#loading").fadeOut(500);
-        });
-    },
-
-    // 显示&隐藏导航栏
-    NH: function(){
-        var h1 = 0,
-            h2 = 50,
-            ss = $(document).scrollTop();
-        $(window).scroll(function(){
-            var s = $(document).scrollTop();
-            if(s== h1){
-                $('.site-header').removeClass('yya');
-            }if(s > h1){
-                $('.site-header').addClass('yya');
-            }if(s > h2){
-                $('.site-header').addClass('gizle');
-                if(s > ss){
-                    $('.site-header').removeClass('sabit');
+            // 导航菜单
+            $('#show-nav').on('click', function () {
+                if($('#show-nav').hasClass('showNav')){
+                    $('#show-nav').removeClass('showNav').addClass('hideNav');
+                    $('.site-top .lower nav').addClass('navbar');
                 }else{
-                    $('.site-header').addClass('sabit');
-                }
-                ss = s;
-            }
-        });
-    },
-
-    // Ajax加载文章
-    XLS: function(){
-        $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
-        $('body').on('click', '#pagination a', function(){
-        $(this).addClass("loading").text("");
-        $.ajax({
-            type: "POST",
-                url: $(this).attr("href") + "#main",
-                success: function(data){
-                    result = $(data).find("#main .post");
-                    nextHref = $(data).find("#pagination a").attr("href");
-                    // In the new content
-                    $("#main").append(result.fadeIn(500));
-                    $("#pagination a").removeClass("loading").text("Previous");
-                    if ( nextHref != undefined ) {
-                        $("#pagination a").attr("href", nextHref);
-                    } else {
-                    // If there is no link, that is the last page, then remove the navigation
-                        $("#pagination").html("<span>Don't have more ...</span>");
-                    }
-                    if (Poi.live2d_tips == 'open') { initTips() }; // 重载 Live2D 提示
-                    if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
+                    $('#show-nav').removeClass('hideNav').addClass('showNav');
+                    $('.site-top .lower nav').removeClass('navbar');
                 }
             });
-            return false;
-        });
-    },
 
-    // Ajax评论提交
-    XCS: function(){
-        var __cancel = jQuery('#cancel-comment-reply-link'),
-            __cancel_text = __cancel.text(),
-            __list = 'commentwrap'; // your comment wrapprer
-        jQuery(document).on("submit", "#commentform", function() {
-            jQuery.ajax({
-                url: Poi.ajaxurl,
-                data: jQuery(this).serialize() + "&action=ajax_comment",
-                type: jQuery(this).attr('method'),
-                beforeSend: addComment.createButterbar("提交中...."),
-                error: function(request) {
-                    var t = addComment;
-                    t.createButterbar(request.responseText);
-                },
-                success: function(data) {
-                    jQuery('textarea').each(function() {
-                        this.value = ''
-                    });
-                    var t = addComment,
-                        cancel = t.I('cancel-comment-reply-link'),
-                        temp = t.I('wp-temp-form-div'),
-                        respond = t.I(t.respondId),
-                        post = t.I('comment_post_ID').value,
-                        parent = t.I('comment_parent').value;
-                    if (parent != '0') {
-                        jQuery('#respond').before('<ol class="children">' + data + '</ol>');
-                    } else if (!jQuery('.' + __list ).length) {
-                        if (Poi.formpostion == 'bottom') {
-                            jQuery('#respond').before('<ol class="' + __list + '">' + data + '</ol>');
-                        } else {
-                            jQuery('#respond').after('<ol class="' + __list + '">' + data + '</ol>');
-                        }
+            // 过渡动画
+            $("#loading").click(function() {
+                $("#loading").fadeOut(500);
+            });
+        },
 
-                    } else {
-                        if (Poi.order == 'asc') {
-                            jQuery('.' + __list ).append(data); // your comments wrapper
-                        } else {
-                            jQuery('.' + __list ).prepend(data); // your comments wrapper
-                        }
+        // 显示&隐藏导航栏
+        NH: function(){
+            var h1 = 0,
+                h2 = 50,
+                ss = $(document).scrollTop();
+            $(window).scroll(function(){
+                var s = $(document).scrollTop();
+                if(s== h1){
+                    $('.site-header').removeClass('yya');
+                }if(s > h1){
+                    $('.site-header').addClass('yya');
+                }if(s > h2){
+                    $('.site-header').addClass('gizle');
+                    if(s > ss){
+                        $('.site-header').removeClass('sabit');
+                    }else{
+                        $('.site-header').addClass('sabit');
                     }
-                    t.createButterbar("提交成功");
-                        $('#comments_edit').html('');
-                    cancel.style.display = 'none';
-                    cancel.onclick = null;
-                    t.I('comment_parent').value = '0';
-                    if (temp && respond) {
-                        temp.parentNode.insertBefore(respond, temp);
-                        temp.parentNode.removeChild(temp)
-                    }
-                    if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                    ss = s;
                 }
             });
-            return false;
-        });
-        addComment = {
-            moveForm: function(commId, parentId, respondId) {
-                var t = this,
-                    div, comm = t.I(commId),
-                    respond = t.I(respondId),
-                    cancel = t.I('cancel-comment-reply-link'),
-                    parent = t.I('comment_parent'),
-                    post = t.I('comment_post_ID');
-                __cancel.text(__cancel_text);
-                t.respondId = respondId;
-                if (!t.I('wp-temp-form-div')) {
-                    div = document.createElement('div');
-                    div.id = 'wp-temp-form-div';
-                    div.style.display = 'none';
-                    respond.parentNode.insertBefore(div, respond)
-                }!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
-                var textarea = $('#comments_edit'),top = {scrollTop:textarea.offset().top-400};
-                $('body').animate(top);
-                $(document.documentElement).animate(top);
-                setTimeout(function(){textarea.focus();},400);
-                parent.value = parentId;
-                cancel.style.display = '';
-                cancel.onclick = function() {
-                    var t = addComment,
-                        temp = t.I('wp-temp-form-div'),
-                        respond = t.I(t.respondId);
-                    t.I('comment_parent').value = '0';
-                    if (temp && respond) {
-                        temp.parentNode.insertBefore(respond, temp);
-                        temp.parentNode.removeChild(temp);
+        },
+
+        // Ajax加载文章
+        XLS: function(){
+            $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
+            $('body').on('click', '#pagination a', function(){
+                $(this).addClass("loading").text("");
+                $.ajax({
+                    type: "POST",
+                    url: $(this).attr("href") + "#main",
+                    success: function(data){
+                        result = $(data).find("#main .post");
+                        nextHref = $(data).find("#pagination a").attr("href");
+                        // In the new content
+                        $("#main").append(result.fadeIn(500));
+                        $("#pagination a").removeClass("loading").text("Previous");
+                        if ( nextHref != undefined ) {
+                            $("#pagination a").attr("href", nextHref);
+                        } else {
+                            // If there is no link, that is the last page, then remove the navigation
+                            $("#pagination").html("<span>Don't have more ...</span>");
+                        }
+                        if (Poi.live2d_tips == 'open') { live2d_Tips() }; // 重载 Live2D 提示
+                        if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
                     }
-                    this.style.display = 'none';
-                    this.onclick = null;
-                    return false;
-                };
-                try {
-                    t.I('comment').focus();
-                } catch (e) {}
+                });
                 return false;
-            },
-            I: function(e) {
-                return document.getElementById(e);
-            },
-            clearButterbar: function(e) {
-                if (jQuery(".butterBar").length > 0) {
-                    jQuery(".butterBar").remove();
-                }
-            },
-            createButterbar: function(message) {
-                var t = this;
-                t.clearButterbar();
-                jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
-                setTimeout("jQuery('.butterBar').remove()", 3000);
-            }
-        };
-    },
+            });
+        },
 
-    // Ajax评论分页
-    XCP: function(){
-        $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
-        $('body').on('click', '#comments-navi a', function(e){
-            e.preventDefault();
-            $.ajax({
-                type: "GET",
-                url: $(this).attr('href'),
-                beforeSend: function(){
-                    $('#comments-navi').remove();
-                    $('ul.commentwrap').remove();
-                    $('#loading-comments').slideDown();
-                    $body.animate({scrollTop: $('#comments-list-title').offset().top - 65}, 800 );
+        // Ajax评论提交
+        XCS: function(){
+            var __cancel = jQuery('#cancel-comment-reply-link'),
+                __cancel_text = __cancel.text(),
+                __list = 'commentwrap'; // your comment wrapprer
+            jQuery(document).on("submit", "#commentform", function() {
+                jQuery.ajax({
+                    url: Poi.ajaxurl,
+                    data: jQuery(this).serialize() + "&action=ajax_comment",
+                    type: jQuery(this).attr('method'),
+                    beforeSend: addComment.createButterbar("提交中...."),
+                    error: function(request) {
+                        var t = addComment;
+                        t.createButterbar(request.responseText);
+                    },
+                    success: function(data) {
+                        jQuery('textarea').each(function() {
+                            this.value = ''
+                        });
+                        var t = addComment,
+                            cancel = t.I('cancel-comment-reply-link'),
+                            temp = t.I('wp-temp-form-div'),
+                            respond = t.I(t.respondId),
+                            post = t.I('comment_post_ID').value,
+                            parent = t.I('comment_parent').value;
+                        if (parent != '0') {
+                            jQuery('#respond').before('<ol class="children">' + data + '</ol>');
+                        } else if (!jQuery('.' + __list ).length) {
+                            if (Poi.formpostion == 'bottom') {
+                                jQuery('#respond').before('<ol class="' + __list + '">' + data + '</ol>');
+                            } else {
+                                jQuery('#respond').after('<ol class="' + __list + '">' + data + '</ol>');
+                            }
+
+                        } else {
+                            if (Poi.order == 'asc') {
+                                jQuery('.' + __list ).append(data); // your comments wrapper
+                            } else {
+                                jQuery('.' + __list ).prepend(data); // your comments wrapper
+                            }
+                        }
+                        t.createButterbar("提交成功");
+                        $('#comments_edit').html('');
+                        cancel.style.display = 'none';
+                        cancel.onclick = null;
+                        t.I('comment_parent').value = '0';
+                        if (temp && respond) {
+                            temp.parentNode.insertBefore(respond, temp);
+                            temp.parentNode.removeChild(temp)
+                        }
+                        if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                    }
+                });
+                return false;
+            });
+            addComment = {
+                moveForm: function(commId, parentId, respondId) {
+                    var t = this,
+                        div, comm = t.I(commId),
+                        respond = t.I(respondId),
+                        cancel = t.I('cancel-comment-reply-link'),
+                        parent = t.I('comment_parent'),
+                        post = t.I('comment_post_ID');
+                    __cancel.text(__cancel_text);
+                    t.respondId = respondId;
+                    if (!t.I('wp-temp-form-div')) {
+                        div = document.createElement('div');
+                        div.id = 'wp-temp-form-div';
+                        div.style.display = 'none';
+                        respond.parentNode.insertBefore(div, respond)
+                    }!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
+                    var textarea = $('#comments_edit'),top = {scrollTop:textarea.offset().top-400};
+                    $('body').animate(top);
+                    $(document.documentElement).animate(top);
+                    setTimeout(function(){textarea.focus();},400);
+                    parent.value = parentId;
+                    cancel.style.display = '';
+                    cancel.onclick = function() {
+                        var t = addComment,
+                            temp = t.I('wp-temp-form-div'),
+                            respond = t.I(t.respondId);
+                        t.I('comment_parent').value = '0';
+                        if (temp && respond) {
+                            temp.parentNode.insertBefore(respond, temp);
+                            temp.parentNode.removeChild(temp);
+                        }
+                        this.style.display = 'none';
+                        this.onclick = null;
+                        return false;
+                    };
+                    try {
+                        t.I('comment').focus();
+                    } catch (e) {}
+                    return false;
                 },
-                dataType: "html",
-                success: function(out){
-                    result = $(out).find('ul.commentwrap');
-                    nextlink = $(out).find('#comments-navi');
-                    $('#loading-comments').slideUp('fast');
-                    $('#loading-comments').after(result.fadeIn(500));
-                    $('ul.commentwrap').after(nextlink);
-                    if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                I: function(e) {
+                    return document.getElementById(e);
+                },
+                clearButterbar: function(e) {
+                    if (jQuery(".butterBar").length > 0) {
+                        jQuery(".butterBar").remove();
+                    }
+                },
+                createButterbar: function(message) {
+                    var t = this;
+                    t.clearButterbar();
+                    jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+                    setTimeout("jQuery('.butterBar').remove()", 3000);
+                }
+            };
+        },
+
+        // Ajax评论分页
+        XCP: function(){
+            $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
+            $('body').on('click', '#comments-navi a', function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "GET",
+                    url: $(this).attr('href'),
+                    beforeSend: function(){
+                        $('#comments-navi').remove();
+                        $('ul.commentwrap').remove();
+                        $('#loading-comments').slideDown();
+                        $body.animate({scrollTop: $('#comments-list-title').offset().top - 65}, 800 );
+                    },
+                    dataType: "html",
+                    success: function(out){
+                        result = $(out).find('ul.commentwrap');
+                        nextlink = $(out).find('#comments-navi');
+                        $('#loading-comments').slideUp('fast');
+                        $('#loading-comments').after(result.fadeIn(500));
+                        $('ul.commentwrap').after(nextlink);
+                        if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                    }
+                });
+            });
+        },
+
+        // 输入框特效
+        IA: function(){
+            POWERMODE.colorful = true; // make power mode colorful
+            POWERMODE.shake = false; // turn off shake
+            document.body.addEventListener('input', POWERMODE)
+        },
+
+        // 返回顶部
+        GT: function(){
+            var offset = 100,
+                offset_opacity = 1200,
+                scroll_top_duration = 700,
+                $back_to_top = $('.cd-top');
+            $(window).scroll(function(){
+                ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if( $(this).scrollTop() > offset_opacity ) {
+                    $back_to_top.addClass('cd-fade-out');
                 }
             });
-        });
-    },
+            //smooth scroll to top
+            $back_to_top.on('click', function(event){
+                event.preventDefault();
+                $('body,html').animate({
+                        scrollTop: 0 ,
+                    }, scroll_top_duration
+                );
+            });
+        }
 
-    // 输入框特效
-    IA: function(){
-        POWERMODE.colorful = true; // make power mode colorful
-        POWERMODE.shake = false; // turn off shake
-        document.body.addEventListener('input', POWERMODE)
-    },
-
-    // 返回顶部
-    GT: function(){
-        var offset = 100,
-        offset_opacity = 1200,
-        scroll_top_duration = 700,
-        $back_to_top = $('.cd-top');
-        $(window).scroll(function(){
-            ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-            if( $(this).scrollTop() > offset_opacity ) {
-                $back_to_top.addClass('cd-fade-out');
-            }
-        });
-        //smooth scroll to top
-        $back_to_top.on('click', function(event){
-            event.preventDefault();
-            $('body,html').animate({
-                scrollTop: 0 ,
-                }, scroll_top_duration
-            );
-        });
     }
-
-}
 
 // Executive function
 $(function() {
@@ -608,7 +608,7 @@ $(function() {
             NProgress.done();
             $("#loading").fadeOut(500);
             if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
-            if (Poi.live2d_tips == 'open') { initTips() }; // 重载 Live2D 提示
+            if (Poi.live2d_tips == 'open') { live2d_Tips() }; // 重载 Live2D 提示
             if (Poi.picture_zoom == 'open') { initImg() }; // 重载图片放大实例
             if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
         }).on('submit', '.search-form,.s-search', function (event) {
@@ -636,17 +636,17 @@ $(function() {
         } else {
             $(this).addClass('done');
             var id = $(this).data("id"),
-            action = $(this).data('action'),
-            rateHolder = $(this).children('.count');
+                action = $(this).data('action'),
+                rateHolder = $(this).children('.count');
             var ajax_data = {
                 action: "specs_zan",
                 um_id: id,
                 um_action: action
             };
             $.post(Poi.ajaxurl, ajax_data,
-            function(data) {
-                $(rateHolder).html(data);
-            });
+                function(data) {
+                    $(rateHolder).html(data);
+                });
             return false;
         }
     };
@@ -697,7 +697,7 @@ if(Poi.hitokoto == 'open') {
 
 // AJAX删除评论
 function deleteComments(obj,children) {
-  	children = children||false;
+    children = children||false;
     function main() {
         var url = $(obj).attr('data-url');
         var arg = url.replace(/.*\?/, '');
@@ -749,22 +749,28 @@ function deleteComments(obj,children) {
     }
 }
 
+//重载 Live2D 提示
+function live2d_Tips() {
+    if (screen && screen.width > 860) {
+        initTips();
+    }
+}
+
 //图片放大初始化
-if(Poi.picture_zoom == 'open' && screen && screen.width > 860) {
-    function initImg() {
+function initImg() {
+    if(screen && screen.width > 860) {
         var zooming = new Zooming({
             defaultZoomable: '.entry-content img',
             bgColor: 'rgba(0, 0, 0, .7)'
         })
     }
-    initImg();
 }
 
 //图片懒加载初始化
-if(Poi.laziness_img == 'open') {
-    function lazinessImg() {
-        var images = document.querySelectorAll(".lazinessImg");
-        lazyload(images);
-    }
-    lazinessImg();
+function lazinessImg() {
+    var images = document.querySelectorAll(".lazinessImg");
+    lazyload(images);
 }
+
+if(Poi.picture_zoom == 'open') { initImg() }
+if(Poi.laziness_img == 'open') { lazinessImg() }
