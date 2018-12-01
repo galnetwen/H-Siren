@@ -171,6 +171,16 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('说说心情', 'akina'),
+        'id' => 'shuoshuo',
+        'std' => "no",
+        'type' => "radio",
+        'options' => array(
+            'yes' => __('开启', ''),
+            'no' => __('关闭', '')
+        ));
+
+    $options[] = array(
         'name' => __('网页背景风格', 'akina'),
         'id' => 'background_style',
         'std' => "blur",
@@ -201,6 +211,16 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('文章分页模式', 'akina'),
+        'id' => 'pagenav_style',
+        'std' => "ajax",
+        'type' => "radio",
+        'options' => array(
+            'ajax' => __('AJAX加载', ''),
+            'np' => __('翻页模式', '')
+        ));
+
+    $options[] = array(
         'name' => __('评论列表收缩', 'akina'),
         'id' => 'toggle-menu',
         'std' => "yes",
@@ -208,16 +228,6 @@ function optionsframework_options()
         'options' => array(
             'yes' => __('开启', ''),
             'no' => __('关闭', '')
-        ));
-
-    $options[] = array(
-        'name' => __('分页模式', 'akina'),
-        'id' => 'pagenav_style',
-        'std' => "ajax",
-        'type' => "radio",
-        'options' => array(
-            'ajax' => __('AJAX加载', ''),
-            'np' => __('翻页模式', '')
         ));
 
     $options[] = array(

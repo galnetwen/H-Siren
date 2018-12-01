@@ -562,17 +562,6 @@ function siren_auto_link_nofollow($content)
     return $content;
 }
 
-// 图片自动加标题
-add_filter('the_content', 'siren_auto_images_alt');
-function siren_auto_images_alt($content)
-{
-    global $post;
-    $pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-    $replacement = '<a$1href=$2$3.$4$5 alt="' . $post->post_title . '" title="' . $post->post_title . '"$6>';
-    $content = preg_replace($pattern, $replacement, $content);
-    return $content;
-}
-
 // 分类页面全部添加斜杠，利于SEO
 function siren_nice_trailingslashit($string, $type_of_url)
 {
@@ -582,7 +571,6 @@ function siren_nice_trailingslashit($string, $type_of_url)
 }
 
 add_filter('user_trailingslashit', 'siren_nice_trailingslashit', 10, 2);
-
 
 // 去除 URL 中的 categroy
 add_action('load-themes.php', 'no_category_base_refresh_rules');

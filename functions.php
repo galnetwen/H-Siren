@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.2.4.181119');
+define('SIREN_VERSION', '4.2.5.181130');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -293,6 +293,13 @@ require get_template_directory() . '/inc/categories-images.php';
  * Disable Embeds.
  */
 require get_template_directory() . '/inc/disable-embeds.php';
+
+/**
+ * Shuoshuo.
+ */
+if (akina_option('shuoshuo') == 'yes'){
+    require get_template_directory() . '/inc/shuoshuo.php';
+}
 
 /**
  * COMMENT FORMATTING

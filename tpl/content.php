@@ -18,16 +18,16 @@ if (has_post_thumbnail()) {
 <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
     <div class="post-entry">
         <div class="feature">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="overlay"><i class="iconfont">&#xe791;</i></div>
-                    <?php if (akina_option('laziness_img') != '0') {
-                        global $preset;
-                        ?>
-                        <img class="lazinessImg" src="<?php echo $preset; ?>" data-src="<?php echo $post_img; ?>">
-                    <?php } else { ?>
-                        <img src="<?php echo $post_img; ?>">
-                    <?php } ?>
-                </a>
+            <a href="<?php the_permalink(); ?>">
+                <div class="overlay"><i class="iconfont">&#xe791;</i></div>
+                <?php if (akina_option('laziness_img') != '0') {
+                    global $preset;
+                    ?>
+                    <img class="lazinessImg" src="<?php echo $preset; ?>" data-src="<?php echo $post_img; ?>">
+                <?php } else { ?>
+                    <img src="<?php echo $post_img; ?>">
+                <?php } ?>
+            </a>
         </div>
         <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         <div class="p-time">

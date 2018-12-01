@@ -44,15 +44,18 @@ if (akina_option('top_feature') == '1') {
                     </header>
                 <?php
                 endif;
-                if (akina_option('post_list_style') == 'standard') {
-                    while (have_posts()) : the_post();
+                while (have_posts()) : the_post();
+                    if (akina_option('post_list_style') == 'standard') {
                         get_template_part('tpl/content', get_post_format());
-                    endwhile;
-                } else {
-                    get_template_part('tpl/content', 'thumb');
-                }
-                ?>
-            <?php else : get_template_part('tpl/content', 'none'); endif; ?>
+                    }
+                    if (akina_option('post_list_style') == 'imageflow') {
+                        get_template_part('tpl/content', 'thumb');
+                    }
+                endwhile;
+            else :
+                get_template_part('tpl/content', 'none');
+            endif;
+            ?>
         </main>
         <?php if (akina_option('pagenav_style') == 'ajax') { ?>
             <div id="pagination"><?php next_posts_link('Previous'); ?></div>

@@ -57,6 +57,9 @@
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/live2d/css/live2d.css"/>
     <?php } ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/sweet-alert.css"/>
+    <?php if (akina_option('shuoshuo') == 'yes') { ?>
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/shuoshuo.css"/>
+    <?php } ?>
     <?php if (akina_option('zoom_c') != '0') { ?>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/zooming@1.5.0/build/zooming.min.js"></script>
     <?php } ?>
