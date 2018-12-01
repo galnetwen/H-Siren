@@ -569,8 +569,8 @@ function bolo_after_wp_tiny_mce($mce_settings)
 //Login Page style
 function custom_login()
 {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />' . "\n";
-    echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/js/jquery.min.js"></script>' . "\n";
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css">' . "\n";
+    echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>' . "\n";
 }
 
 add_action('login_head', 'custom_login');
