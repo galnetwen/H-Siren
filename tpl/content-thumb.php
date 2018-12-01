@@ -14,6 +14,8 @@ if (has_post_thumbnail()) {
     $post_img = get_random_bg_url();
 }
 
+$the_cat = get_the_category();
+
 ?>
 <article class="post post-list-thumbs" itemscope="" itemtype="http://schema.org/BlogPosting">
     <?php if (akina_option('laziness_img') != '0') {
