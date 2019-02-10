@@ -34,105 +34,98 @@ $bg_style = akina_option('focus_height') ? 'background-position: center center;b
                 <li class="wechat">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/images/sns/wechat.png"/></a>
                     <div class="wechatInner">
-                        <img src="<?php echo akina_option('wechat', ''); ?>" alt="微信公众号">
+                        <img src="<?php echo akina_option('wechat', ''); ?>" alt="微信名片">
                     </div>
                 </li>
             <?php } ?>
-            <?php if (akina_option('sina')) { ?>
+            <?php if (akina_option('lofter')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('sina', ''); ?>" target="_blank" class="social-sina" title="sina">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/sina.png"/>
-                    </a>
-                </li>
-            <?php } ?>
-            <?php if (akina_option('qq')) { ?>
-                <li class="qq">
-                    <a href="//wpa.qq.com/msgrd?v=3&uin=<?php echo akina_option('qq', ''); ?>&site=qq&menu=yes" target="_blank" title="QQ">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/qq.png"/>
+                    <a href="<?php echo akina_option('lofter', ''); ?>" target="_blank" title="乐乎">
+                        <img src="<?php bloginfo('template_url'); ?>/images/sns/lofter.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('qzone')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('qzone', ''); ?>" target="_blank" class="social-qzone" title="QQ空间">
+                    <a href="<?php echo akina_option('qzone', ''); ?>" target="_blank" title="QQ空间">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/qzone.png"/>
                     </a>
                 </li>
             <?php } ?>
-            <?php if (akina_option('github')) { ?>
+            <?php if (akina_option('sina')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/github.png"/>
-                    </a>
-                </li>
-            <?php } ?>
-            <?php if (akina_option('lofter')) { ?>
-                <li>
-                    <a href="<?php echo akina_option('lofter', ''); ?>" target="_blank" class="social-lofter" title="lofter">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/lofter.png"/>
+                    <a href="<?php echo akina_option('sina', ''); ?>" target="_blank" title="新浪微博">
+                        <img src="<?php bloginfo('template_url'); ?>/images/sns/sina.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('bili')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('bili', ''); ?>" target="_blank" class="social-bili" title="bilibili">
+                    <a href="<?php echo akina_option('bili', ''); ?>" target="_blank" title="哔哩哔哩">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/bilibili.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('youku')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('youku', ''); ?>" target="_blank" class="social-youku" title="优酷">
+                    <a href="<?php echo akina_option('youku', ''); ?>" target="_blank" title="优酷视频">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/youku.png"/>
-                    </a>
-                </li>
-            <?php } ?>
-            <?php if (akina_option('wangyiyun')) { ?>
-                <li>
-                    <a href="<?php echo akina_option('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/wangyiyun.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('twitter')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter">
+                    <a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" title="Twitter">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/twitter.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('facebook')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook">
+                    <a href="<?php echo akina_option('facebook', ''); ?>" target="_blank" title="Facebook">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/facebook.png"/>
                     </a>
                 </li>
             <?php } ?>
-            <?php if (akina_option('googleplus')) { ?>
+            <?php if (akina_option('douban')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('googleplus', ''); ?>" target="_blank" class="social-wangyiyun" title="Google+">
-                        <img src="<?php bloginfo('template_url'); ?>/images/sns/googleplus.png"/>
+                    <a href="<?php echo akina_option('douban', ''); ?>" target="_blank" title="豆瓣">
+                        <img src="<?php bloginfo('template_url'); ?>/images/sns/douban.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('jianshu')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="简书">
+                    <a href="<?php echo akina_option('jianshu', ''); ?>" target="_blank" title="简书">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/jianshu.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('zhihu')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('zhihu', ''); ?>" target="_blank" class="social-wangyiyun" title="知乎">
+                    <a href="<?php echo akina_option('zhihu', ''); ?>" target="_blank" title="知乎">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/zhihu.png"/>
                     </a>
                 </li>
             <?php } ?>
             <?php if (akina_option('csdn')) { ?>
                 <li>
-                    <a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN">
+                    <a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" title="CSDN">
                         <img src="<?php bloginfo('template_url'); ?>/images/sns/csdn.png"/>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if (akina_option('github')) { ?>
+                <li>
+                    <a href="<?php echo akina_option('github', ''); ?>" target="_blank" title="Github">
+                        <img src="<?php bloginfo('template_url'); ?>/images/sns/github.png"/>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if (akina_option('netease')) { ?>
+                <li>
+                    <a href="<?php echo akina_option('netease', ''); ?>" target="_blank" title="网易云音乐">
+                        <img src="<?php bloginfo('template_url'); ?>/images/sns/netease.png"/>
                     </a>
                 </li>
             <?php } ?>

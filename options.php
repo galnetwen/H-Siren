@@ -432,13 +432,13 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('微信打赏', 'options_framework_theme'),
-        'desc' => __('微信二维码', 'options_framework_theme'),
+        'desc' => __('上传一个微信收款码图片', 'options_framework_theme'),
         'id' => 'wechat_code',
         'type' => 'upload');
 
     $options[] = array(
         'name' => __('支付宝打赏', 'options_framework_theme'),
-        'desc' => __('支付宝二维码', 'options_framework_theme'),
+        'desc' => __('上传一个支付宝收款码图片', 'options_framework_theme'),
         'id' => 'alipay_code',
         'type' => 'upload');
 
@@ -450,105 +450,98 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('微信', 'options_framework_theme'),
-        'desc' => __('微信二维码', 'options_framework_theme'),
+        'desc' => __('上传一个微信二维码图片', 'options_framework_theme'),
         'id' => 'wechat',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('新浪微博', 'options_framework_theme'),
-        'desc' => __('微博地址', 'options_framework_theme'),
-        'id' => 'sina',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('腾讯QQ', 'options_framework_theme'),
-        'desc' => __('QQ号码', 'options_framework_theme'),
-        'id' => 'qq',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('QQ空间', 'options_framework_theme'),
-        'desc' => __('空间地址', 'options_framework_theme'),
-        'id' => 'qzone',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('GitHub', 'options_framework_theme'),
-        'desc' => __('GitHub地址', 'options_framework_theme'),
-        'id' => 'github',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
         'name' => __('乐乎', 'options_framework_theme'),
-        'desc' => __('乐乎地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'lofter',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('QQ空间', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'qzone',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('新浪微博', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'sina',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('哔哩哔哩', 'options_framework_theme'),
-        'desc' => __('B站地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'bili',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('优酷视频', 'options_framework_theme'),
-        'desc' => __('优酷地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'youku',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('网易云音乐', 'options_framework_theme'),
-        'desc' => __('云音乐地址', 'options_framework_theme'),
-        'id' => 'wangyiyun',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
         'name' => __('推特', 'options_framework_theme'),
-        'desc' => __('推特地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'twitter',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('脸书', 'options_framework_theme'),
-        'desc' => __('脸书地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'facebook',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('谷歌+', 'options_framework_theme'),
-        'desc' => __('谷歌+地址', 'options_framework_theme'),
-        'id' => 'googleplus',
+        'name' => __('豆瓣', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'douban',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('简书', 'options_framework_theme'),
-        'desc' => __('简书地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'jianshu',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('知乎', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'zhihu',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('CSDN', 'options_framework_theme'),
-        'desc' => __('CSND地址', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
         'id' => 'csdn',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('知乎', 'options_framework_theme'),
-        'desc' => __('知乎地址', 'options_framework_theme'),
-        'id' => 'zhihu',
+        'name' => __('GitHub', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'github',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('网易云音乐', 'options_framework_theme'),
+        'desc' => __('填入一个 URL 地址', 'options_framework_theme'),
+        'id' => 'netease',
         'std' => '',
         'type' => 'text');
 

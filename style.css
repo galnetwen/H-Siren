@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 后宫学长
 Author URI: https://haremu.com
 Description: Fuzzz 的 Akina 主题分支。本版由后宫学长修改，突出随机图片，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 4.2.5.181130
+Version: 4.2.7.190210
 Tags: Akina（娱乐版）
 */
 
@@ -2849,7 +2849,8 @@ ol.children {
     opacity: 0;
 }
 
-.comment .comment-reply-link {
+.comment .comment-reply-link,
+.comment .comment-reply-login {
     font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     font-size: 12px;
     display: block;
@@ -2883,18 +2884,21 @@ ol.children {
 
 .comment .contents:hover .right,
 .comment .contents:hover .comment-reply-link,
+.comment .contents:hover .comment-reply-login,
 .comment .contents:hover .deleteComments {
     opacity: .9;
 }
 
 .comment .contents .right:hover,
 .comment .contents .comment-reply-link:hover,
+.comment .contents .comment-reply-login:hover,
 .comment .contents .deleteComments:hover {
     opacity: 1;
 }
 
 @media (max-width: 880px) {
     .comment .comment-reply-link,
+    .comment .comment-reply-login,
     .comment .deleteComments {
         opacity: 1;
         position: relative;
