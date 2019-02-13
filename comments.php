@@ -40,20 +40,17 @@ if (post_password_required()) {
                     'id_form' => 'commentform',
                     'id_submit' => 'submit',
                     'title_reply' => '',
-                    'title_reply_to' => '<div class="graybar"><i class="fa fa-comments-o"></i>' . esc_html__('回复给', 'akina') . ' %s' . '</div>',
+                    'title_reply_to' => esc_html__('回复给 %s', 'akina'),
                     'cancel_reply_link' => esc_html__('取消回复', 'akina'),
                     'label_submit' => esc_html__('发送评论', 'akina'),
-                    'comment_field' => get_meme() . '<div id="comments_edit" placeholder="' . esc_attr__($text, 'akina') . '" contenteditable="true" class="textarea" onmouseup="comments_edit_mouseup();" onmouseout="comments_edit_mouseout();" onkeyup="comments_edit_keyup();"></div><input name="comment" type="hidden" />',
-                    'comment_notes_after' => '',
+                    'comment_field' => get_meme() . '<div id="comments_edit" placeholder="' . esc_attr__($text, 'akina') . '" contenteditable="true" class="textarea" onmouseup="comments_edit_mouseup();" onmouseout="comments_edit_mouseout();" onkeyup="comments_edit_keyup();"></div>' . '<input name="comment" type="hidden" />',
+                    'comment_notes_after' => '<div class="comment_button">' . $robot_comments . $private_ms . '</div>',
                     'comment_notes_before' => '',
                     'submit_button' => '<input onclick="comments_submit();" name="%1$s" type="button" id="%2$s" class="%3$s" value="%4$s" />',
                     'fields' => apply_filters('comment_form_default_fields', array(
-                            'author' =>
-                                '<input type="text" placeholder="' . esc_attr__('昵称', 'akina') . ' ' . ($req ? '(' . esc_attr__('必填', 'akina') . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />',
-                            'email' =>
-                                '<input type="text" placeholder="' . esc_attr__('邮箱', 'akina') . ' ' . ($req ? '(' . esc_attr__('必填', 'akina') . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />',
-                            'url' =>
-                                '<input type="text" placeholder="' . esc_attr__('网站', 'akina') . ' ' . ($req ? '(' . esc_attr__('选填', 'akina') . ')' : '') . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" tabindex="1" />' . $robot_comments . $private_ms
+                            'author' => '<input type="text" placeholder="' . esc_attr__('昵称', 'akina') . ' ' . ($req ? '(' . esc_attr__('必填', 'akina') . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />',
+                            'email' => '<input type="text" placeholder="' . esc_attr__('邮箱', 'akina') . ' ' . ($req ? '(' . esc_attr__('必填', 'akina') . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />',
+                            'url' => '<input type="text" placeholder="' . esc_attr__('网站', 'akina') . ' ' . ($req ? '(' . esc_attr__('选填', 'akina') . ')' : '') . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" tabindex="1" />'
                         )
                     )
                 );

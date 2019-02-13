@@ -69,7 +69,7 @@
     color: #888;
     cursor: pointer;
     float: left;
-    margin: 10px 0;
+    margin: 10px 10px 10px 0;
 }
 
 .meme_btn:hover {
@@ -103,7 +103,7 @@
 }
 
 .meme_body ul {
-    max-height: 192px;
+    max-height: 230px;
     padding: 5px;
     margin: 0;
     overflow: scroll;

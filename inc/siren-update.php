@@ -217,8 +217,10 @@ if (akina_option('norobot')) add_action('pre_comment_on_post', 'siren_robot_comm
 // 纯英文评论拦截
 function scp_comment_post($incoming_comment)
 {
-    if (!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])) {
-        siren_ajax_comment_err('写点汉字吧，博主外语很捉急<br>YOU SHOULD TYPE SOME CHINESE WORD');
+    if (!current_user_can('level_10')) {
+        if (!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])) {
+            siren_ajax_comment_err('写点汉字吧，博主外语很捉急<br>YOU SHOULD TYPE SOME CHINESE WORD');
+        }
     }
     return ($incoming_comment);
 }
