@@ -4,7 +4,7 @@ function shuoshuo_custom_init()
 {
     $labels = array(
         'name' => '说说',
-        'singular_name' => 'singularname',
+        'singular_name' => '说说',
         'add_new' => '发表说说',
         'add_new_item' => '发表说说',
         'edit_item' => '编辑说说',
