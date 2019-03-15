@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.2.8.190214');
+define('SIREN_VERSION', '4.2.9.190315');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -597,7 +597,7 @@ function custom_html()
     if (akina_option('login_bg')) {
         $loginbg = akina_option('login_bg');
     } else {
-        $loginbg = get_bloginfo('template_directory') . '/images/hd.jpg';
+        $loginbg = get_random_bg_url();
     }
     echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">' . "\n";
