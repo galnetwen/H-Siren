@@ -21,7 +21,7 @@ body::before {
     left: 0;
     will-change: transform;
     z-index: -1;
-    background-image: url(../images/hd.jpg);
+    background-image: url(../../images/hd.jpg);
     background-repeat: no-repeat;
     background-position: top right;
     background-size: cover;
