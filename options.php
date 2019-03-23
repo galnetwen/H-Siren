@@ -301,9 +301,16 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('自定义CSS样式', 'options_framework_theme'),
-        'desc' => __('直接填写CSS代码，无需标签', 'options_framework_theme'),
+        'name' => __('自定义前台CSS样式', 'options_framework_theme'),
+        'desc' => __('直接填写CSS代码，无需 HTML 标签，在前台展示页面生效', 'options_framework_theme'),
         'id' => 'site_custom_style',
+        'std' => '',
+        'type' => 'textarea');
+
+    $options[] = array(
+        'name' => __('自定义后台CSS样式', 'options_framework_theme'),
+        'desc' => __('直接填写CSS代码，无需 HTML 标签，仅对模糊配色后生效', 'options_framework_theme'),
+        'id' => 'blur_custom_style',
         'std' => '',
         'type' => 'textarea');
 
@@ -835,8 +842,14 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('后台登陆背景图', 'options_framework_theme'),
-        'desc' => __('自定义登录背景图，如果这个地址为空则使用默认图片', 'options_framework_theme'),
+        'desc' => __('自定义后台登录背景图，如果这个地址为空则使用随机图', 'options_framework_theme'),
         'id' => 'login_bg',
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('模糊配色背景图', 'options_framework_theme'),
+        'desc' => __('自定义模糊配色背景图，如果这个地址为空则使用随机图', 'options_framework_theme'),
+        'id' => 'blur_bg',
         'type' => 'upload');
 
 

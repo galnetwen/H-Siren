@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.2.9.190315');
+define('SIREN_VERSION', '4.3.0.190323');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -185,12 +185,53 @@ if (!function_exists('akina_setup')) :
 endif;
 add_action('after_setup_theme', 'akina_setup');
 
-function admin_lettering()
-{
-    echo '<style type="text/css">body{ font-family: Microsoft YaHei; }</style>';
-}
+/**
+ * 定义后台字体
+ */
+function admin_font()
+{ ?>
+    <style type="text/css">
+        body {
+            font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+        }
+    </style>;
+<?php }
 
-add_action('admin_head', 'admin_lettering');
+add_action('admin_head', 'admin_font');
+
+// 添加后台配色
+wp_admin_css_color('blur', __('模糊'), get_template_directory_uri() . '/inc/css/blur-colors.css', array('#00000080', '#ffffff87', '#ffffff87', '#ffffff87'));
+
+/**
+ * 模糊配色配置
+ */
+function blur_image()
+{
+    if (akina_option('blur_bg')) {
+        $blurbg = akina_option('blur_bg');
+    } else {
+        $blurbg = get_random_bg_url();
+    } ?>
+    <style type="text/css">
+        body::before {
+            background-image: url('<?php echo $blurbg; ?>');
+        }
+    </style>
+<?php }
+
+function blur_custom()
+{ ?>
+    <style type="text/css">
+        <?php echo akina_option('blur_custom_style'); ?>
+    </style>
+<?php }
+
+if (get_user_option('admin_color') == "blur") {
+    add_action('admin_head', 'blur_image');
+    if (akina_option('blur_custom_style')) {
+        add_action('admin_head', 'blur_custom');
+    }
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
