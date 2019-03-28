@@ -76,15 +76,15 @@ if (!function_exists('akina_setup')) :
 
         add_filter('pre_option_link_manager_enabled', '__return_true');
 
+        remove_action('wp_head', 'feed_links', 2);
         remove_action('wp_head', 'feed_links_extra', 3);
         remove_action('wp_head', 'rsd_link');
         remove_action('wp_head', 'wlwmanifest_link');
         remove_action('wp_head', 'index_rel_link');
         remove_action('wp_head', 'start_post_rel_link', 10, 0);
-        remove_action('wp_head', 'wp_generator');
+        remove_action('wp_head', 'rest_output_link_wp_head', 10);
         remove_action('wp_head', 'wp_generator');    //隐藏WordPress版本
         remove_filter('the_content', 'wptexturize');    //取消标点符号转义
-
         remove_action('rest_api_init', 'wp_oembed_register_route');
         remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
         remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
@@ -181,6 +181,26 @@ if (!function_exists('akina_setup')) :
         {
             return is_array($var) ? array_intersect($var, array('current-menu-item', 'current-post-ancestor', 'current-menu-ancestor', 'current-menu-parent')) : '';
         }
+
+        /**
+         * 移除 BLOCK CSS
+         */
+        add_action( 'wp_enqueue_scripts', 'remove_block_library_css', 100 );
+        function remove_block_library_css() {
+            wp_dequeue_style( 'wp-block-library' );
+        }
+
+        /**
+         * 移除 DNS-PREFETCH
+         */
+        function remove_dns_prefetch( $hints, $relation_type ) {
+            if ( 'dns-prefetch' === $relation_type ) {
+                return array_diff( wp_dependencies_unique_hosts(), $hints );
+            }
+
+            return $hints;
+        }
+        add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
     }
 endif;
 add_action('after_setup_theme', 'akina_setup');
