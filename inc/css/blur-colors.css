@@ -32,17 +32,21 @@ body::before {
     filter: blur(10px) brightness(.88);
 }
 
-.tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
+.card, .welcome-panel, .tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
     background: rgba(255, 255, 255, .53);
     border-radius: 15px;
 }
 
-body, #activity-widget #the-comment-list .comment-item, #adminmenu, #adminmenuwrap, .theme-overlay .theme-backdrop, .alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
+.plugins tr, body, #activity-widget #the-comment-list .comment-item, #adminmenu, #adminmenuwrap, .theme-overlay .theme-backdrop, .alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
     background: none;
 }
 
 #adminmenuback {
     top: 32px;
+}
+
+#donate {
+    display: none !important;
 }
 
 #update-nag, .update-nag {
@@ -71,7 +75,7 @@ table, table tr th, table tr td {
     border-bottom: 2px solid rgba(0, 0, 0, .3);
 }
 
-.nav-tab-wrapper a, #replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
+.color-option.selected, .color-option:hover, .nav-tab-wrapper a, #replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
     border-radius: 15px;
 }
 
@@ -137,7 +141,7 @@ table, table tr th, table tr td {
     border-bottom: none;
 }
 
-.plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
+.importer-title, .importers td.desc, .theme-info, .theme-name, .wrap form h2, #whl_settings, .wp-core-ui .notice.is-dismissible, .welcome-panel li, .fileedit-sub, #templateside ul ul, #adminmenu, #donate, .wp-list-table.plugins .plugin-title, .wp-list-table.plugins .theme-title, .plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
     text-transform: uppercase;
 }
 
@@ -146,7 +150,6 @@ table.widefat code {
 }
 
 .card {
-    background: rgba(255, 255, 255, .53);
     min-width: auto;
     max-width: none;
 }

@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.3.2.190328');
+define('SIREN_VERSION', '4.3.3.190329');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -595,22 +595,29 @@ function bolo_after_wp_tiny_mce($mce_settings)
         QTags.addButton('download', '下载按钮', "[download] 把文件地址填写在这里 [/download]");
     </script>
 <?php }
+
 add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
 
 /**
- * 后台登录页
- * @M.J
+ * 后台登录美化
  */
-//Login Page style
 function custom_login()
 {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/css/login.css">' . "\n";
-    echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>' . "\n";
-}
+    if (akina_option('login_bg')) {
+        $loginbg = akina_option('login_bg');
+    } else {
+        $loginbg = get_random_bg_url();
+    } ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory'); ?>/inc/css/login.css">
+    <style type="text/css">
+        body::before {
+            background-image: url('<?php echo $loginbg; ?>');
+        }
+    </style>
+<?php }
 
 add_action('login_head', 'custom_login');
 
-//Login Page Title
 function custom_headertitle($title)
 {
     return get_bloginfo('name');
@@ -618,34 +625,12 @@ function custom_headertitle($title)
 
 add_filter('login_headertitle', 'custom_headertitle');
 
-//Login Page Link
 function custom_loginlogo_url($url)
 {
     return esc_url(home_url('/'));
 }
 
 add_filter('login_headerurl', 'custom_loginlogo_url');
-
-//Login Page Footer
-function custom_html()
-{
-    if (akina_option('login_bg')) {
-        $loginbg = akina_option('login_bg');
-    } else {
-        $loginbg = get_random_bg_url();
-    }
-    echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/js/login.js"></script>' . "\n";
-    echo '<script type="text/javascript">' . "\n";
-    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"' . get_bloginfo('template_directory') . '/images/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
-    echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').load(function(){' . "\n";
-    echo 'resizeImage(\'bg\');' . "\n";
-    echo 'jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
-    echo 'jQuery(\'.loading\').fadeOut();' . "\n";
-    echo '});';
-    echo '</script>' . "\n";
-}
-
-add_action('login_footer', 'custom_html');
 
 /**
  * 评论邮件回复
