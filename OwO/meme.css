@@ -17,7 +17,7 @@
 #comments_edit {
     resize: vertical;
     overflow: auto;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     font-size: 16.8px;
     width: 100%;
     height: auto;
@@ -77,7 +77,7 @@
 }
 
 .meme_btn span {
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .meme_body {
@@ -103,7 +103,7 @@
 }
 
 .meme_body ul {
-    max-height: 230px;
+    max-height: 187px;
     padding: 5px;
     margin: 0;
     overflow: scroll;

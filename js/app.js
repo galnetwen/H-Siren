@@ -323,11 +323,13 @@ var home = location.href,
             });
 
             // 灯箱
-            baguetteBox.run('.entry-content', {
-                captions: function(element) {
-                    return element.getElementsByTagName('img')[0].alt;
-                }
-            });
+            if(Poi.picture_browse == 'open') {
+                baguetteBox.run('.entry-content', {
+                    captions: function (element) {
+                        return element.getElementsByTagName('img')[0].alt;
+                    }
+                });
+            }
 
             // 搜索框
             $('.js-toggle-search').on('click', function () {

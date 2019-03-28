@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 后宫学长
 Author URI: https://haremu.com
 Description: Fuzzz 的 Akina 主题分支。本版由后宫学长修改，突出随机图片展示与高斯模糊效果，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 4.3.0.190323
+Version: 4.3.1.190328
 Tags: Akina（娱乐版）
 */
 
@@ -88,7 +88,6 @@ Tags: Akina（娱乐版）
 # Normalize
 --------------------------------------------------------------*/
 html {
-    font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     overflow-x: hidden;
@@ -96,7 +95,7 @@ html {
 
 body {
     margin: 0;
-    font: 300 17px miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font: 300 17px "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -224,7 +223,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -324,7 +323,6 @@ input,
 select,
 textarea {
     color: #404040;
-    font-family: sans-serif;
     font-size: 15px;
     line-height: 1.5;
 }
@@ -340,7 +338,7 @@ h6 {
 
 p {
     margin-bottom: 1.5em;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     font-size: 16.8px;
 }
 
@@ -352,11 +350,11 @@ i {
 }
 
 blockquote {
-    margin: 0 0 0 5px;
-    padding: 0 10px 0 20px;
-    /* background: #F9F9F9; */
+    margin: 0 5px;
+    padding: 0 20px;
+    background: #F9F9F9;
     position: relative;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     border-left: 4px solid #ddd;
     color: rgba(121, 121, 121, .8);
 }
@@ -374,7 +372,7 @@ address {
 
 pre {
     background: #F8F8F8;
-    font: 15px/22px "microsoft jhenghei", "Arial", Sans-Serif;
+    font: 15px/22px "Microsoft JhengHei", "Arial", Sans-Serif;
     line-height: 1.6;
     margin-bottom: 1.6em;
     max-width: 100%;
@@ -382,6 +380,7 @@ pre {
     padding: 1.6em;
     text-shadow: none;
     color: #000;
+    border-radius: 5px;
 }
 
 code,
@@ -636,7 +635,7 @@ a:active {
     display: block;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 @keyframes fade-in {
@@ -742,7 +741,7 @@ a:active {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 0;
     font-size: 18px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;
@@ -810,7 +809,7 @@ a:active {
     margin: auto;
     padding: 0;
     border: 0;
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: Microsoft JhengHei, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, Sans-Serif;
 }
 
 .pattern-center .cat-des {
@@ -1145,7 +1144,7 @@ ul.sub-menu li a {
 --------------------------------------------------------------*/
 .site-main {
     padding: 40px 0 0;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .site-content {
@@ -1218,7 +1217,7 @@ ul.sub-menu li a {
 
 .entry-title a {
     color: #504E4E;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .entry-title a:hover {
@@ -1232,7 +1231,7 @@ ul.sub-menu li a {
     font-size: 12px;
     color: #989898;
     letter-spacing: 0;
-    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+    font-family: din, "Microsoft JhengHei", "Hiragino Sans GB", "Microsoft YaHei", Arial, Sans-Serif;
 }
 
 .p-time i {
@@ -1249,7 +1248,7 @@ i.iconfont.hotpost {
     min-height: 60px;
     margin: 0 0 0 17%;
     font-size: 15px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     color: rgba(0, 0, 0, .66);
     letter-spacing: 0;
     line-height: 30px;
@@ -1276,7 +1275,7 @@ i.iconfont.hotpost {
 
 .info-meta {
     margin-top: 10px;
-    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+    font-family: din, "Microsoft JhengHei", "Hiragino Sans GB", "Microsoft YaHei", Arial, Sans-Serif;
     position: absolute;
     top: 20px;
     opacity: 0;
@@ -1534,7 +1533,7 @@ i.iconfont.hotpost {
     text-align: right;
     margin-bottom: 10px;
     margin-top: -15px;
-    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+    font-family: din, "Microsoft JhengHei", "Hiragino Sans GB", "Microsoft YaHei", Arial, Sans-Serif;
 }
 
 .s-content {
@@ -1602,7 +1601,7 @@ i.iconfont.hotpost {
     text-align: center;
     font-size: 14px;
     color: #B9B9B9;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .site-info p {
@@ -1668,40 +1667,83 @@ i.iconfont.hotpost {
     position: relative;
 }
 
-.entry-content h3 {
-    padding-bottom: 5px;
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    color: #737373;
+    border-radius: 5px;
+    position: relative;
+    padding: 8px 35px;
+    text-align: center;
     border-bottom: 1px dashed #ddd;
-    /* color: #737373; */
-    font-size: 21px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}
+
+.entry-content h1 {
+    background: rgba(255, 154, 154, .5);
+}
+
+.entry-content h2 {
+    background: rgba(255, 246, 181, .5);
+}
+
+.entry-content h3 {
+    background: rgba(200, 230, 251, .5);
+}
+
+.entry-content h4 {
+    background: rgba(130, 239, 219, .5);
+    border-left: 5px solid #80ff5e;
+}
+
+.entry-content h5 {
+    background: rgba(236, 198, 255, .5);
+    border-left: 5px solid #ffdf7f;
+}
+
+.entry-content h6 {
+    background: rgba(249, 249, 249, .5);
+    border-left: 5px solid #878cfb;
 }
 
 .entry-content h1:before,
 .entry-content h2:before,
-.entry-content h3:before,
-.entry-content h4:before,
-.entry-content h5:before,
-.entry-content h6:before {
+.entry-content h3:before {
     content: "「";
     margin-right: 5px;
     color: #FF6D6D;
-    /* font-size: 25px; */
+}
+
+.entry-content h4:before,
+.entry-content h5:before,
+.entry-content h6:before {
+    content: "*";
+    margin-right: 5px;
+    color: #FF6D6D;
 }
 
 .entry-content h1:after,
 .entry-content h2:after,
-.entry-content h3:after,
-.entry-content h4:after,
-.entry-content h5:after,
-.entry-content h6:after {
+.entry-content h3:after {
     content: "」";
     margin-left: 5px;
     color: #FF6D6D;
-    /* font-size: 25px; */
+}
+
+.entry-content h4:after,
+.entry-content h5:after,
+.entry-content h6:after {
+    content: "*";
+    margin-left: 5px;
+    color: #FF6D6D;
 }
 
 .entry-content code {
     word-break: break-word;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     text-shadow: none;
     letter-spacing: 1px;
 }
@@ -1796,7 +1838,7 @@ h1.page-title {
     padding: 10px 15px;
     color: #828282;
     margin-bottom: 30px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 h1.page-title.mb- {
@@ -1870,7 +1912,7 @@ h1.page-title.mb- {
     font-size: 13px;
     color: #B3B3B3;
     text-transform: uppercase;
-    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif
+    font-family: din, "Microsoft JhengHei", "Hiragino Sans GB", "Microsoft YaHei", Arial, Sans-Serif
 }
 
 .post-tags a {
@@ -1900,7 +1942,7 @@ h1.page-title.mb- {
 }
 
 /*.post-like a.done, .post-like a:hover {
-    color: #FF4646; 
+    color: #FF4646;
 }*/
 
 .post-like a.done {
@@ -1954,7 +1996,7 @@ h1.page-title.mb- {
 }
 
 .post-squares .category {
-    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
+    font-family: "Microsoft JhengHei", "Arial", Sans-Serif;
     font-size: 10px;
     padding: 7px 15px;
     text-transform: uppercase;
@@ -1964,7 +2006,7 @@ h1.page-title.mb- {
 }
 
 .post-squares h3 {
-    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
+    font-family: "Microsoft JhengHei", "Arial", Sans-Serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 30px;
@@ -1989,7 +2031,7 @@ h1.page-title.mb- {
 }
 
 .post-squares .label {
-    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
+    font-family: "Microsoft JhengHei", "Arial", Sans-Serif;
     font-size: 13px;
     display: block;
     text-transform: uppercase;
@@ -2144,7 +2186,7 @@ h1.page-title.mb- {
 }
 
 .author-profile .meta h3 a {
-    font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+    font-family: din, "Microsoft JhengHei", "Hiragino Sans GB", "Microsoft YaHei", Arial, Sans-Serif;
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
@@ -2195,7 +2237,7 @@ h3#comments-list-title {
     max-width: 780px;
     margin: 0 auto;
     margin-top: 8px;
-    font-family: microsoft yahei;
+    font-family: "Microsoft JhengHei", "Microsoft YaHei";
     color: #7D7D7D;
     font-size: 20px;
     font-weight: 400;
@@ -2238,6 +2280,10 @@ h3#comments-list-title {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+.alignnone {
+    margin: 0;
+}
+
 .alignleft {
     display: inline;
     float: left;
@@ -2470,7 +2516,7 @@ h1.works-title {
 --------------------------------------------------------------*/
 
 #archives-temp {
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     margin-top: 50px;
     margin-bottom: 100px;
 }
@@ -2606,7 +2652,7 @@ form#commentform {
 }
 
 nav#comments-navi {
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     color: #9A9A9A;
     max-width: 700px;
     margin: 0 50px 30px;
@@ -2677,14 +2723,14 @@ a.page-numbers {
 
 .comments ul.commentwrap {
     margin: 0 auto 30px;
-    font-family: microsoft yahei;
+    font-family: "Microsoft JhengHei", "Microsoft YaHei";
 }
 
 .comnav {
     width: 100%;
     max-width: 860px;
     margin: 0 auto;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .comnav a {
@@ -2749,7 +2795,7 @@ ol.children {
 }
 
 .comment .body {
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: Microsoft JhengHei, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, Sans-Serif;
     line-height: 32px;
     color: #63686d;
     /* border-bottom: 1px solid rgba(0,0,0,.05); */
@@ -2832,7 +2878,7 @@ ol.children {
 }
 
 .comment .commeta {
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: Microsoft JhengHei, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, Sans-Serif;
     font-size: 16px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -2851,7 +2897,7 @@ ol.children {
 
 .comment .comment-reply-link,
 .comment .comment-reply-login {
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: Microsoft JhengHei, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, Sans-Serif;
     font-size: 12px;
     display: block;
     margin-left: 10px;
@@ -2867,7 +2913,7 @@ ol.children {
 }
 
 .comment .deleteComments {
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: Microsoft JhengHei, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, Sans-Serif;
     cursor: pointer;
     font-size: 12px;
     line-height: 20px;
@@ -2936,7 +2982,7 @@ ol.children {
 }
 
 .comment h4 {
-    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
+    font-family: "Microsoft JhengHei", "Arial", Sans-Serif;
     /* font-size: 24px; */
     font-weight: 400;
     margin: 0;
@@ -3056,7 +3102,7 @@ ol.children {
 }
 
 .comment-respond input {
-    font-family: "microsoft jhenghei", "Arial", Sans-Serif;
+    font-family: "Microsoft JhengHei", "Arial", Sans-Serif;
     font-size: 14px;
     float: left;
     width: calc(33% - 0px);
@@ -3146,7 +3192,7 @@ ol.children {
     border-radius: 3px;
     background: #FFFFFF;
     color: #6F6F6F;
-    font-family: microsoft yahei;
+    font-family: "Microsoft JhengHei", "Microsoft YaHei";
 }
 
 .comment-respond .logged-in-as {
@@ -3195,7 +3241,7 @@ ol.children {
     cursor: pointer;
     color: #555;
     font-size: 14px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     border: 1px solid #DDD;
     padding: 5px 7px;
     border-radius: 5px;
@@ -3272,7 +3318,7 @@ h1.fes-title, h1.main-title {
     width: 100%;
     height: auto;
     margin-top: 55px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .top-feature img {
@@ -3322,7 +3368,7 @@ li.feature-2 {
 .notice {
     padding: 20px;
     border: 1px dashed #E6E6E6;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     color: #969696;
     position: relative;
     display: inline-block;
@@ -3478,7 +3524,7 @@ li.feature-2 {
     background: rgba(0, 0, 0, 0.5);
     padding: 15px 25px;
     margin-top: 22px;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     letter-spacing: 0;
     line-height: 30px;
     border-radius: 50px;
@@ -3496,7 +3542,7 @@ li.feature-2 {
     margin-left: 10px;
     list-style: none;
     display: inline-block;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .top-social img {
@@ -3612,7 +3658,7 @@ i.iconfont.js-toggle-search.iconsearch {
     height: 285px;
     top: 0;
     bottom: 0;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .search-form--modal .search-form__inner p {
@@ -3682,7 +3728,7 @@ i.iconfont.js-toggle-search.iconsearch {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .search-form input::-webkit-input-placeholder {
@@ -3716,7 +3762,7 @@ i.iconfont.js-toggle-search.iconsearch {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 .s-search i {
@@ -3770,7 +3816,7 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .err-button.back {
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     text-align: center;
     margin: 40px 0;
 }
@@ -3841,10 +3887,9 @@ i.iconfont.js-toggle-search.iconsearch {
     display: inline-block;
     width: auto;
     height: auto;
-    max-height: 80%;
-    max-width: 80%;
+    max-height: 100%;
+    max-width: 100%;
     vertical-align: middle;
-    box-shadow: 0px 0px 170px #ddd;
 }
 
 #baguetteBox-overlay .full-image figcaption {
@@ -3856,8 +3901,8 @@ i.iconfont.js-toggle-search.iconsearch {
     line-height: 3;
     color: #eee;
     background: #000;
-    background: rgba(0, 0, 0, 0.8);
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    background: rgba(0, 0, 0, .7);
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 #baguetteBox-overlay .full-image:before {
@@ -3909,7 +3954,7 @@ i.iconfont.js-toggle-search.iconsearch {
     box-shadow: none;
     border-radius: 0;
     color: #ddd;
-    font: 1.6em sans-serif;
+    font: 1.6em Sans-Serif;
 }
 
 .baguetteBox-button:hover {
@@ -4293,7 +4338,7 @@ object {
 /*
 *
 * download
-* 
+*
 **/
 .download {
     color: #fff !important;
@@ -4363,7 +4408,7 @@ i.iconfont.down {
     text-align: center;
     margin: 40px 0 80px;
     display: inline-block;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 #pagination a {
@@ -4402,7 +4447,7 @@ i.iconfont.down {
 /*
 *
 * some mobile style
-* 
+*
 **/
 @media (max-width: 630px) {
     .works-list {
@@ -4574,7 +4619,7 @@ i.iconfont.down {
     .site-title {
         font-size: 20px;
         margin-right: 10px;
-        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif
+        font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif
     }
 
     .author-box {
@@ -4753,7 +4798,7 @@ i.iconfont.down {
         display: block;
         overflow-x: hidden;
         overflow-y: auto;
-        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+        font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     }
 
     #mo-nav .m-avatar {
@@ -4789,7 +4834,7 @@ i.iconfont.down {
         text-align: center;
         border-radius: 3px;
         outline: none;
-        font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+        font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     }
 
     #mo-nav ul {
@@ -5399,7 +5444,7 @@ i.iconfont.down {
     outline: none;
     border-radius: 3px;
     font-size: 16px;
-    font: 300 14px miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font: 300 14px miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;

@@ -45,6 +45,10 @@ body, #activity-widget #the-comment-list .comment-item, #adminmenu, #adminmenuwr
     top: 32px;
 }
 
+#update-nag, .update-nag {
+    margin: 8px 0 0 0;
+}
+
 #comment-link-box, .comment-ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
     background: rgba(255, 255, 255, .53);
 }
@@ -76,7 +80,7 @@ table, table tr th, table tr td {
 }
 
 #screen-meta-links .screen-meta-toggle {
-    top: 25px;
+    top: 8px;
     left: 20px;
 }
 
@@ -106,7 +110,7 @@ table, table tr th, table tr td {
 
 .wp-editor-container textarea.wp-editor-area {
     border-radius: 0;
-    font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
 }
 
 #replycontainer #qt_replycontent_toolbar, #postdiv #qt_content_toolbar, #wp-content-editor-tools {

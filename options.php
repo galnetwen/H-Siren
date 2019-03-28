@@ -678,8 +678,18 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('图片懒加载', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，仅对首页文章列表和文章内的图片生效，同时文章内的图片 ALT 信息会去掉，恶化 SEO', 'options_framework_theme'),
+        'name' => __('图片放大方式', 'akina'),
+        'id' => 'picture_m',
+        'std' => "single",
+        'type' => "radio",
+        'options' => array(
+            'single' => __('单张放大查看，兼容性高（ZOOMING.JS）', ''),
+            'multiple' => __('画廊多张浏览，兼容性低，仅对媒体库中有“链接到-媒体文件”的图片生效（BAGUETTEBOX.JS）', '')
+        ));
+
+    $options[] = array(
+        'name' => __('图片延迟加载', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅对首页文章列表和文章内的图片生效', 'options_framework_theme'),
         'id' => 'laziness_img',
         'std' => '0',
         'type' => 'checkbox');

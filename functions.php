@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.3.0.190323');
+define('SIREN_VERSION', '4.3.1.190328');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -192,7 +192,8 @@ function admin_font()
 { ?>
     <style type="text/css">
         body {
-            font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+            font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
+            font-weight: bold;
         }
     </style>;
 <?php }
@@ -248,46 +249,39 @@ function akina_content_width()
 add_action('after_setup_theme', 'akina_content_width', 0);
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-/* function akina_widgets_init() {
-    register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'akina' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'akina' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
-}
-add_action( 'widgets_init', 'akina_widgets_init' );
-*/
-
-/**
  * Enqueue scripts and styles.
  */
 function akina_scripts()
 {
     wp_enqueue_style('siren', get_stylesheet_uri(), array(), SIREN_VERSION);
-    wp_enqueue_script( 'jq', 'https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js', array(), SIREN_VERSION, true );
+    wp_enqueue_script('jq', 'https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('pjax-libs', get_template_directory_uri() . '/js/jquery.pjax.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('input', get_template_directory_uri() . '/js/input.min.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SIREN_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-
-    //20161116 @Louie
+    if (akina_option('zoom_c') == '1'){
+        if (akina_option('picture_m') == 'single'){
+            $picture_zoom = 'open';
+        } else {
+            $picture_zoom = 'close';
+        }
+        if (akina_option('picture_m') == 'multiple'){
+            $picture_browse = 'open';
+        } else {
+            $picture_browse = 'close';
+        }
+    } else {
+        $picture_zoom = 'close';
+        $picture_browse = 'close';
+    }
     $mv_live = akina_option('focus_mvlive') ? 'open' : 'close';
     $movies = akina_option('focus_amv') ? array('url' => akina_option('amv_url'), 'name' => akina_option('amv_title'), 'live' => $mv_live) : 'close';
     $auto_height = akina_option('focus_height') ? 'fixed' : 'auto';
     $code_lamp = akina_option('open_prism_codelamp') ? 'open' : 'close';
     $live2d_tips = akina_option('live2d_s') ? 'open' : 'close';
     $hitokoto = akina_option('hitokoto_o') ? 'open' : 'close';
-    $picture_zoom = akina_option('zoom_c') ? 'open' : 'close';
     $laziness_img = akina_option('laziness_img') ? 'open' : 'close';
     if (wp_is_mobile()) $auto_height = 'fixed';    //拦截移动端
     wp_localize_script('app', 'Poi', array(
@@ -298,6 +292,7 @@ function akina_scripts()
         'live2d_tips' => $live2d_tips,
         'hitokoto' => $hitokoto,
         'picture_zoom' => $picture_zoom,
+        'picture_browse' => $picture_browse,
         'laziness_img' => $laziness_img,
         'ajaxurl' => admin_url('admin-ajax.php'),
         'order' => get_option('comment_order'),    //ajax comments
@@ -461,7 +456,7 @@ function specs_zan()
 }
 
 /**
- * Gravatar头像使用中国服务器
+ * GRAVATAR头像使用中国服务器
  */
 function gravatar_cn($url)
 {
@@ -472,7 +467,7 @@ function gravatar_cn($url)
 add_filter('get_avatar_url', 'gravatar_cn', 4);
 
 /**
- * 阻止站内文章互相 Pingback
+ * 阻止站内文章互相 PINGBACK
  */
 function theme_noself_ping(&$links)
 {
@@ -485,7 +480,7 @@ function theme_noself_ping(&$links)
 add_action('pre_ping', 'theme_noself_ping');
 
 /**
- * 订制 body 类
+ * 订制 BODY 类
  */
 function akina_body_classes($classes)
 {
@@ -594,14 +589,13 @@ function download($atts, $content = null)
 
 add_shortcode("download", "download");
 
-add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
 function bolo_after_wp_tiny_mce($mce_settings)
 { ?>
     <script type="text/javascript">
-        QTags.addButton('download', '下载按钮', "[download]下载地址[/download]");
-        function bolo_QTnextpage_arg1();
+        QTags.addButton('download', '下载按钮', "[download] 把文件地址填写在这里 [/download]");
     </script>
 <?php }
+add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
 
 /**
  * 后台登录页
@@ -610,7 +604,7 @@ function bolo_after_wp_tiny_mce($mce_settings)
 //Login Page style
 function custom_login()
 {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css">' . "\n";
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/css/login.css">' . "\n";
     echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>' . "\n";
 }
 
@@ -733,14 +727,50 @@ function sig_add_editor_styles()
 
 add_action('init', 'sig_add_editor_styles');
 
-//文章内图片懒加载替换处理
+//净化图片多余标签结构
+function remove_attribute($content)
+{
+    $content = preg_replace('/class=\"[^\"]*\"/', "", $content);
+    $content = preg_replace('/(width|height)="\d*"\s/', "", $content);
+    $content = preg_replace('/srcset=\"[^\"]*\"\s+sizes=\"[^\"]*\"/', "", $content);
+    $content = preg_replace('/  /', " ", $content);
+    return $content;
+}
+
+add_filter('post_thumbnail_html', 'remove_attribute', 10);
+add_filter('image_send_to_editor', 'remove_attribute', 10);
+add_filter('the_content', 'remove_attribute', 10);
+
+function custom_caption_shortcode($attr, $content = null)
+{
+    if (!isset($attr['caption'])) {
+        if (preg_match('#((?:<a [^>]+>s*)?<img [^>]+>(?:s*</a>)?)(.*)#is', $content, $matches)) {
+            $content = $matches[1];
+            $attr['caption'] = trim($matches[2]);
+        }
+    }
+    $output = apply_filters('img_caption_shortcode', '', $attr, $content);
+    if ($output != '') return $output;
+    extract(shortcode_atts(array(
+        'id' => '',
+        'align' => 'alignnone',
+        'width' => '',
+        'caption' => ''
+    ), $attr, 'caption'));
+    if (1 > (int)$width || empty($caption)) return $content;
+    return '<figure class="wp-caption ' . esc_attr($align) . '">' . do_shortcode($content) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+}
+
+add_shortcode('caption', 'custom_caption_shortcode');
+
+//文章图片延迟加载替换
 if (akina_option('laziness_img') == true) {
     $preset = 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.5.3/img/svg/loader/trans.ajax-spinner-preloader.svg';
     function lazinessImg($content)
     {
         global $preset;
-        $imgsrc = '/\<img.*?src\="(.*?)"[^>]*>/i';
-        $replace = "<img class=\"lazinessImg\" src=\"$preset\" data-src=\"\$1\">";
+        $imgsrc = '/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i';
+        $replace = "<img class=\"lazinessImg\" src=\"$preset\" data-src=\"\$2\" \$3>";
         $content = preg_replace($imgsrc, $replace, $content);
         return $content;
     }
