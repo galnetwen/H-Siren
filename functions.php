@@ -7,7 +7,7 @@
  * @package Akina
  */
 
-define('SIREN_VERSION', '4.3.1.190328');
+define('SIREN_VERSION', '4.3.2.190328');
 
 if (!function_exists('akina_setup')) :
     /**
@@ -261,13 +261,13 @@ function akina_scripts()
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-    if (akina_option('zoom_c') == '1'){
-        if (akina_option('picture_m') == 'single'){
+    if (akina_option('zoom_c') == '1') {
+        if (akina_option('picture_m') == 'single') {
             $picture_zoom = 'open';
         } else {
             $picture_zoom = 'close';
         }
-        if (akina_option('picture_m') == 'multiple'){
+        if (akina_option('picture_m') == 'multiple') {
             $picture_browse = 'open';
         } else {
             $picture_browse = 'close';
@@ -333,7 +333,7 @@ require get_template_directory() . '/inc/disable-embeds.php';
 /**
  * Shuoshuo.
  */
-if (akina_option('shuoshuo') == 'yes'){
+if (akina_option('shuoshuo') == 'yes') {
     require get_template_directory() . '/inc/shuoshuo.php';
 }
 
@@ -728,40 +728,49 @@ function sig_add_editor_styles()
 add_action('init', 'sig_add_editor_styles');
 
 //净化图片多余标签结构
-function remove_attribute($content)
-{
-    $content = preg_replace('/class=\"[^\"]*\"/', "", $content);
-    $content = preg_replace('/(width|height)="\d*"\s/', "", $content);
-    $content = preg_replace('/srcset=\"[^\"]*\"\s+sizes=\"[^\"]*\"/', "", $content);
-    $content = preg_replace('/  /', " ", $content);
-    return $content;
-}
-
-add_filter('post_thumbnail_html', 'remove_attribute', 10);
-add_filter('image_send_to_editor', 'remove_attribute', 10);
-add_filter('the_content', 'remove_attribute', 10);
-
-function custom_caption_shortcode($attr, $content = null)
-{
-    if (!isset($attr['caption'])) {
-        if (preg_match('#((?:<a [^>]+>s*)?<img [^>]+>(?:s*</a>)?)(.*)#is', $content, $matches)) {
-            $content = $matches[1];
-            $attr['caption'] = trim($matches[2]);
-        }
+if (akina_option('remove_attribute') == '1') {
+    function remove_attribute_a($content)
+    {
+        $content = preg_replace('/class=\"[^\"]*\"/', "", $content);
+        $content = preg_replace('/(width|height)="\d*"\s/', "", $content);
+        $content = preg_replace('/  /', "", $content);
+        return $content;
     }
-    $output = apply_filters('img_caption_shortcode', '', $attr, $content);
-    if ($output != '') return $output;
-    extract(shortcode_atts(array(
-        'id' => '',
-        'align' => 'alignnone',
-        'width' => '',
-        'caption' => ''
-    ), $attr, 'caption'));
-    if (1 > (int)$width || empty($caption)) return $content;
-    return '<figure class="wp-caption ' . esc_attr($align) . '">' . do_shortcode($content) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
-}
 
-add_shortcode('caption', 'custom_caption_shortcode');
+    function remove_attribute_b($content)
+    {
+        $content = preg_replace('/(width|height)="\d*"\s/', "", $content);
+        $content = preg_replace('/srcset=\"[^\"]*\"\s+sizes=\"[^\"]*\"/', "", $content);
+        $content = preg_replace('/  /', "", $content);
+        return $content;
+    }
+
+    add_filter('post_thumbnail_html', 'remove_attribute_a', 10);
+    add_filter('image_send_to_editor', 'remove_attribute_a', 10);
+    add_filter('the_content', 'remove_attribute_b', 10);
+
+    function custom_caption_shortcode($attr, $content = null)
+    {
+        if (!isset($attr['caption'])) {
+            if (preg_match('#((?:<a [^>]+>s*)?<img [^>]+>(?:s*</a>)?)(.*)#is', $content, $matches)) {
+                $content = $matches[1];
+                $attr['caption'] = trim($matches[2]);
+            }
+        }
+        $output = apply_filters('img_caption_shortcode', '', $attr, $content);
+        if ($output != '') return $output;
+        extract(shortcode_atts(array(
+            'id' => '',
+            'align' => 'alignnone',
+            'width' => '',
+            'caption' => ''
+        ), $attr, 'caption'));
+        if (1 > (int)$width || empty($caption)) return $content;
+        return '<figure class="wp-caption ' . esc_attr($align) . '">' . do_shortcode($content) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+    }
+
+    add_shortcode('caption', 'custom_caption_shortcode');
+}
 
 //文章图片延迟加载替换
 if (akina_option('laziness_img') == true) {

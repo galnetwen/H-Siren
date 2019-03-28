@@ -71,7 +71,7 @@ table, table tr th, table tr td {
     border-bottom: 2px solid rgba(0, 0, 0, .3);
 }
 
-#replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
+.nav-tab-wrapper a, #replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
     border-radius: 15px;
 }
 
@@ -86,6 +86,10 @@ table, table tr th, table tr td {
 
 #screen-meta {
     margin: 0;
+}
+
+.nav-tab-wrapper a {
+    margin: auto;
 }
 
 #contextual-help-wrap, #screen-options-wrap {
@@ -129,11 +133,11 @@ table, table tr th, table tr td {
     width: calc(100% - 2px) !important;
 }
 
-#post-status-info td {
+.nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #post-status-info td {
     border-bottom: none;
 }
 
-.wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
+.plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
     text-transform: uppercase;
 }
 

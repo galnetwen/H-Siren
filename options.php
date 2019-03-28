@@ -671,6 +671,13 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('净化图片标签', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，去除 IMG 中多余的标签元素，开启后可能会产生新 BUG ，关闭恢复。BETA', 'options_framework_theme'),
+        'id' => 'remove_attribute',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('文章图片放大', 'options_framework_theme'),
         'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
         'id' => 'zoom_c',
