@@ -60,7 +60,7 @@
     <?php if (akina_option('shuoshuo') == 'yes') { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/shuoshuo.css"/>
     <?php } ?>
-    <?php if (akina_option('zoom_c') != '0') { ?>
+    <?php if (akina_option('picture_m') == 'single') { ?>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/zooming@1.5.0/build/zooming.min.js"></script>
     <?php } ?>
     <?php if (akina_option('laziness_img') != '0') { ?>
@@ -84,23 +84,10 @@
     <![endif]-->
     <?php if (akina_option('web_title') != '0') { ?>
         <script type="text/javascript">
-            var OriginTitile = document.title;
-            var titleTime;
             var title = {
                 focus: '<?php echo akina_option('onfocus'); ?>',
                 blur: '<?php echo akina_option('onblur'); ?>',
             }
-            document.addEventListener('visibilitychange', function () {
-                if (document.hidden) {
-                    document.title = title.blur;
-                    clearTimeout(titleTime);
-                } else {
-                    document.title = title.focus;
-                    titleTime = setTimeout(function () {
-                        document.title = OriginTitile;
-                    }, 2000);
-                }
-            });
         </script>
     <?php } ?>
     <?php if (akina_option('right_click') != '0') { ?>

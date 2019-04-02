@@ -1,10 +1,3 @@
-/*
- * Siren application
- * @author Louie
- * @url http://i94.me
- * @date 2018.11.19
- */
-
 // baguetteBox Libs
 var baguetteBox = function() {
     function t(t, n) {
@@ -197,7 +190,7 @@ var home = location.href,
 
         // 移动端菜单自动隐藏
         MNH: function(){
-            if($('body').hasClass('navOpen')){
+            if ($('body').hasClass('navOpen')){
                 $('body').toggleClass('navOpen');
                 $('#main-container,#mo-nav,.openNav').toggleClass('open');
             }
@@ -216,14 +209,14 @@ var home = location.href,
             s.pause();
         },
         liveplay: function(){ // 自动续播 - 播放
-            if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
-                if($('.videolive').length > 0){ // 检查播放状态
+            if (s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
+                if ($('.videolive').length > 0){ // 检查播放状态
                     Siren.splay();
                 }
             }
         },
         livepause: function(){
-            if(s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
+            if (s.oncanplay != undefined && $('.haslive').length > 0){ // 检查视频数据
                 Siren.spause();
                 $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
             }
@@ -235,10 +228,12 @@ var home = location.href,
             $('#bgvideo').attr('src',Poi.movies.url+'/'+ _t +'.mp4');
             $('#bgvideo').attr('video-name',_t);
         },
+
+        // 加载视频
         LV: function(){
             var _btn = $('#video-btn');
             _btn.on('click', function(){
-                if($(this).hasClass('loadvideo')){
+                if ($(this).hasClass('loadvideo')){
                     $(this).addClass('video-pause').removeClass('loadvideo').hide();
                     Siren.addsource();
                     s.oncanplay = function() { // 数据可用时
@@ -248,7 +243,7 @@ var home = location.href,
                         _btn.addClass('haslive'); // MDZZ
                     }
                 }else{
-                    if($(this).hasClass('video-pause')){
+                    if ($(this).hasClass('video-pause')){
                         Siren.spause();
                         _btn.removeClass('videolive');
                         $('.video-stu').css({"bottom":"0px"}).html('已暂停 ...');
@@ -273,7 +268,7 @@ var home = location.href,
 
         // 自适应窗口高度
         AH: function(){
-            if(Poi.windowheight == 'auto'){
+            if (Poi.windowheight == 'auto'){
                 if ($('h1.main-title').length > 0){
                     var _height = $(window).height();
                     $('#centerbg').css({'height':_height});
@@ -289,12 +284,12 @@ var home = location.href,
 
         // 进程
         PE: function(){
-            if($('.headertop').length > 0){
-                if($('h1.main-title').length > 0){
+            if ($('.headertop').length > 0){
+                if ($('h1.main-title').length > 0){
                     $('.blank').css({"padding-top":"0px"});
                     $('.headertop').css({"height":"auto"}).show();
                     // 当前位置为首页并且视频原处于播放状态
-                    if(Poi.movies.live == 'open') Siren.liveplay();
+                    if (Poi.movies.live == 'open') Siren.liveplay();
                 }else{
                     $('.blank').css({"padding-top":"80px"});
                     $('.headertop').css({"height":"0px"}).hide();
@@ -322,8 +317,8 @@ var home = location.href,
                 return false;
             });
 
-            // 灯箱
-            if(Poi.picture_browse == 'open') {
+            // BAGUETTEBOX
+            if (Poi.picture_m == 'multiple') {
                 baguetteBox.run('.entry-content', {
                     captions: function (element) {
                         return element.getElementsByTagName('img')[0].alt;
@@ -337,7 +332,7 @@ var home = location.href,
                 $('.js-search').toggleClass('is-visible');
             });
             $('.search_close').on('click', function () {
-                if($('.js-search').hasClass('is-visible')){
+                if ($('.js-search').hasClass('is-visible')){
                     $('.js-toggle-search').toggleClass('is-active');
                     $('.js-search').toggleClass('is-visible');
                 }
@@ -345,7 +340,7 @@ var home = location.href,
 
             // 导航菜单
             $('#show-nav').on('click', function () {
-                if($('#show-nav').hasClass('showNav')){
+                if ($('#show-nav').hasClass('showNav')){
                     $('#show-nav').removeClass('showNav').addClass('hideNav');
                     $('.site-top .lower nav').addClass('navbar');
                 }else{
@@ -367,13 +362,13 @@ var home = location.href,
                 ss = $(document).scrollTop();
             $(window).scroll(function(){
                 var s = $(document).scrollTop();
-                if(s== h1){
+                if (s== h1){
                     $('.site-header').removeClass('yya');
-                }if(s > h1){
+                }if (s > h1){
                     $('.site-header').addClass('yya');
-                }if(s > h2){
+                }if (s > h2){
                     $('.site-header').addClass('gizle');
-                    if(s > ss){
+                    if (s > ss){
                         $('.site-header').removeClass('sabit');
                     }else{
                         $('.site-header').addClass('sabit');
@@ -383,7 +378,7 @@ var home = location.href,
             });
         },
 
-        // Ajax加载文章
+        // AJAX加载文章
         XLS: function(){
             $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
             $('body').on('click', '#pagination a', function(){
@@ -403,15 +398,15 @@ var home = location.href,
                             // If there is no link, that is the last page, then remove the navigation
                             $("#pagination").html("<span>Don't have more ...</span>");
                         }
-                        if (Poi.live2d_tips == 'open') { live2d_Tips() }; // 重载 Live2D 提示
-                        if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
+                        if (Poi.live2d_tips == 'open') { live2d_Tips() } // 重载 Live2D 提示
+                        if (Poi.laziness_img == 'open') { lazinessImg() } // 重载图片懒加载
                     }
                 });
                 return false;
             });
         },
 
-        // Ajax评论提交
+        // AJAX评论提交
         XCS: function(){
             var __cancel = jQuery('#cancel-comment-reply-link'),
                 __cancel_text = __cancel.text(),
@@ -461,7 +456,8 @@ var home = location.href,
                             temp.parentNode.insertBefore(respond, temp);
                             temp.parentNode.removeChild(temp)
                         }
-                        if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                        if (Poi.code_pjax == 'prism') { Prism.highlightAll() } // 重载 PRISM.JS 代码高亮
+                        if (Poi.code_pjax == 'highlight') { highlight_pjax() } // 重载 HIGHLIGHT.JS 代码高亮
                     }
                 });
                 return false;
@@ -523,7 +519,7 @@ var home = location.href,
             };
         },
 
-        // Ajax评论分页
+        // AJAX评论分页
         XCP: function(){
             $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
             $('body').on('click', '#comments-navi a', function(e){
@@ -544,7 +540,8 @@ var home = location.href,
                         $('#loading-comments').slideUp('fast');
                         $('#loading-comments').after(result.fadeIn(500));
                         $('ul.commentwrap').after(nextlink);
-                        if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
+                        if (Poi.code_pjax == 'prism') { Prism.highlightAll() } // 重载 PRISM.JS 代码高亮
+                        if (Poi.code_pjax == 'highlight') { highlight_pjax() } // 重载 HIGHLIGHT.JS 代码高亮
                     }
                 });
             });
@@ -565,7 +562,7 @@ var home = location.href,
                 $back_to_top = $('.cd-top');
             $(window).scroll(function(){
                 ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-                if( $(this).scrollTop() > offset_opacity ) {
+                if ( $(this).scrollTop() > offset_opacity ) {
                     $back_to_top.addClass('cd-fade-out');
                 }
             });
@@ -577,6 +574,16 @@ var home = location.href,
                     }, scroll_top_duration
                 );
             });
+        },
+
+        // PJAX 重载
+        REL: function(){
+            if (Poi.web_title) { window_title() } // 重载网站标题自动判断
+            if (Poi.live2d_tips == 'open') { live2d_Tips() } // 重载 Live2D 提示
+            if (Poi.picture_m == 'single') { initImg() } // 重载图片放大实例
+            if (Poi.laziness_img == 'open') { lazinessImg() } // 重载图片懒加载
+            if (Poi.code_pjax == 'prism') { Prism.highlightAll() } // 重载 PRISM.JS 代码高亮
+            if (Poi.code_pjax == 'highlight') { highlight_pjax() } // 重载 HIGHLIGHT.JS 代码高亮
         }
 
     }
@@ -588,15 +595,15 @@ $(function() {
     Siren.PE(); // 进程
     Siren.NH(); // 显示&隐藏导航栏
     Siren.GT(); // 返回顶部
-    Siren.XLS(); // Ajax文章列表
-    Siren.XCS(); // Ajax评论提交
-    Siren.XCP(); // Ajax评论分页
+    Siren.XLS(); // AJAX文章列表
+    Siren.XCS(); // AJAX评论提交
+    Siren.XCP(); // AJAX评论分页
     Siren.CE(); // 点击事件
     Siren.MN(); // 移动端菜单
     Siren.IA(); // 输入框特效
     Siren.LV(); // 加载视频
 
-    if(Poi.pjax){
+    if (Poi.pjax){
         $(document).pjax('a[target!=_top]', '#page', {
             fragment: '#page',
             timeout: 8000,
@@ -607,12 +614,9 @@ $(function() {
             Siren.AH();
             Siren.PE();
             Siren.CE();
+            Siren.REL();
             NProgress.done();
             $("#loading").fadeOut(500);
-            if (Poi.codelamp == 'open') { Prism.highlightAll() }; // 解决Prism代码高亮
-            if (Poi.live2d_tips == 'open') { live2d_Tips() }; // 重载 Live2D 提示
-            if (Poi.picture_zoom == 'open') { initImg() }; // 重载图片放大实例
-            if (Poi.laziness_img == 'open') { lazinessImg() }; // 重载图片懒加载
         }).on('submit', '.search-form,.s-search', function (event) {
             event.preventDefault();
             $.pjax.submit(event, '#page', {
@@ -628,6 +632,7 @@ $(function() {
             Siren.AH();
             Siren.PE();
             Siren.CE();
+            Siren.REL();
         },false);
     }
 
@@ -689,7 +694,7 @@ if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEve
 }
 
 // 一言替换简介
-if(Poi.hitokoto == 'open') {
+if (Poi.hitokoto == 'open') {
     $(function () {
         $.getJSON("https://v1.hitokoto.cn/", function(e) {
             $('.header-info p').html(e.hitokoto+" —— <strong>"+e.from+"</strong>")
@@ -751,16 +756,16 @@ function deleteComments(obj,children) {
     }
 }
 
-//重载 Live2D 提示
+// 重载 Live2D 提示
 function live2d_Tips() {
     if (screen && screen.width > 860) {
         initTips();
     }
 }
 
-//图片放大初始化
+// 图片放大初始化
 function initImg() {
-    if(screen && screen.width > 860) {
+    if (screen && screen.width > 860) {
         var zooming = new Zooming({
             defaultZoomable: '.entry-content img',
             bgColor: 'rgba(0, 0, 0, .7)'
@@ -768,11 +773,36 @@ function initImg() {
     }
 }
 
-//图片懒加载初始化
+// 图片懒加载初始化
 function lazinessImg() {
     var images = document.querySelectorAll(".lazinessImg");
     lazyload(images);
 }
 
-if(Poi.picture_zoom == 'open') { initImg() }
-if(Poi.laziness_img == 'open') { lazinessImg() }
+// 代码高亮重载代码
+function highlight_pjax() {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+}
+
+// 网站标题自动判断
+function window_title() {
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            document.title = title.blur;
+            clearTimeout(titleTime);
+        } else {
+            document.title = title.focus;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitile;
+            }, 2000);
+        }
+    });
+}
+
+if (Poi.web_title) { window_title() }
+if (Poi.picture_m == 'single') { initImg() }
+if (Poi.laziness_img == 'open') { lazinessImg() }
