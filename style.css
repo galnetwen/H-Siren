@@ -1748,7 +1748,7 @@ i.iconfont.hotpost {
     letter-spacing: 1px;
 }
 
-pre.code-toolbar > .toolbar .toolbar-item {
+.toolbar-item {
     text-transform: uppercase;
 }
 

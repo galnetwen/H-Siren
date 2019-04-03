@@ -32,7 +32,7 @@ body::before {
     filter: blur(10px) brightness(.88);
 }
 
-.card, .welcome-panel, .tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
+.cat-checklist, .card, .welcome-panel, .tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
     background: rgba(255, 255, 255, .53);
     border-radius: 15px;
 }
@@ -141,7 +141,7 @@ table, table tr th, table tr td {
     border-bottom: none;
 }
 
-.importer-title, .importers td.desc, .theme-info, .theme-name, .wrap form h2, #whl_settings, .wp-core-ui .notice.is-dismissible, .welcome-panel li, .fileedit-sub, #templateside ul ul, #adminmenu, #donate, .wp-list-table.plugins .plugin-title, .wp-list-table.plugins .theme-title, .plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
+.checkbox-title, .importer-title, .importers td.desc, .theme-info, .theme-name, .wrap form h2, #whl_settings, .wp-core-ui .notice.is-dismissible, .welcome-panel li, .fileedit-sub, #templateside ul ul, #adminmenu, #donate, .wp-list-table.plugins .plugin-title, .wp-list-table.plugins .theme-title, .plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
     text-transform: uppercase;
 }
 
@@ -152,6 +152,10 @@ table.widefat code {
 .card {
     min-width: auto;
     max-width: none;
+}
+
+.avatar {
+    border-radius: 50px;
 }
 
 #comment-link-box {
