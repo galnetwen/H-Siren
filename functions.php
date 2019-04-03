@@ -7,6 +7,7 @@
  * @package Akina
  */
 
+//获取当前主题版本
 $theme = wp_get_theme();
 $theme_version = $theme->get('Version');
 define('SIREN_VERSION', $theme_version);
@@ -79,6 +80,7 @@ if (!function_exists('akina_setup')) :
 
         add_filter('pre_option_link_manager_enabled', '__return_true');
 
+        remove_action('wp_head', 'wp_shortlink_wp_head');    //移除文章短链接
         remove_action('wp_head', 'feed_links', 2);
         remove_action('wp_head', 'feed_links_extra', 3);
         remove_action('wp_head', 'rsd_link');
@@ -146,7 +148,7 @@ if (!function_exists('akina_setup')) :
         }
 
         /**
-         * 禁用原生EMOJI
+         * 禁用原生 EMOJI
          */
         function disable_emojis()
         {
@@ -163,7 +165,7 @@ if (!function_exists('akina_setup')) :
         add_action('init', 'disable_emojis');
 
         /**
-         * 禁用原生编辑器EMOJI选项
+         * 禁用编辑器 EMOJI
          */
         function disable_emojis_tinymce($plugins)
         {
@@ -186,30 +188,34 @@ if (!function_exists('akina_setup')) :
         }
 
         /**
-         * 移除 BLOCK CSS
+         * 移除前端 DNS 预获取
          */
-        add_action( 'wp_enqueue_scripts', 'remove_block_library_css', 100 );
-        function remove_block_library_css() {
-            wp_dequeue_style( 'wp-block-library' );
-        }
-
-        /**
-         * 移除 DNS-PREFETCH
-         */
-        function remove_dns_prefetch( $hints, $relation_type ) {
-            if ( 'dns-prefetch' === $relation_type ) {
-                return array_diff( wp_dependencies_unique_hosts(), $hints );
+        function remove_dns_prefetch($hints, $relation_type)
+        {
+            if ('dns-prefetch' === $relation_type) {
+                return array_diff(wp_dependencies_unique_hosts(), $hints);
             }
 
             return $hints;
         }
-        add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
+
+        add_filter('wp_resource_hints', 'remove_dns_prefetch', 10, 2);
+
+        /**
+         * 移除古腾堡编辑器前端样式
+         * 适用于 WordPress 5.0+
+         */
+        add_action('wp_enqueue_scripts', 'remove_block_library_css', 100);
+        function remove_block_library_css()
+        {
+            wp_dequeue_style('wp-block-library');
+        }
     }
 endif;
 add_action('after_setup_theme', 'akina_setup');
 
 /**
- * 定义后台字体
+ * 定义管理后台字体
  */
 function admin_font()
 { ?>
@@ -223,36 +229,34 @@ function admin_font()
 
 add_action('admin_head', 'admin_font');
 
-// 添加后台配色
-wp_admin_css_color('blur', __('模糊'), get_template_directory_uri() . '/inc/css/blur-colors.css', array('#00000080', '#ffffff87', '#ffffff87', '#ffffff87'));
-
 /**
- * 模糊配色配置
+ * 添加高斯模糊配色
  */
-function blur_image()
-{
-    if (akina_option('blur_bg')) {
-        $blurbg = akina_option('blur_bg');
-    } else {
-        $blurbg = get_random_bg_url();
-    } ?>
-    <style type="text/css">
-        body::before {
-            background-image: url('<?php echo $blurbg; ?>');
-        }
-    </style>
-<?php }
-
-function blur_custom()
-{ ?>
-    <style type="text/css">
-        <?php echo akina_option('blur_custom_style'); ?>
-    </style>
-<?php }
+wp_admin_css_color('blur', __('高斯'), get_template_directory_uri() . '/inc/css/blur-colors.css', array('#00000080', '#ffffff87', '#ffffff87', '#ffffff87'));
 
 if (get_user_option('admin_color') == "blur") {
+    function blur_image()
+    {
+        if (akina_option('blur_bg')) {
+            $blurbg = akina_option('blur_bg');
+        } else {
+            $blurbg = get_random_bg_url();
+        } ?>
+        <style type="text/css">
+            body::before {
+                background-image: url('<?php echo $blurbg; ?>');
+            }
+        </style>
+    <?php }
     add_action('admin_head', 'blur_image');
+
     if (akina_option('blur_custom_style')) {
+        function blur_custom()
+        { ?>
+            <style type="text/css">
+                <?php echo akina_option('blur_custom_style'); ?>
+            </style>
+        <?php }
         add_action('admin_head', 'blur_custom');
     }
 }
@@ -272,7 +276,7 @@ function akina_content_width()
 add_action('after_setup_theme', 'akina_content_width', 0);
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue Scripts And Styles
  */
 function akina_scripts()
 {
@@ -281,9 +285,6 @@ function akina_scripts()
     wp_enqueue_script('pjax-libs', get_template_directory_uri() . '/js/jquery.pjax.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('input', get_template_directory_uri() . '/js/input.min.js', array(), SIREN_VERSION, true);
     wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SIREN_VERSION, true);
-    if (is_singular() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
     $mv_live = akina_option('focus_mvlive') ? 'open' : 'close';
     $movies = akina_option('focus_amv') ? array('url' => akina_option('amv_url'), 'name' => akina_option('amv_title'), 'live' => $mv_live) : 'close';
     $auto_height = akina_option('focus_height') ? 'fixed' : 'auto';
@@ -310,42 +311,42 @@ function akina_scripts()
 add_action('wp_enqueue_scripts', 'akina_scripts');
 
 /**
- * load .php.
+ * Load Other Functions
  */
 require get_template_directory() . '/inc/decorate.php';
 require get_template_directory() . '/inc/random.php';
 require get_template_directory() . '/inc/useragent.php';
 
 /**
- * Custom template tags for this theme.
+ * Custom Template Tags
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Customizer additions.
+ * Customizer Additions
  */
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * function update
+ * Function Update
  */
 require get_template_directory() . '/inc/siren-update.php';
 require get_template_directory() . '/inc/categories-images.php';
 
 /**
- * Disable Embeds.
+ * Disable Embeds
  */
 require get_template_directory() . '/inc/disable-embeds.php';
 
 /**
- * Shuoshuo.
+ * 心情说说
  */
 if (akina_option('shuoshuo') == 'yes') {
     require get_template_directory() . '/inc/shuoshuo.php';
 }
 
 /**
- * COMMENT FORMATTING
+ * 评论模板
  */
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
@@ -396,8 +397,7 @@ if (!function_exists('akina_comment_format')) {
 }
 
 /**
- * post views.
- * @bigfa
+ * Post Views
  */
 function restyle_text($number)
 {
@@ -588,7 +588,9 @@ function akina_infinite_scroll_render()
     }
 }
 
-//下载按钮
+/**
+ * 编辑器下载按钮
+ */
 function download($atts, $content = null)
 {
     return '<a class="download" href="' . $content . '" rel="external" target="_blank" title="下载地址"><span><i class="iconfont down">&#xe69f;</i>Download</span></a>' ;
@@ -606,7 +608,7 @@ function bolo_after_wp_tiny_mce($mce_settings)
 add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
 
 /**
- * 后台登录美化
+ * 后台登录页美化
  */
 function custom_login()
 {
@@ -640,7 +642,7 @@ function custom_loginlogo_url($url)
 add_filter('login_headerurl', 'custom_loginlogo_url');
 
 /**
- * 评论邮件回复
+ * 评论回复邮件模板
  */
 function comment_mail_notify($comment_id)
 {
@@ -692,7 +694,9 @@ function comment_mail_notify($comment_id)
 
 add_action('comment_post', 'comment_mail_notify');
 
-//开放访客评论HTML标签
+/**
+ * 开放访客评论HTML标签
+ */
 function sig_allowed_html_tags_in_comments()
 {
     define('CUSTOM_TAGS', true);
@@ -711,7 +715,9 @@ function sig_allowed_html_tags_in_comments()
 
 add_action('init', 'sig_allowed_html_tags_in_comments', 10);
 
-//后台编辑器添加主题CSS
+/**
+ * 后台编辑器添加前台CSS
+ */
 function sig_add_editor_styles()
 {
     add_editor_style('style.css');
@@ -719,7 +725,9 @@ function sig_add_editor_styles()
 
 add_action('init', 'sig_add_editor_styles');
 
-//净化图片多余标签结构
+/**
+ * 净化图片多余标签结构
+ */
 if (akina_option('remove_attribute') == '1') {
     function remove_attribute_a($content)
     {
@@ -764,7 +772,9 @@ if (akina_option('remove_attribute') == '1') {
     add_shortcode('caption', 'custom_caption_shortcode');
 }
 
-//文章图片延迟加载替换
+/**
+ * 文章图片延迟加载处理
+ */
 if (akina_option('laziness_img') == true) {
     $preset = get_template_directory_uri() . '/images/preloader.svg';
     function lazinessImg($content)
@@ -777,4 +787,38 @@ if (akina_option('laziness_img') == true) {
     }
 
     add_filter('the_content', 'lazinessImg');
+}
+
+/**
+ * 修改评论回复按钮链接
+ */
+global $wp_version;
+if (version_compare($wp_version, '5.1.1', '>=')) {
+    add_filter('comment_reply_link', 'haremu_replace_comment_reply_link', 10, 4);
+    function haremu_replace_comment_reply_link($link, $args, $comment, $post)
+    {
+        if (get_option('comment_registration') && !is_user_logged_in()) {
+            $link = sprintf(
+                '<a rel="nofollow" class="comment-reply-login" href="%s">%s</a>',
+                esc_url(wp_login_url(get_permalink())),
+                $args['login_text']
+            );
+        } else {
+            $onclick = sprintf(
+                'return addComment.moveForm( "%1$s-%2$s", "%2$s", "%3$s", "%4$s" )',
+                $args['add_below'],
+                $comment->comment_ID,
+                $args['respond_id'],
+                $post->ID
+            );
+            $link = sprintf(
+                "<a rel='nofollow' class='comment-reply-link' href='%s' onclick='%s' aria-label='%s'>%s</a>",
+                esc_url(add_query_arg('replytocom', $comment->comment_ID, get_permalink($post->ID))) . "#" . $args['respond_id'],
+                $onclick,
+                esc_attr(sprintf($args['reply_to_text'], $comment->comment_author)),
+                $args['reply_text']
+            );
+        }
+        return $link;
+    }
 }
