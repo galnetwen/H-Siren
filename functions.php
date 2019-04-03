@@ -218,7 +218,7 @@ function admin_font()
             font-family: "Microsoft JhengHei", miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, Sans-Serif;
             font-weight: bold;
         }
-    </style>;
+    </style>
 <?php }
 
 add_action('admin_head', 'admin_font');
