@@ -467,8 +467,8 @@ function specs_zan()
  */
 function gravatar_cn($url)
 {
-    $gravatar_url = array('0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 's.gravatar.com', 'secure.gravatar.com');
-    return str_replace($gravatar_url, 'cn.gravatar.com', $url);
+    $gravatar_url = array('0.gravatar.com/', '1.gravatar.com/', '2.gravatar.com/', 's.gravatar.com/', 'secure.gravatar.com/');
+    return str_replace($gravatar_url, 'cdn.v2ex.com/gr', $url);
 }
 
 add_filter('get_avatar_url', 'gravatar_cn', 4);
