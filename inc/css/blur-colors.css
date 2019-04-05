@@ -1,3 +1,13 @@
+@charset "utf-8";
+
+/*
+Theme Name: 高斯模糊
+Author: 后宫学长
+Author URI: https://haremu.com
+Description: 为 WordPress 后台管理注入新的外观样式！突出高斯模糊与圆角风格，打磨许多细节，用心去感受这个配色的变化吧！
+Date: 2019.04.05
+*/
+
 ::-webkit-scrollbar {
     width: 12px;
     height: 5px;
@@ -32,12 +42,12 @@ body::before {
     filter: blur(10px) brightness(.88);
 }
 
-.cat-checklist, .card, .welcome-panel, .tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
+.filter-group, .theme-overlay .theme-actions, .cat-checklist, .card, .welcome-panel, .tablenav .tablenav-pages a, .tablenav-pages-navspan, .postbox, #title-wrap #title, #quick-press textarea#content, #update-nag, .update-nag, #screen-meta-links .screen-meta-toggle, #screen-meta {
     background: rgba(255, 255, 255, .53);
     border-radius: 15px;
 }
 
-.plugins tr, body, #activity-widget #the-comment-list .comment-item, #adminmenu, #adminmenuwrap, .theme-overlay .theme-backdrop, .alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
+.filter-drawer, .wp-filter .favorites-form, .plugins tr, body, #activity-widget #the-comment-list .comment-item, #adminmenu, #adminmenuwrap, .theme-overlay .theme-backdrop, .alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
     background: none;
 }
 
@@ -62,7 +72,7 @@ body::before {
     margin: auto;
 }
 
-input[type=text], input[type=search], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], select, textarea {
+[class*="plugin-card plugin-card-"], .plugin-card-bottom, input[type=text], input[type=search], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], select, textarea {
     background-color: rgba(255, 255, 255, .53);
     border-radius: 15px;
 }
@@ -75,7 +85,7 @@ table, table tr th, table tr td {
     border-bottom: 2px solid rgba(0, 0, 0, .3);
 }
 
-.color-option.selected, .color-option:hover, .nav-tab-wrapper a, #replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
+.plugin-icon, .theme-overlay .theme-wrap, .theme-overlay *, .theme-browser *, .color-option.selected, .color-option:hover, .nav-tab-wrapper a, #replycontainer #wp-replycontent-editor-container, #comment-link-box, #postdiv #wp-content-editor-container, .wp-core-ui .attachment .thumbnail, .wp-core-ui .attachment-preview, .edit-attachment-frame .attachment-media-view .details-image, .media-modal-content, .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .tablenav .actions select, #doaction, #doaction2, #post-query-submit, .wp-core-ui p .button, #major-publishing-actions, .wp-filter, .wp-core-ui .button, .wp-core-ui .button-secondary, .wp-core-ui .notice.is-dismissible, .metabox-holder .postbox-container .empty-container, .stuffbox, table.widefat {
     border-radius: 15px;
 }
 
@@ -141,7 +151,7 @@ table, table tr th, table tr td {
     border-bottom: none;
 }
 
-.checkbox-title, .importer-title, .importers td.desc, .theme-info, .theme-name, .wrap form h2, #whl_settings, .wp-core-ui .notice.is-dismissible, .welcome-panel li, .fileedit-sub, #templateside ul ul, #adminmenu, #donate, .wp-list-table.plugins .plugin-title, .wp-list-table.plugins .theme-title, .plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
+[class*="plugin-card plugin-card-"], .plugin-card-bottom, .filter-drawer, .wp-filter .favorites-form, .checkbox-title, .importer-title, .importers td.desc, .theme-info, .theme-name, .wrap form h2, #whl_settings, .wp-core-ui .notice.is-dismissible, .welcome-panel li, .fileedit-sub, #templateside ul ul, #adminmenu, #donate, .wp-list-table.plugins .plugin-title, .wp-list-table.plugins .theme-title, .plugins .row-actions, .plugins .second, .plugins .desc p, .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, #editor_emoji h2, .wp-admin select, .wp-admin select option, .wp-core-ui .button, .wp-core-ui .button-secondary, .form-table, .form-table input[type=text], label.selectit a, .form-table td fieldset label, .form-table td fieldset li, .form-table td fieldset p, code, kbd {
     text-transform: uppercase;
 }
 
@@ -214,5 +224,77 @@ table.widefat code {
 
     body::before {
         background-image: none !important;
+    }
+}
+
+button.media-modal-close {
+    border-radius: 0 15px 0 0;
+}
+
+.theme-overlay .theme-tags {
+    border-radius: 0;
+}
+
+.theme-browser .theme.add-new-theme {
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.widefat * {
+    word-wrap: break-word !important;
+}
+
+p.popular-tags {
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+.plugins-popular-tags-wrapper p, .plugins-popular-tags-wrapper h2 {
+    text-align: center;
+    margin: 0;
+    padding: 12px;
+    text-shadow: 0px 0px 10px #fff;
+}
+
+.plugin-install-tab-favorites .install-help, .plugin-install-tab-favorites label[for="user"] {
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+
+@media screen and (max-width: 2299px) and (min-width: 1600px) {
+    [class*="plugin-card plugin-card-"] {
+        width: calc(50% - 10px) !important;
+        margin: 5px !important;
+        clear: none !important;
+        max-height: 250px !important;
+        overflow: hidden;
+    }
+
+    p.authors {
+        margin: 0;
+    }
+
+    .plugin-card h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .plugin-card-top {
+        min-height: 138px;
+        max-height: 138px;
+    }
+
+    .plugin-card-bottom {
+        background-color: rgba(255, 255, 255, .53);
+        border-radius: 15px;
+    }
+
+    .desc.column-description p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
