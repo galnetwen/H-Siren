@@ -6,7 +6,8 @@
 
 get_header();
 ?>
-    <div class="main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
         <?php while (have_posts()) : the_post(); ?>
             <?php the_content(); ?>
             <hr>
@@ -40,6 +41,7 @@ get_header();
                 <?php endif; ?>
             </article>
         <?php endwhile; ?>
+        </main>
     </div>
 <?php
 get_footer();

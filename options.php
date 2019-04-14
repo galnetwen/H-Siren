@@ -723,13 +723,14 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('代码高亮PJAX', 'options_framework_theme'),
+        'desc' => __('开启前需要先安装对应插件', 'options_framework_theme'),
         'id' => 'code_pjax',
         'std' => "off",
         'type' => "radio",
         'options' => array(
             'off' => __('关闭', 'options_framework_theme'),
-            'prism' => __('（PRISM.JS）开启前需要先安装该插件', 'options_framework_theme'),
-            'highlight' => __('（HIGHLIGHT.JS）开启前需要先安装该插件', 'options_framework_theme')
+            'prism' => __('（PRISM.JS）', 'options_framework_theme'),
+            'highlight' => __('（HIGHLIGHT.JS）', 'options_framework_theme')
         )
     );
 
@@ -743,10 +744,16 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('页面点击特效', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
+        'desc' => __('该功能仅在 PC 端有效果', 'options_framework_theme'),
         'id' => 'click_effect',
-        'std' => '0',
-        'type' => 'checkbox'
+        'std' => "off",
+        'type' => "radio",
+        'options' => array(
+            'off' => __('关闭', 'options_framework_theme'),
+            'click' => __('点击大爆炸', 'options_framework_theme'),
+            'slide' => __('滑动小星星', 'options_framework_theme'),
+            'all' => __('以上全都要', 'options_framework_theme')
+        )
     );
 
     $options[] = array(
@@ -759,6 +766,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('图片放大方式', 'options_framework_theme'),
+        'desc' => __('该功能仅在 PC 端有效果', 'options_framework_theme'),
         'id' => 'picture_m',
         'std' => "off",
         'type' => "radio",
@@ -779,7 +787,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('博客看板娘', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启，仅在 PC 端生效', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，该功能仅在 PC 端有效果', 'options_framework_theme'),
         'id' => 'live2d_s',
         'std' => '0',
         'type' => 'checkbox'

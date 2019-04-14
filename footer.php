@@ -19,7 +19,7 @@
         <div class="hide-button">隐藏</div>
     </div>
 <?php } ?>
-<?php if (akina_option('click_effect') != '0') { ?>
+<?php if (akina_option('click_effect') == 'click' || akina_option('click_effect') == 'all') { ?>
     <canvas class="fireworks"></canvas>
 <?php } ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
@@ -38,7 +38,7 @@
             </p>
         </div>
         <div class="footer-device">
-            <p><?php echo akina_option('record') ? '<a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">' . akina_option('record') . '</a>' : ''; ?></p>
+            <p><?php echo akina_option('record') ? '<a href="http://www.beian.miit.gov.cn" target="_blank" rel="nofollow">' . akina_option('record') . '</a>' : ''; ?></p>
         </div>
         <?php if (akina_option('web_runtime') != '0') { ?>
             <div class="footer-device">
@@ -101,11 +101,18 @@
     </script>
 <?php } ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/OwO/meme.js"></script>
-<?php if (akina_option('click_effect') != '0') { ?>
+<?php if (akina_option('click_effect') == 'click' || akina_option('click_effect') == 'all') { ?>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.min.js"></script>
     <script type="text/javascript">
         if (screen && screen.width > 860) {
             document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fireworks.js"><\/script>');
+        }
+    </script>
+<?php } ?>
+<?php if (akina_option('click_effect') == 'slide' || akina_option('click_effect') == 'all') { ?>
+    <script type="text/javascript">
+        if (screen && screen.width > 860) {
+            document.write('<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/inc/js/cursor-effects.js"><\/script>');
         }
     </script>
 <?php } ?>
@@ -118,7 +125,7 @@
                 text: "<?php echo akina_option('ctrl_cs'); ?>",
                 type: "success",
                 confirmButtonText: "好的",
-                timer: 3000
+                timer: 2100
             });
         }
     </script>
