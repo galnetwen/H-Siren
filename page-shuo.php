@@ -28,6 +28,7 @@ get_header();
                                             <?php the_content(); ?>
                                             <h3><?php the_title(); ?></h3>
                                         </div>
+                                        <?php get_template_part('layouts/sharelike'); ?>
                                     </li>
                                 <?php
                                 endwhile; ?>

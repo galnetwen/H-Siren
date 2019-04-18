@@ -259,6 +259,24 @@ if (get_user_option('admin_color') == "blur") {
         <?php }
         add_action('admin_head', 'blur_custom');
     }
+
+    if (akina_option('mobile_blur') == '0') {
+        function blur_mobile()
+        { ?>
+            <style type="text/css">
+                @media (max-width: 860px) {
+                    body {
+                        background: #f1f1f1;
+                    }
+
+                    body::before {
+                        background-image: none !important;
+                    }
+                }
+            </style>
+        <?php }
+        add_action('admin_head', 'blur_mobile');
+    }
 }
 
 /**
@@ -292,6 +310,7 @@ function akina_scripts()
     $hitokoto = akina_option('hitokoto_o') ? 'open' : 'close';
     $laziness_img = akina_option('laziness_img') ? 'open' : 'close';
     if (wp_is_mobile()) $auto_height = 'fixed';    //拦截移动端
+    global $theme_version;
     wp_localize_script('app', 'Poi', array(
         'pjax' => akina_option('poi_pjax'),
         'code_pjax' => akina_option('code_pjax'),
@@ -300,6 +319,7 @@ function akina_scripts()
         'live2d_tips' => $live2d_tips,
         'hitokoto' => $hitokoto,
         'laziness_img' => $laziness_img,
+        'theme_version' => $theme_version,
         'web_title' => akina_option('web_title'),
         'picture_m' => akina_option('picture_m'),
         'ajaxurl' => admin_url('admin-ajax.php'),

@@ -2,8 +2,7 @@
 function customizer_css()
 { ?>
     <style type="text/css">
-        <?php
-        if ( akina_option('shownav') ) { ?>
+        <?php if ( akina_option('shownav') ) { ?>
         .site-top .lower nav {
             display: block !important;
         }
@@ -11,58 +10,19 @@ function customizer_css()
         <?php }
 
         if ( akina_option('theme_skin') ) { ?>
-        .author-profile i,
-        .post-like a,
-        .post-share .show-share,
-        .sub-text,
-        .we-info a,
-        span.sitename,
-        .post-more i:hover,
-        #pagination a:hover,
-        .post-content a:hover,
-        .float-content i:hover,
-        .entry-content a:hover,
-        .site-info a:hover,
-        .comment h4 a,
-        #comments-navi a.prev,
-        #comments-navi a.next,
-        .comment h4 a:hover,
-        .site-top ul li a:hover,
-        .entry-title a:hover,
-        #archives-temp h3,
-        span.page-numbers.current,
-        .sorry li a:hover,
-        .site-title a:hover,
-        i.iconfont.js-toggle-search.iconsearch:hover {
+        #archives-temp h3, #comments-navi a.next, #comments-navi a.prev, #pagination a:hover, .author-profile i, .comment h4 a, .comment h4 a:hover, .entry-content a:hover, .entry-title a:hover, .float-content i:hover, .post-content a:hover, .post-like a, .post-more i:hover, .post-share .show-share, .site-info a:hover, .site-title a:hover, .site-top ul li a:hover, .sorry li a:hover, .sub-text, .we-info a, i.iconfont.js-toggle-search.iconsearch:hover, span.page-numbers.current, span.sitename {
             color: <?php echo akina_option('theme_skin'); ?>;
         }
 
-        .feature i,
-        .download,
-        .navigator i:hover,
-        .links ul li:before,
-        .ar-time i,
-        span.ar-circle,
-        .object,
-        ::selection,
-        .comment .comment-reply-link,
-        .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after {
+        .ar-time i, .comment .comment-reply-link, .download, .feature i, .links ul li:before, .navigator i:hover, .object, .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after, ::selection, span.ar-circle {
             background: <?php echo akina_option('theme_skin'); ?>;
         }
 
-        .download,
-        .navigator i:hover,
-        .link-title,
-        .links ul li:hover,
-        #pagination a:hover,
-        .form-submit .submit:hover {
+        #pagination a:hover, .download, .form-submit .submit:hover, .link-title, .links ul li:hover, .navigator i:hover {
             border-color: <?php echo akina_option('theme_skin'); ?>;
         }
 
-        .notification:hover,
-        .meme_btn:hover,
-        .meme_body,
-        .meme_popup .meme_btn {
+        .notification:hover, .meme_btn:hover, .meme_body, .meme_popup .meme_btn {
             border: 1px solid<?php echo akina_option('theme_skin'); ?>;
         }
 
@@ -70,10 +30,12 @@ function customizer_css()
             color: <?php echo akina_option('theme_skin'); ?>;
         }
 
-        #comments_edit:focus,
-        .comment-respond input:focus,
-        .search-form input:focus {
+        #comments_edit:focus, .comment-respond input:focus, .search-form input:focus {
             border: 1px solid<?php echo akina_option('theme_skin'); ?>;
+            box-shadow: 0 0 10px 0<?php echo akina_option('theme_skin'); ?>;
+        }
+
+        #mo-nav .m-search input:focus {
             box-shadow: 0 0 10px 0<?php echo akina_option('theme_skin'); ?>;
         }
 
@@ -113,8 +75,7 @@ function customizer_css()
         <?php }
 
         if ( akina_option('list_type') == 'square') { ?>
-        .feature i,
-        .feature img {
+        .feature i, .feature img {
             border-radius: 0 !important;
         }
 
@@ -194,11 +155,6 @@ function customizer_css()
             color: #6F6F6F;
         }
 
-        .comments {
-            max-width: 800px;
-            margin: auto;
-        }
-
         #content, .comments .comments-main {
             border-radius: 0 0 10px 10px;
         }
@@ -254,10 +210,16 @@ function customizer_css()
         }
 
         @media (max-width: 860px) {
+        <?php if (akina_option('mobile_blur') == '0') { ?>
             body::before {
                 background-image: none;
             }
 
+            .headertop-bar::after, .pattern-center::after {
+                background: #fff !important;
+            }
+
+        <?php } ?>
             .centerbg {
                 background-image: url('<?php echo get_random_bg_url(); ?>') !important;
             }
@@ -270,10 +232,6 @@ function customizer_css()
 
             .single-center .entry-census {
                 padding: 18px 0 0 !important;
-            }
-
-            .headertop-bar::after, .pattern-center::after {
-                background: #fff !important;
             }
 
             .pattern-center {
@@ -295,6 +253,30 @@ function customizer_css()
             .linkpage li a p {
                 color: #bbc;
             }
+
+        <?php if (akina_option('mobile_blur') == '1') { ?>
+            .wrapper {
+                background: none;
+            }
+
+            #mo-nav {
+                background: none;
+            }
+
+            #mo-nav .m-search form {
+                background: none;
+            }
+
+            #mo-nav .m-search input {
+                background: rgba(255, 255, 255, .53);
+            }
+
+            #mo-nav ul li a {
+                background: rgba(255, 255, 255, .53);
+                border-radius: 5px;
+            }
+
+        <?php } ?>
         }
 
         <?php }
@@ -304,7 +286,6 @@ function customizer_css()
         }
 
         ?>
-
     </style>
 <?php }
 

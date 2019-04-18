@@ -5,7 +5,7 @@ Theme Name: 高斯模糊
 Author: 后宫学长
 Author URI: https://haremu.com
 Description: 为 WordPress 后台管理注入新的外观样式！突出高斯模糊与圆角风格，打磨许多细节，用心去感受这个配色的变化吧！
-Date: 2019.04.05
+Date: 2019.04.19
 */
 
 ::-webkit-scrollbar {
@@ -165,7 +165,7 @@ table.widefat code {
 }
 
 .avatar {
-    border-radius: 50px;
+    border-radius: 50px !important;
 }
 
 #comment-link-box {
@@ -216,14 +216,6 @@ table.widefat code {
 
     #wpcontent {
         padding: 0 5px !important;
-    }
-
-    body {
-        background: #f1f1f1;
-    }
-
-    body::before {
-        background-image: none !important;
     }
 }
 

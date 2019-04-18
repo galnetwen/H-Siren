@@ -121,7 +121,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('主页图标', 'options_framework_theme'),
-        'desc' => __('最佳高度尺寸40PX', 'options_framework_theme'),
+        'desc' => __('最佳高度尺寸40PX，不上传图标默认显示网站名称', 'options_framework_theme'),
         'id' => 'akina_logo',
         'type' => 'upload'
     );
@@ -136,7 +136,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('网站关键词', 'options_framework_theme'),
-        'desc' => __('各关键字间用半角逗号","分割，数量在5个以内最佳。', 'options_framework_theme'),
+        'desc' => __('各关键字间用半角逗号","分割，数量在5个以内最佳', 'options_framework_theme'),
         'id' => 'akina_meta_keywords',
         'std' => '',
         'type' => 'text'
@@ -144,7 +144,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('网站描述', 'options_framework_theme'),
-        'desc' => __('用简洁的文字描述本站点，字数建议在120个字以内。', 'options_framework_theme'),
+        'desc' => __('用简洁的文字描述本站点，字数建议在120个字以内', 'options_framework_theme'),
         'id' => 'akina_meta_description',
         'std' => '',
         'type' => 'text'
@@ -160,7 +160,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('页面装饰图', 'options_framework_theme'),
-        'desc' => __('默认开启，勾选关闭。显示在文章页面，独立页面以及分类页的顶部', 'options_framework_theme'),
+        'desc' => __('默认开启，勾选关闭，显示在文章页面，独立页面以及分类页的顶部', 'options_framework_theme'),
         'id' => 'patternimg',
         'std' => '0',
         'type' => 'checkbox'
@@ -197,6 +197,14 @@ function optionsframework_options()
             'simple' => __('白色简约', 'options_framework_theme'),
             'blur' => __('高斯模糊', 'options_framework_theme')
         )
+    );
+
+    $options[] = array(
+        'name' => __('移动高斯模糊', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，仅对“高斯模糊”网页背景风格生效', 'options_framework_theme'),
+        'id' => 'mobile_blur',
+        'std' => '0',
+        'type' => 'checkbox'
     );
 
     $options[] = array(
@@ -356,7 +364,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('社交信息', 'options_framework_theme'),
-        'desc' => __('默认开启，勾选关闭。显示头像、签名、SNS', 'options_framework_theme'),
+        'desc' => __('默认开启，勾选关闭，显示头像、签名、SNS', 'options_framework_theme'),
         'id' => 'focus_infos',
         'std' => '0',
         'type' => 'checkbox'
@@ -364,7 +372,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('动态名言', 'options_framework_theme'),
-        'desc' => __('默认关闭，勾选开启。使用“一言”代替博主描述名言', 'options_framework_theme'),
+        'desc' => __('默认关闭，勾选开启，使用“一言”代替主页博主描述名言', 'options_framework_theme'),
         'id' => 'hitokoto_o',
         'std' => '0',
         'type' => 'checkbox'
@@ -396,7 +404,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('视频地址', 'options_framework_theme'),
-        'desc' => __('视频的来源地址，该地址拼接下方的视频名称，地址尾部不需要加斜杠', 'options_framework_theme'),
+        'desc' => __('视频的来源地址，该地址拼接下方的视频名称，地址尾部不需要加斜杠，比如“https://1.cn/MV.mp4”，只需要填写“https://1.cn”，这个地址是固定的', 'options_framework_theme'),
         'id' => 'amv_url',
         'std' => '',
         'type' => 'text'
@@ -404,7 +412,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('视频名称', 'options_framework_theme'),
-        'desc' => __('比如 MV.mp4 ，只需要填写视频文件名 MV 即可，多个用英文逗号隔开如 MV,AV ，无需在意顺序，因为加载是随机的 ', 'options_framework_theme'),
+        'desc' => __('仅支持MP4格式，比如“https://1.cn/MV.mp4”，只需要填写视频文件名“MV”即可，多个视频用英文逗号隔开如“MV,AV”，无需在意顺序，因为加载是随机的', 'options_framework_theme'),
         'id' => 'amv_title',
         'std' => '',
         'type' => 'text'
@@ -419,7 +427,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('背景图API', 'options_framework_theme'),
-        'desc' => __('这里填入一个图片API地址，比如漫月API', 'options_framework_theme'),
+        'desc' => __('这里填入一个图片API地址，比如漫月API，仅支持静态URL', 'options_framework_theme'),
         'id' => 'focus_img_0',
         'std' => '',
         'type' => 'text'
@@ -865,7 +873,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('发件地址前缀', 'options_framework_theme'),
-        'desc' => __('用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为 Poi@你的域名.com', 'options_framework_theme'),
+        'desc' => __('用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为“Poi@你的域名.com”，仅适用于 WordPress 不需要装插件就能发信的服务器，但多数服务器已屏蔽', 'options_framework_theme'),
         'id' => 'mail_user_name',
         'std' => 'Poi',
         'type' => 'text'

@@ -5,7 +5,7 @@ Theme Name: H-Siren
 Author: 后宫学长
 Author URI: https://haremu.com
 Description: Fuzzz 的 Akina 主题分支。本版由后宫学长修改，突出随机图片展示与高斯模糊效果，集成实用功能，打磨许多细节，用心去感受这个版本的变化吧！
-Version: 4.3.7.190414
+Version: 4.3.8.190419
 Tags: Akina（娱乐版）
 */
 
@@ -461,6 +461,11 @@ ul {
 
 ol {
     list-style: decimal;
+}
+
+li {
+    /* word-wrap: break-word; */
+    word-break: break-all;
 }
 
 li > ul,
@@ -2680,6 +2685,8 @@ a.page-numbers {
     clear: both;
     overflow: hidden;
     width: 100%;
+    max-width: 800px;
+    margin: auto;
     padding: 60px 0 80px;
     list-style: none;
     background: #FFFFFF;
@@ -2855,20 +2862,34 @@ ol.children {
 }
 
 .comment .profile img {
-    width: 100%;
-    max-width: 40px;
+    width: 40px;
     height: 40px;
+    max-width: 40px;
+    max-height: 40px;
     border-radius: 100%;
     -webkit-transition: opacity 0.15s ease-out;
     -moz-transition: opacity 0.15s ease-out;
     transition: opacity 0.15s ease-out;
 }
 
-.comment .profile img:hover {
-    opacity: .8;
+.comments .main.shadow img.avatar {
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    -ms-transform: all ease 1s;
+    -o-transition: all ease 1s;
+    transition: all ease 1s;
 }
 
-.shadow {
+.comments .main.shadow:hover img.avatar {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg)
+}
+
+.comment .profile img:hover {
+    opacity: .8;
 }
 
 .comment .main {
@@ -3489,9 +3510,10 @@ li.feature-2 {
 
 .focusinfo img {
     width: 130px;
-    height: auto;
+    height: 130px;
     padding: 2px;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 .focusinfo .header-tou img {
@@ -5807,6 +5829,19 @@ i.iconfont.down {
     top: 15px;
     left: 15px;
     cursor: pointer;
+    transition: all ease 1s;
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    -ms-transform: all ease 1s;
+}
+
+.linkpage li:hover a img {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
 }
 
 .linkpage li a p {

@@ -661,16 +661,16 @@ $(function() {
         $(this).postLike();
     });
 
-    console.log("%c 蜜汁路易 %c","background:#24272A; color:#ffffff","","https://www.cssplus.org");
-    console.log("%c 后宫学长 %c","background:#24272A; color:#ffffff","","https://haremu.com");
+    console.log("%c 蜜汁路易 %c", "background:#24272A; color:#ffffff", "", "https://www.cssplus.org");
+    console.log("%c 后宫学长 %c", "background:#24272A; color:#ffffff", "", "https://haremu.com");
+    console.log("%c 主题版本 %c", "background:#F4A7B9; color:#ffffff", "", Poi.theme_version);
 
 });
 
 /*
- * File skip-link-focus-fix.js.
- * Helps with accessibility for keyboard only users.
- * Learn more: https://git.io/vWdr2
-*/
+ * 帮助只使用键盘的用户使用辅助功能
+ * 了解更多：https://git.io/vWdr2
+ */
 
 var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
     isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
