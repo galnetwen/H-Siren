@@ -493,6 +493,14 @@ img {
 table {
     margin: 0 0 1.5em;
     width: 100%;
+	border:1px solid #cad9ea;
+	color:#666;
+}
+
+td,
+th {
+    padding: 0;
+	border:1px solid #cad9ea;
 }
 
 /*--------------------------------------------------------------
